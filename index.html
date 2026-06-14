@@ -4,21 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guía Oficial - Next Gen</title>
-    <!-- Estilos CSS de la Guía y los Cánones -->
     <style>
         /* ==========================================================================
-           VARIABLES Y CONFIGURACIÓN MAESTRA
+           VARIABLES Y CONFIGURACIÓN MAESTRA (INTEGRACIÓN CON TU FORO)
            ========================================================================== */
         :root {
-            --xgb-bg-main: #141414;
-            --xgb-bg-sidebar: #0d0d0d;
-            --xgb-bg-card: #1e1e1e;
-            --xgb-border-color: #2a2a2a;
-            --xgb-text-primary: #e0e0e0;
-            --xgb-text-muted: #8a8a8a;
-            --xgb-accent: #732f2f; /* Color base oscuro y atmosférico */
-            --xgb-accent-light: #a64444;
-            --xgb-font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Variables heredadas directamente de tu hoja de estilos */
+            --imagen-fondo: url(https://i.imgur.com/Zx61S0K.jpeg);
+            --imagen-logo: url(https://i.imgur.com/f3PkI1Y.png);  
+            --fuente1: Helvetica, 'Segoe UI', sans-serif;  
+            --fuente2: Crobery, Georgia, serif;
+            --fuente3: Bigtimes, 'Times New Roman', serif;    
+            --fondo1: #121212c9;
+            --fondo2: #121212;
+            --fondo3: #0e0e0e;  
+            --color1: #ccbad9; /* Lavanda claro */
+            --color2: #9187b3; /* Violeta medio */ 
+            --color3: #e3e3e3; 
+            --textobase: #ededed;
+            --links1: #ededed;  
+            --borde1: 1px solid #ededed;
+            --borde1-c: #ededed;
+            --borde2: 1px solid #1c1c1c;
+            --borde2-c: #1c1c1c; 
+            --gradient1: linear-gradient(180deg, #8a7099 0%, #b29dbc 50%, #d4cad9 100%);
+            --sombra: 1px 0px 0px black;
+
+            /* Mapeo de variables antiguas de la guidebook a las nuevas del foro */
+            --xgb-bg-main: var(--fondo1);
+            --xgb-bg-sidebar: var(--fondo3);
+            --xgb-bg-card: var(--fondo2);
+            --xgb-border-color: var(--borde2-c);
+            --xgb-text-primary: var(--textobase);
+            --xgb-text-muted: #888888;
+            --xgb-accent: var(--color2); 
+            --xgb-accent-light: var(--color1);
         }
 
         * {
@@ -29,7 +49,11 @@
 
         body {
             background-color: #080808;
-            font-family: var(--xgb-font-main);
+            background-image: var(--imagen-fondo);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: var(--fuente1);
             color: var(--xgb-text-primary);
             padding: 40px 20px;
             display: flex;
@@ -45,30 +69,33 @@
             max-width: 1200px;
             min-height: 750px;
             background-color: var(--xgb-bg-main);
-            border: 1px solid var(--xgb-border-color);
+            backdrop-filter: blur(8px); /* Efecto blur elegante para el fondo semitransparente */
+            border: var(--borde2);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
         }
 
         /* BARRA LATERAL */
         .xgb-sidebar {
             width: 260px;
             background-color: var(--xgb-bg-sidebar);
-            border-right: 1px solid var(--xgb-border-color);
+            border-right: var(--borde2);
             display: flex;
             flex-direction: column;
             padding: 30px 20px;
         }
 
         .xgb-logo {
-            font-size: 28px;
+            font-family: var(--fuente2);
+            font-size: 32px;
             font-weight: 900;
-            letter-spacing: 4px;
+            letter-spacing: 2px;
             color: var(--xgb-accent-light);
             text-align: center;
             margin-bottom: 40px;
             text-transform: uppercase;
+            text-shadow: var(--sombra);
         }
 
         .xgb-tabs {
@@ -81,7 +108,7 @@
             background: none;
             border: none;
             color: var(--xgb-text-muted);
-            font-family: var(--xgb-font-main);
+            font-family: var(--fuente1);
             font-size: 14px;
             font-weight: 600;
             text-align: left;
@@ -101,7 +128,7 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            background-color: var(--xgb-bg-main);
+            background: transparent;
         }
 
         .xgb-content {
@@ -111,7 +138,7 @@
             max-height: 700px;
         }
 
-        /* BLOQUES DE PANELES (OCULTOS POR DEFECTO EXCEPTO EL ACTIVO) */
+        /* BLOQUES DE PANELES */
         .xgb-pane {
             display: none;
         }
@@ -126,7 +153,7 @@
             align-items: center;
             gap: 15px;
             margin-bottom: 30px;
-            border-bottom: 1px solid var(--xgb-border-color);
+            border-bottom: var(--borde2);
             padding-bottom: 20px;
         }
 
@@ -141,18 +168,18 @@
         }
 
         .xgb-page-title {
-            font-size: 24px;
+            font-family: var(--fuente2);
+            font-size: 26px;
             font-weight: 700;
-            letter-spacing: 1px;
             color: #ffffff;
         }
 
         .xgb-page-sub {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--xgb-text-muted);
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-top: 2px;
+            margin-top: 4px;
         }
 
         /* COMPONENTES VISUALES */
@@ -161,7 +188,7 @@
             border-radius: 8px;
             overflow: hidden;
             margin-bottom: 25px;
-            border: 1px solid var(--xgb-border-color);
+            border: var(--borde2);
         }
 
         .xgb-big-img img {
@@ -178,7 +205,7 @@
 
         .xgb-block {
             background-color: var(--xgb-bg-card);
-            border: 1px solid var(--xgb-border-color);
+            border: var(--borde2);
             border-radius: 8px;
             padding: 24px;
         }
@@ -188,7 +215,8 @@
         }
 
         .xgb-block-title {
-            font-size: 16px;
+            font-family: var(--fuente2);
+            font-size: 18px;
             font-weight: 700;
             color: #ffffff;
         }
@@ -226,20 +254,22 @@
 
         .xgb-mini-card {
             background-color: var(--xgb-bg-card);
-            border: 1px solid var(--xgb-border-color);
+            border: var(--borde2);
             border-radius: 6px;
             padding: 20px;
         }
 
         .xgb-mini-icon {
-            font-size: 18px;
+            font-family: var(--fuente3);
+            font-size: 20px;
             font-weight: 800;
             color: var(--xgb-accent-light);
             margin-bottom: 10px;
         }
 
         .xgb-mini-title {
-            font-size: 14px;
+            font-family: var(--fuente2);
+            font-size: 15px;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 6px;
@@ -253,13 +283,14 @@
 
         .xgb-listbox {
             background-color: var(--xgb-bg-card);
-            border: 1px solid var(--xgb-border-color);
+            border: var(--borde2);
             border-radius: 8px;
             padding: 24px;
         }
 
         .xgb-list-title {
-            font-size: 15px;
+            font-family: var(--fuente2);
+            font-size: 16px;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 12px;
@@ -268,7 +299,7 @@
         .xgb-footer {
             padding: 20px 40px;
             background-color: var(--xgb-bg-sidebar);
-            border-top: 1px solid var(--xgb-border-color);
+            border-top: var(--borde2);
             display: flex;
             justify-content: space-between;
             font-size: 11px;
@@ -289,8 +320,8 @@
         .xcanon-phone {
             width: 100%;
             max-width: 680px;
-            background-color: #0b0b0b;
-            border: 4px solid #1a1a1a;
+            background-color: var(--fondo3);
+            border: 4px solid var(--borde2-c);
             border-radius: 24px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.8);
@@ -299,19 +330,19 @@
         }
 
         .xcanon-header {
-            background-color: #121212;
+            background-color: var(--fondo2);
             padding: 25px 20px;
             text-align: center;
-            border-bottom: 1px solid #1f1f1f;
+            border-bottom: var(--borde2);
         }
 
         .xcanon-title {
-            font-family: Georgia, serif;
-            font-size: 24px;
-            font-style: italic;
+            font-family: var(--fuente2);
+            font-size: 26px;
             letter-spacing: 2px;
             color: #ffffff;
             text-transform: lowercase;
+            text-shadow: var(--sombra);
         }
 
         .xcanon-subtitle {
@@ -324,14 +355,15 @@
 
         .xcanon-tabs {
             display: flex;
-            background-color: #0e0e0e;
-            border-bottom: 1px solid #1f1f1f;
+            background-color: #0a0a0a;
+            border-bottom: var(--borde2);
         }
 
         .xcanon-tab {
             flex: 1;
             text-align: center;
             padding: 12px 5px;
+            font-family: var(--fuente1);
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -342,7 +374,7 @@
 
         .xcanon-tab.active, .xcanon-tab:hover {
             color: #ffffff;
-            background-color: #141414;
+            background-color: var(--fondo2);
             border-bottom: 2px solid var(--xgb-accent-light);
         }
 
@@ -350,7 +382,7 @@
             padding: 20px;
             max-height: 500px;
             overflow-y: auto;
-            background-color: #0b0b0b;
+            background-color: var(--fondo3);
         }
 
         .xcanon-pane {
@@ -365,13 +397,14 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            border-bottom: 1px solid #222;
+            border-bottom: var(--borde2);
             padding-bottom: 8px;
             margin-bottom: 20px;
         }
 
         .xcanon-cluster-head strong {
-            font-size: 15px;
+            font-family: var(--fuente2);
+            font-size: 16px;
             color: #ffffff;
             display: block;
         }
@@ -382,6 +415,7 @@
         }
 
         .xcanon-cluster-head em {
+            font-family: var(--fuente1);
             font-size: 11px;
             color: var(--xgb-accent-light);
             font-style: normal;
@@ -396,12 +430,13 @@
         }
 
         .xcanon-family {
-            background-color: #111111;
-            border: 1px solid #1c1c1c;
+            background-color: var(--fondo2);
+            border: var(--borde2);
             border-radius: 8px;
             overflow: hidden;
         }
 
+        /* Borde izquierdo estilizado usando tu gradiente del foro */
         .xcanon-family.simple {
             border-left: 3px solid var(--xgb-accent);
         }
@@ -415,12 +450,13 @@
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 14px;
-            border-bottom: 1px solid #1a1a1a;
+            border-bottom: var(--borde2);
             padding-bottom: 10px;
         }
 
         .xcanon-family-name {
-            font-size: 15px;
+            font-family: var(--fuente2);
+            font-size: 16px;
             font-weight: 700;
             color: #ffffff;
         }
@@ -435,12 +471,12 @@
         .xcanon-family-badge {
             font-size: 9px;
             text-transform: uppercase;
-            background-color: #1a1a1a;
-            color: var(--xgb-text-primary);
+            background: var(--gradient1); /* Uso de tu gradiente del foro */
+            color: var(--fondo3); /* Contraste oscuro para que sea legible sobre el gradiente claro */
             padding: 4px 8px;
             border-radius: 4px;
             letter-spacing: 1px;
-            border: 1px solid #2a2a2a;
+            font-weight: 700;
         }
 
         .xcanon-members {
@@ -454,8 +490,8 @@
         }
 
         .xmember {
-            background-color: #151515;
-            border: 1px solid #202020;
+            background-color: #161616;
+            border: var(--borde2);
             padding: 12px;
             border-radius: 6px;
             font-size: 13px;
@@ -463,34 +499,41 @@
         }
 
         .xmember strong {
-            color: #ffffff;
+            color: var(--color1); /* Los nombres de los personajes resaltan con el lavanda */
             margin-right: 8px;
         }
 
         .xmember span {
-            color: var(--xgb-text-muted);
+            color: var(--textobase);
         }
 
+        .xmember span[style*="font-size: smaller;"] {
+            color: var(--xgb-text-muted) !important;
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* Estilo elegante para elementos reservados */
         .xmember.reserved {
-            border-left: 3px solid #b3945b;
-            background-color: #171511;
+            border-left: 3px solid var(--color1);
+            background-color: #1b1622;
         }
 
         .xmember.reserved strong {
-            color: #e6cb95;
+            color: #ffffff;
+            text-shadow: 0 0 5px var(--color2);
         }
 
         .xcanon-footer {
-            background-color: #121212;
+            background-color: var(--fondo2);
             padding: 15px 20px;
             text-align: center;
-            border-top: 1px solid #1f1f1f;
+            border-top: var(--borde2);
             font-size: 11px;
         }
 
         .xcanon-footer strong {
-            font-family: Georgia, serif;
-            font-style: italic;
+            font-family: var(--fuente2);
             color: var(--xgb-accent-light);
             display: block;
             margin-bottom: 4px;
@@ -503,10 +546,8 @@
 </head>
 <body>
 
-<!-- CAJA MAESTRA xoxo-guide -->
 <div class="xoxo-guide">
     
-    <!-- BARRA LATERAL (TABS) -->
     <div class="xgb-sidebar">
         <div class="xgb-logo">XOXO</div>
         <div class="xgb-tabs">
@@ -518,13 +559,9 @@
         </div>
     </div>
     
-    <!-- CONTENIDO PRINCIPAL -->
     <div class="xgb-main">
         <div class="xgb-content">
             
-            <!-- ========================================== -->
-            <!-- PESTAÑA BIENVENIDA                         -->
-            <!-- ========================================== -->
             <div class="xgb-pane xgb-pane-bienvenida active">
                 <div class="xgb-page-head">
                     <div class="xgb-page-icon">✦</div>
@@ -563,9 +600,6 @@
                 </div>
             </div>
 
-            <!-- ========================================== -->
-            <!-- PESTAÑA AMBIENTACIÓN                       -->
-            <!-- ========================================== -->
             <div class="xgb-pane xgb-pane-ambientacion">
                 <div class="xgb-page-head">
                     <div class="xgb-page-icon">✧</div>
@@ -589,9 +623,6 @@
                 </div>
             </div>
 
-            <!-- ========================================== -->
-            <!-- PESTAÑA CÁNONES                            -->
-            <!-- ========================================== -->
             <div class="xgb-pane xgb-pane-canon">
                 <div class="xcanon-wrap">
                     <div class="xcanon-phone">
@@ -608,7 +639,6 @@
                         
                         <div class="xcanon-content">
                             
-                            <!-- CLUSTER 1: THE CLASSIC ERA -->
                             <div class="xcanon-pane xcanon-pane-classic active">
                                 <div class="xcanon-cluster-head">
                                     <div><strong>The Classic Era</strong> <span>núcleos fundacionales y descendencia directa del linaje original</span></div>
@@ -668,10 +698,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> <!-- FIN xcanon-pane-classic -->
-
-                            <!-- CLUSTER 2: THE REBOOT -->
-                            <div class="xcanon-pane xcanon-pane-reboot">
+                            </div> <div class="xcanon-pane xcanon-pane-reboot">
                                 <div class="xcanon-cluster-head">
                                     <div><strong>The Reboot</strong> <span>nuevas dinastías, guerras de influencia y los rostros de la era digital</span></div>
                                     <em>cluster 02</em>
@@ -822,18 +849,14 @@
                                             </div>
                                         </div>	
                                     </div>
-                                </div> <!-- FIN xcanon-familylist -->
-                            </div> <!-- FIN xcanon-pane-reboot -->
-
-                            <!-- CLUSTER 3: OTROS PERSONAJES -->
-                            <div class="xcanon-pane xcanon-pane-otros">
+                                </div> </div> <div class="xcanon-pane xcanon-pane-otros">
                                 <div class="xcanon-cluster-head">
                                     <div><strong>Otros personajes</strong> <span>figuras vinculadas al universo gossip girl fuera de los núcleos familiares principales</span></div>   
                                     <em>cluster 03</em> 
                                 </div>
                                 <div class="xcanon-members xcanon-members-alone">
                                     <div class="xmember"><strong>Damien Dalgaard</strong> <span>35-36 años</span> <span style="font-size: smaller;">Hijo del embajador de Bélgica. Ex de Jenny / Eric. Empresario internacional, diplomático o figura en los márgenes de la ley. FC: Kevin Zegers o libre.</span></div>
-                                    <div class="xmember"><strong>Olivia Burke</strong> <span>34-35 años</span> <span style="font-size: smaller;">Exnovia de Dan Humphrey. Estrella de cine, productora o retirada del espectáculo. FC: Hilary Duff o libre.</span></div>
+                                    <div class="xmember"><strong>Olivia Burke</strong> <span>34-35 años</span> <span style="font-size: smaller;">Exnovia de Dan Humphrey. Estrella de cine, productora o retiree del espectáculo. FC: Hilary Duff o libre.</span></div>
                                     <div class="xmember"><strong>Steven Spence</strong> <span>45-50 años</span> <span style="font-size: smaller;">Padre de Sage Spence. Empresario. FC libre.</span></div>
                                     <div class="xmember"><strong>Sage Spence</strong> <span>27-28 años</span> <span style="font-size: smaller;">Ex Queen B de Constance y modelo. Puede ser diseñadora, influencer o estar ligada al mundo de la moda. FC: Sofia Black-D’Elia o libre.</span></div>
                                     <div class="xmember"><strong>Raina Thorpe</strong> <span>35-36 años</span> <span style="font-size: smaller;">Empresaria y ejecutiva en Thorpe Enterprises. FC: Tika Sumpter o libre. Debe ser afroamericana.</span></div>
@@ -846,21 +869,10 @@
                                     <div class="xmember"><strong>Poppy Lifton</strong> <span>38-40 años</span> <span style="font-size: smaller;">Socialité devenida en estafadora de alto nivel. Puede estar rehabilitada o preparando el próximo golpe. FC: Tamara Feldman o libre.</span></div>
                                     <div class="xmember"><strong>Gabriel Edwards</strong> <span>40-45 años</span> <span style="font-size: smaller;">Estafador y falso emprendedor tecnológico. Puede estar rehabilitado o preparando otro golpe. FC libre.</span></div>
                                 </div>
-                            </div> <!-- FIN xcanon-pane-otros -->
-                            
-                        </div> <!-- FIN xcanon-content -->
-                        
-                        <div class="xcanon-footer"> 
+                            </div> </div> <div class="xcanon-footer"> 
                             <strong>xoxo, gossip girl</strong> <span>Los personajes canon y semicanon pueden ser reinterpretados mientras conserven sus ejes narrativos y sus conexiones con el universo.</span> 
                         </div>
-                    </div> <!-- FIN xcanon-phone -->
-                </div> <!-- FIN xcanon-wrap -->
-            </div> <!-- FIN xgb-pane-canon -->
-
-            <!-- ========================================== -->
-            <!-- PESTAÑA GUÍA NUEVOS USUARIOS               -->
-            <!-- ========================================== -->
-            <div class="xgb-pane xgb-pane-guia">
+                    </div> </div> </div> <div class="xgb-pane xgb-pane-guia">
                 <div class="xgb-page-head">
                     <div class="xgb-page-icon">?</div>
                     <div class="xgb-page-titlebox">
@@ -903,9 +915,6 @@
                 </div>
             </div>
 
-            <!-- ========================================== -->
-            <!-- PESTAÑA SISTEMAS                           -->
-            <!-- ========================================== -->
             <div class="xgb-pane xgb-pane-sistemas">
                 <div class="xgb-page-head">
                     <div class="xgb-page-icon">☷</div>
@@ -944,17 +953,11 @@
                 </div>
             </div>
             
-        </div> <!-- FIN xgb-content -->
-        
-        <div class="xgb-footer"> 
+        </div> <div class="xgb-footer"> 
             <div>xoxo, next gen</div>
             <div>guidebook oficial</div> 
         </div>
-    </div> <!-- FIN xgb-main -->
-</div> <!-- FIN DE LA CAJA MAESTRA xoxo-guide -->
-
-<!-- SCRIPTS DE NAVEGACIÓN -->
-<script>
+    </div> </div> <script>
     document.addEventListener('DOMContentLoaded', () => {
         // 1. Control de Pestañas Principales de la Guía
         const mainTabs = document.querySelectorAll('.xgb-tab');
