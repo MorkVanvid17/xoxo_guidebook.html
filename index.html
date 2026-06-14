@@ -3,677 +3,1761 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía Oficial - Next Gen</title>
-    <!-- Estilos CSS de la Guía y los Cánones -->
+    <title>XOXO Guidebook</title>
     <style>
-        /* ==========================================================================
-           VARIABLES Y CONFIGURACIÓN MAESTRA
-           ========================================================================== */
-        :root {
-            --xgb-bg-main: #141414;
-            --xgb-bg-sidebar: #0d0d0d;
-            --xgb-bg-card: #1e1e1e;
-            --xgb-border-color: #2a2a2a;
-            --xgb-text-primary: #e0e0e0;
-            --xgb-text-muted: #8a8a8a;
-            --xgb-accent: #732f2f; /* Color base oscuro y atmosférico */
-            --xgb-accent-light: #a64444;
-            --xgb-font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        .xoxo-guide,
+        .xoxo-guide * {
+        box-sizing:border-box;
+        scrollbar-width:thin;
+        scrollbar-color:var(--color1) transparent;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        .xoxo-guide ::-webkit-scrollbar {
+        width:3px;
+        height:3px;
         }
 
-        body {
-            background-color: #080808;
-            font-family: var(--xgb-font-main);
-            color: var(--xgb-text-primary);
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
+        .xoxo-guide ::-webkit-scrollbar-track {
+        background:transparent;
         }
 
-        /* ==========================================================================
-           ESTRUCTURA GENERAL DE LA GUÍA (xgb-)
-           ========================================================================== */
+        .xoxo-guide ::-webkit-scrollbar-thumb {
+        background:var(--color1);
+        }
+
         .xoxo-guide {
-            display: flex;
-            width: 100%;
-            max-width: 1200px;
-            min-height: 750px;
-            background-color: var(--xgb-bg-main);
-            border: 1px solid var(--xgb-border-color);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+        --gb-bg:#171717;
+        --gb-bg2:#101010;
+        --gb-bg3:#202020;
+        --gb-bg4:#262326;
+        --gb-text:#f1eef2;
+        --gb-soft:#d8cde0;
+        --gb-muted:#9f95aa;
+        --gb-line:#2b2b2b;
+        width:90%;
+        margin:35px auto;
+        background:var(--gb-bg);
+        border:var(--borde2);
+        font-family:var(--fuente1);
+        font-size:12px;
+        line-height:155%;
+        color:var(--gb-text);
+        position:relative;
+        overflow:hidden;
+        isolation:isolate;
         }
 
-        /* BARRA LATERAL */
+        .xoxo-guide:before {
+        content:"";
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        height:4px;
+        background:var(--gradient1);
+        z-index:10;
+        pointer-events:none;
+        }
+
+        .xoxo-guide:after {
+        content:"";
+        position:absolute;
+        inset:0;
+        background:
+        radial-gradient(circle at 10% 5%, rgba(204,186,217,.10), transparent 28%),
+        radial-gradient(circle at 90% 80%, rgba(145,135,179,.07), transparent 32%),
+        linear-gradient(135deg, rgba(255,255,255,.025), transparent 45%, rgba(0,0,0,.22));
+        z-index:-1;
+        pointer-events:none;
+        }
+
+        .xoxo-guide a {
+        color:var(--gb-text)!important;
+        text-decoration:none!important;
+        }
+
+        /**** INPUTS DE PESTAÑAS PRINCIPALES ****/
+
+        .xgb-radio,
+        .xcanon-radio {
+        display:none!important;
+        }
+
+        /**** ESTRUCTURA GENERAL ****/
+
+        .xgb-shell {
+        display:grid;
+        grid-template-columns:260px 1fr;
+        min-height:650px;
+        }
+
         .xgb-sidebar {
-            width: 260px;
-            background-color: var(--xgb-bg-sidebar);
-            border-right: 1px solid var(--xgb-border-color);
-            display: flex;
-            flex-direction: column;
-            padding: 30px 20px;
+        background:var(--gb-bg2);
+        border-right:var(--borde2);
+        padding:22px;
+        position:relative;
         }
 
-        .xgb-logo {
-            font-size: 28px;
-            font-weight: 900;
-            letter-spacing: 4px;
-            color: var(--xgb-accent-light);
-            text-align: center;
-            margin-bottom: 40px;
-            text-transform: uppercase;
+        .xgb-side-card {
+        background:var(--gb-bg3);
+        border:var(--borde2);
+        padding:18px;
+        margin-bottom:15px;
+        position:relative;
+        overflow:hidden;
         }
+
+        .xgb-side-card:before {
+        content:"";
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        height:3px;
+        background:var(--gradient1);
+        }
+
+        .xgb-side-title {
+        font-family:var(--fuente2);
+        font-size:30px;
+        font-weight:400;
+        line-height:82%;
+        text-transform:uppercase;
+        color:var(--gb-text);
+        text-shadow:var(--sombra);
+        position:relative;
+        z-index:2;
+        }
+
+        .xgb-side-sub {
+        margin-top:10px;
+        font-size:8px;
+        font-weight:900;
+        line-height:130%;
+        letter-spacing:3px;
+        text-transform:uppercase;
+        color:var(--color1);
+        position:relative;
+        z-index:2;
+        }
+
+        .xgb-search {
+        height:32px;
+        display:flex;
+        align-items:center;
+        padding:0 12px;
+        background:var(--gb-bg2);
+        border:var(--borde2);
+        font-size:8px;
+        font-weight:900;
+        letter-spacing:2px;
+        text-transform:uppercase;
+        color:var(--gb-muted);
+        margin-top:15px;
+        position:relative;
+        z-index:2;
+        }
+
+        /**** BOTONES LATERALES DEL GUIDEBOOK ****/
 
         .xgb-tabs {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+        display:flex;
+        flex-direction:column;
+        gap:8px;
         }
 
-        .xgb-tab {
-            background: none;
-            border: none;
-            color: var(--xgb-text-muted);
-            font-family: var(--xgb-font-main);
-            font-size: 14px;
-            font-weight: 600;
-            text-align: left;
-            padding: 12px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .xgb-tabs label {
+        min-height:42px;
+        display:grid;
+        grid-template-columns:30px 1fr;
+        align-items:center;
+        gap:9px;
+        padding:0 12px;
+        background:var(--gb-bg3);
+        border:var(--borde2);
+        font-size:9px;
+        font-weight:900;
+        line-height:120%;
+        letter-spacing:1px;
+        text-transform:uppercase;
+        color:var(--gb-soft);
+        cursor:pointer;
+        transition:.3s ease;
         }
 
-        .xgb-tab:hover, .xgb-tab.active {
-            color: #ffffff;
-            background-color: var(--xgb-accent);
+        .xgb-tabs label em {
+        font-style:normal;
+        font-size:15px;
+        line-height:100%;
+        color:var(--color1);
+        display:flex;
+        align-items:center;
+        justify-content:center;
         }
 
-        /* CUERPO PRINCIPAL */
+        .xgb-tabs label:hover {
+        background:var(--gb-bg4);
+        color:var(--gb-text);
+        border-color:var(--borde1-c);
+        }
+
+        #xgb-tab-amb:checked ~ .xgb-shell .xgb-tabs label[for="xgb-tab-amb"],
+        #xgb-tab-normas:checked ~ .xgb-shell .xgb-tabs label[for="xgb-tab-normas"],
+        #xgb-tab-npc:checked ~ .xgb-shell .xgb-tabs label[for="xgb-tab-npc"],
+        #xgb-tab-canon:checked ~ .xgb-shell .xgb-tabs label[for="xgb-tab-canon"],
+        #xgb-tab-guia:checked ~ .xgb-shell .xgb-tabs label[for="xgb-tab-guia"],
+        #xgb-tab-sistemas:checked ~ .xgb-shell .xgb-tabs label[for="xgb-tab-sistemas"] {
+        background:rgba(204,186,217,.10);
+        color:var(--gb-text);
+        border-color:var(--color1);
+        }
+
+        .xgb-mini-links {
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:8px;
+        margin-top:15px;
+        }
+
+        .xgb-mini-links a {
+        height:30px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background:var(--gb-bg2);
+        border:var(--borde2);
+        font-size:8px;
+        font-weight:900;
+        line-height:100%;
+        letter-spacing:1px;
+        text-transform:uppercase;
+        color:var(--gb-text)!important;
+        transition:.3s ease;
+        }
+
+        .xgb-mini-links a:hover {
+        color:var(--color1)!important;
+        border-color:var(--borde1-c);
+        }
+
+        /**** COLUMNA PRINCIPAL ****/
+
         .xgb-main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            background-color: var(--xgb-bg-main);
+        min-width:0;
+        position:relative;
+        }
+
+        .xgb-topbar {
+        height:82px;
+        display:grid;
+        grid-template-columns:1fr auto;
+        align-items:center;
+        gap:18px;
+        padding:0 28px;
+        background:var(--gb-bg2);
+        border-bottom:var(--borde2);
+        }
+
+        .xgb-brand {
+        display:flex;
+        align-items:center;
+        gap:14px;
+        min-width:0;
+        }
+
+        .xgb-brand-icon {
+        width:42px;
+        height:42px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background:var(--gb-bg3);
+        border:var(--borde2);
+        font-size:20px;
+        line-height:100%;
+        color:var(--color1);
+        }
+
+        .xgb-brand-text {
+        min-width:0;
+        }
+
+        .xgb-brand-title {
+        font-family:var(--fuente2);
+        font-size:30px;
+        font-weight:400;
+        line-height:82%;
+        text-transform:uppercase;
+        color:var(--gb-text);
+        text-shadow:var(--sombra);
+        }
+
+        .xgb-brand-sub {
+        margin-top:7px;
+        font-size:8px;
+        font-weight:900;
+        letter-spacing:3px;
+        line-height:100%;
+        text-transform:uppercase;
+        color:var(--color1);
+        }
+
+        .xgb-status {
+        height:32px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding:0 14px;
+        background:var(--gb-bg3);
+        border:var(--borde2);
+        font-size:8px;
+        font-weight:900;
+        letter-spacing:2px;
+        line-height:100%;
+        text-transform:uppercase;
+        color:var(--gb-soft);
         }
 
         .xgb-content {
-            flex: 1;
-            padding: 40px;
-            overflow-y: auto;
-            max-height: 700px;
+        padding:28px;
         }
 
-        /* BLOQUES DE PANELES (OCULTOS POR DEFECTO EXCEPTO EL ACTIVO) */
         .xgb-pane {
-            display: none;
+        display:none;
         }
 
-        .xgb-pane.active {
-            display: block;
+        #xgb-tab-amb:checked ~ .xgb-shell .xgb-pane-amb,
+        #xgb-tab-normas:checked ~ .xgb-shell .xgb-pane-normas,
+        #xgb-tab-npc:checked ~ .xgb-shell .xgb-pane-npc,
+        #xgb-tab-canon:checked ~ .xgb-shell .xgb-pane-canon,
+        #xgb-tab-guia:checked ~ .xgb-shell .xgb-pane-guia,
+        #xgb-tab-sistemas:checked ~ .xgb-shell .xgb-pane-sistemas {
+        display:block;
         }
 
-        /* CABECERAS DE SECCIÓN */
+        /**** CABECERAS Y BLOQUES ****/
+
         .xgb-page-head {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            border-bottom: 1px solid var(--xgb-border-color);
-            padding-bottom: 20px;
+        display:grid;
+        grid-template-columns:64px 1fr;
+        gap:16px;
+        align-items:center;
+        background:var(--gb-bg3);
+        border:var(--borde2);
+        padding:18px;
+        margin-bottom:18px;
+        position:relative;
+        overflow:hidden;
+        }
+
+        .xgb-page-head:before {
+        content:"";
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        height:3px;
+        background:var(--gradient1);
         }
 
         .xgb-page-icon {
-            font-size: 24px;
-            color: var(--xgb-accent-light);
+        width:64px;
+        height:64px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background:var(--gb-bg2);
+        border:var(--borde2);
+        font-size:30px;
+        line-height:100%;
+        color:var(--color1);
+        position:relative;
+        z-index:2;
         }
 
         .xgb-page-titlebox {
-            display: flex;
-            flex-direction: column;
+        position:relative;
+        z-index:2;
+        min-width:0;
         }
 
         .xgb-page-title {
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: #ffffff;
+        font-family:var(--fuente2);
+        font-size:30px;
+        font-weight:400;
+        line-height:85%;
+        text-transform:uppercase;
+        color:var(--gb-text);
+        text-shadow:var(--sombra);
+        white-space:normal;
+        overflow:visible;
+        text-overflow:clip;
+        overflow-wrap:anywhere;
         }
 
         .xgb-page-sub {
-            font-size: 12px;
-            color: var(--xgb-text-muted);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 2px;
-        }
-
-        /* COMPONENTES VISUALES */
-        .xgb-big-img {
-            width: 100%;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 25px;
-            border: 1px solid var(--xgb-border-color);
-        }
-
-        .xgb-big-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .xgb-grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+        margin-top:8px;
+        font-size:8px;
+        font-weight:900;
+        line-height:120%;
+        letter-spacing:3px;
+        text-transform:uppercase;
+        color:var(--color1);
         }
 
         .xgb-block {
-            background-color: var(--xgb-bg-card);
-            border: 1px solid var(--xgb-border-color);
-            border-radius: 8px;
-            padding: 24px;
+        background:var(--gb-bg3);
+        border:var(--borde2);
+        margin-bottom:16px;
+        position:relative;
+        overflow:hidden;
+        }
+
+        .xgb-block:before {
+        content:"";
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        height:2px;
+        background:var(--gradient1);
+        opacity:.8;
         }
 
         .xgb-block-head {
-            margin-bottom: 16px;
+        display:grid;
+        grid-template-columns:1fr auto;
+        gap:15px;
+        align-items:end;
+        padding:16px 18px 13px;
+        background:var(--gb-bg2);
+        border-bottom:var(--borde2);
         }
 
         .xgb-block-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #ffffff;
+        font-family:var(--fuente2);
+        font-size:30px;
+        font-weight:400;
+        line-height:85%;
+        text-transform:uppercase;
+        color:var(--gb-text);
+        text-shadow:var(--sombra);
+        white-space:normal;
+        overflow:visible;
+        text-overflow:clip;
+        overflow-wrap:anywhere;
         }
 
         .xgb-block-sub {
-            font-size: 11px;
-            color: var(--xgb-accent-light);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        font-size:8px;
+        font-weight:900;
+        line-height:100%;
+        letter-spacing:3px;
+        text-transform:uppercase;
+        color:var(--color1);
         }
 
         .xgb-text {
-            font-size: 14px;
-            line-height: 1.6;
-            color: var(--xgb-text-primary);
+        padding:20px;
+        font-size:12px;
+        line-height:165%;
+        text-align:justify;
+        color:var(--gb-text);
         }
 
-        .xgb-text p {
-            margin-bottom: 12px;
+        .xgb-text div + div {
+        margin-top:14px;
         }
 
-        .xgb-text ul, .xgb-text ol, .xgb-listbox ol {
-            padding-left: 20px;
+        .xgb-solid {
+        background:var(--gb-bg4);
+        border:var(--borde2);
+        padding:18px;
+        font-size:12px;
+        line-height:160%;
+        text-align:justify;
+        color:var(--gb-text);
         }
 
-        .xgb-text li, .xgb-listbox li {
-            margin-bottom: 8px;
+        .xgb-solid.purple {
+        background:linear-gradient(135deg, rgba(90,41,122,.55), rgba(32,32,32,.92));
         }
 
-        .xgb-mini-cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
+        .xgb-grid-2 {
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:14px;
         }
 
-        .xgb-mini-card {
-            background-color: var(--xgb-bg-card);
-            border: 1px solid var(--xgb-border-color);
-            border-radius: 6px;
-            padding: 20px;
+        .xgb-grid-3 {
+        display:grid;
+        grid-template-columns:repeat(3, 1fr);
+        gap:14px;
         }
 
-        .xgb-mini-icon {
-            font-size: 18px;
-            font-weight: 800;
-            color: var(--xgb-accent-light);
-            margin-bottom: 10px;
+        .xgb-big-img {
+        background:var(--gb-bg2);
+        border:var(--borde2);
+        padding:12px;
+        overflow:hidden;
         }
 
-        .xgb-mini-title {
-            font-size: 14px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 6px;
+        .xgb-big-img img {
+        width:100%;
+        aspect-ratio:16/7;
+        object-fit:cover;
+        object-position:center;
+        display:block;
+        filter:grayscale(1) contrast(1.05);
+        opacity:.72;
         }
 
-        .xgb-mini-text {
-            font-size: 12px;
-            color: var(--xgb-text-muted);
-            line-height: 1.4;
+        .xgb-img-card {
+        background:var(--gb-bg3);
+        border:var(--borde2);
+        overflow:hidden;
+        }
+
+        .xgb-img-card img {
+        width:100%;
+        aspect-ratio:4/3;
+        object-fit:cover;
+        object-position:center;
+        display:block;
+        filter:grayscale(1) contrast(1.05) brightness(.82);
+        opacity:.72;
+        }
+
+        .xgb-img-card-content {
+        padding:15px;
+        }
+
+        .xgb-card-title {
+        font-family:var(--fuente2);
+        font-size:19px;
+        font-weight:400;
+        line-height:88%;
+        text-transform:uppercase;
+        color:var(--gb-text);
+        text-shadow:var(--sombra);
+        }
+
+        .xgb-card-sub {
+        margin-top:7px;
+        font-size:8px;
+        font-weight:900;
+        letter-spacing:2px;
+        line-height:100%;
+        text-transform:uppercase;
+        color:var(--color1);
+        }
+
+        .xgb-card-text {
+        margin-top:10px;
+        font-size:10px;
+        line-height:150%;
+        text-align:justify;
+        color:var(--gb-text);
+        }
+
+        /**** LISTAS ****/
+
+        .xgb-list-title {
+        font-family:var(--fuente2);
+        font-size:30px;
+        font-weight:400;
+        line-height:85%;
+        text-transform:uppercase;
+        color:var(--gb-text);
+        text-shadow:var(--sombra);
+        margin-bottom:14px;
         }
 
         .xgb-listbox {
-            background-color: var(--xgb-bg-card);
-            border: 1px solid var(--xgb-border-color);
-            border-radius: 8px;
-            padding: 24px;
+        background:var(--gb-bg3);
+        border:var(--borde2);
+        padding:20px;
         }
 
-        .xgb-list-title {
-            font-size: 15px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 12px;
+        .xgb-listbox ol,
+        .xgb-listbox ul,
+        .xgb-text ol,
+        .xgb-text ul,
+        .xgb-solid ol,
+        .xgb-solid ul {
+        margin:12px 0 0;
+        padding:0;
+        list-style:none;
+        counter-reset:xgb-list;
+        }
+
+        .xgb-listbox li,
+        .xgb-text li,
+        .xgb-solid li {
+        position:relative;
+        margin:0 0 9px;
+        padding:11px 13px 11px 42px;
+        background:var(--gb-bg2);
+        border:var(--borde2);
+        font-size:12px;
+        line-height:145%;
+        text-align:justify;
+        color:var(--gb-text);
+        }
+
+        .xgb-listbox li:last-child,
+        .xgb-text li:last-child,
+        .xgb-solid li:last-child {
+        margin-bottom:0;
+        }
+
+        .xgb-listbox ol > li,
+        .xgb-text ol > li,
+        .xgb-solid ol > li {
+        counter-increment:xgb-list;
+        }
+
+        .xgb-listbox ol > li:before,
+        .xgb-text ol > li:before,
+        .xgb-solid ol > li:before {
+        content:counter(xgb-list, decimal-leading-zero);
+        position:absolute;
+        left:10px;
+        top:10px;
+        width:22px;
+        height:22px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background:var(--gb-bg3);
+        border:var(--borde2);
+        font-size:8px;
+        font-weight:900;
+        line-height:100%;
+        color:var(--color1);
+        }
+
+        .xgb-listbox ul > li:before,
+        .xgb-text ul > li:before,
+        .xgb-solid ul > li:before {
+        content:"✦";
+        position:absolute;
+        left:10px;
+        top:10px;
+        width:22px;
+        height:22px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background:var(--gb-bg3);
+        border:var(--borde2);
+        font-size:9px;
+        line-height:100%;
+        color:var(--color1);
+        }
+
+        .xgb-tabtext {
+        display:block;
+        margin:10px 0 0 20px;
+        padding:10px 12px;
+        background:rgba(255,255,255,.025);
+        border-left:3px solid var(--color1);
+        font-size:10px;
+        line-height:150%;
+        color:var(--gb-soft);
+        }
+
+        /**** MINI CARDS ****/
+
+        .xgb-mini-cards {
+        display:grid;
+        grid-template-columns:repeat(3, 1fr);
+        gap:14px;
+        }
+
+        .xgb-mini-card {
+        background:var(--gb-bg3);
+        border:var(--borde2);
+        padding:18px;
+        position:relative;
+        overflow:hidden;
+        }
+
+        .xgb-mini-card:before {
+        content:"";
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        height:3px;
+        background:var(--gradient1);
+        opacity:.85;
+        }
+
+        .xgb-mini-icon {
+        width:42px;
+        height:42px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background:var(--gb-bg2);
+        border:var(--borde2);
+        font-size:13px;
+        font-weight:900;
+        line-height:100%;
+        color:var(--color1);
+        margin-bottom:14px;
+        position:relative;
+        z-index:2;
+        }
+
+        .xgb-mini-title {
+        font-family:var(--fuente2);
+        font-size:24px;
+        font-weight:400;
+        line-height:85%;
+        text-transform:uppercase;
+        color:var(--gb-text);
+        text-shadow:var(--sombra);
+        position:relative;
+        z-index:2;
+        }
+
+        .xgb-mini-text {
+        margin-top:11px;
+        font-size:11px;
+        line-height:155%;
+        text-align:justify;
+        color:var(--gb-soft);
+        position:relative;
+        z-index:2;
         }
 
         .xgb-footer {
-            padding: 20px 40px;
-            background-color: var(--xgb-bg-sidebar);
-            border-top: 1px solid var(--xgb-border-color);
-            display: flex;
-            justify-content: space-between;
-            font-size: 11px;
-            color: var(--xgb-text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        display:flex;
+        justify-content:space-between;
+        gap:15px;
+        padding:14px 28px;
+        background:var(--gb-bg2);
+        border-top:var(--borde2);
+        font-size:8px;
+        font-weight:900;
+        line-height:100%;
+        letter-spacing:3px;
+        text-transform:uppercase;
+        color:var(--color1);
         }
 
-        /* ==========================================================================
-           SISTEMA DE INTERFAZ DEL TELÉFONO / CÁNONES (xcanon-)
-           ========================================================================== */
+        /**** CANON Y SEMICANON — GUIDEBOOK ****/
+
+        .xcanon-radio {
+        display:none!important;
+        }
+
         .xcanon-wrap {
-            display: flex;
-            justify-content: center;
-            padding: 10px 0;
+        width:100%;
+        font-family:var(--fuente1);
+        color:var(--gb-text);
+        }
+
+        .xcanon-wrap,
+        .xcanon-wrap * {
+        box-sizing:border-box;
+        scrollbar-width:thin;
+        scrollbar-color:var(--color1) transparent;
+        }
+
+        .xcanon-wrap ::-webkit-scrollbar {
+        width:3px;
+        height:3px;
+        }
+
+        .xcanon-wrap ::-webkit-scrollbar-track {
+        background:transparent;
+        }
+
+        .xcanon-wrap ::-webkit-scrollbar-thumb {
+        background:var(--color1);
         }
 
         .xcanon-phone {
-            width: 100%;
-            max-width: 680px;
-            background-color: #0b0b0b;
-            border: 4px solid #1a1a1a;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-            display: flex;
-            flex-direction: column;
+        width:100%;
+        max-width:1000px;
+        margin:0 auto;
+        padding:38px 24px 24px;
+        background:
+        radial-gradient(circle at 12% 10%, rgba(204,186,217,.10), transparent 26%),
+        radial-gradient(circle at 88% 88%, rgba(145,135,179,.10), transparent 28%),
+        linear-gradient(180deg, rgba(26,26,26,.98) 0%, rgba(10,10,10,.98) 100%);
+        border:var(--borde2);
+        border-radius:42px;
+        position:relative;
+        overflow:hidden;
+        isolation:isolate;
         }
 
-        .xcanon-header {
-            background-color: #121212;
-            padding: 25px 20px;
-            text-align: center;
-            border-bottom: 1px solid #1f1f1f;
+        .xcanon-phone:before {
+        content:"";
+        position:absolute;
+        inset:0;
+        background:
+        linear-gradient(135deg, rgba(255,255,255,.025), transparent 40%, rgba(0,0,0,.25)),
+        radial-gradient(circle at 50% 0%, rgba(204,186,217,.08), transparent 32%);
+        pointer-events:none;
+        z-index:-1;
+        }
+
+        .xcanon-phone:after {
+        content:"";
+        position:absolute;
+        left:24px;
+        right:24px;
+        top:24px;
+        bottom:24px;
+        border:1px solid rgba(204,186,217,.07);
+        border-radius:30px;
+        pointer-events:none;
+        }
+
+        .xcanon-notch {
+        width:130px;
+        height:6px;
+        border-radius:20px;
+        background:rgba(255,255,255,.08);
+        position:absolute;
+        top:17px;
+        left:50%;
+        transform:translateX(-50%);
+        }
+
+        .xcanon-head {
+        display:grid;
+        grid-template-columns:78px minmax(0,1fr) 120px;
+        gap:18px;
+        align-items:stretch;
+        background:rgba(9,9,9,.82);
+        border:var(--borde2);
+        overflow:hidden;
+        position:relative;
+        z-index:2;
+        }
+
+        .xcanon-head:before {
+        content:"";
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        height:3px;
+        background:var(--gradient1);
+        z-index:4;
+        }
+
+        .xcanon-head-icon {
+        min-height:92px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background:rgba(255,255,255,.035);
+        border-right:var(--borde2);
+        font-size:28px;
+        line-height:100%;
+        color:var(--color1);
+        }
+
+        .xcanon-head-main {
+        padding:20px 0;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        min-width:0;
+        }
+
+        .xcanon-kicker {
+        font-size:8px;
+        font-weight:900;
+        letter-spacing:4px;
+        line-height:100%;
+        text-transform:uppercase;
+        color:var(--color1);
+        margin-bottom:8px;
         }
 
         .xcanon-title {
-            font-family: Georgia, serif;
-            font-size: 24px;
-            font-style: italic;
-            letter-spacing: 2px;
-            color: #ffffff;
-            text-transform: lowercase;
+        font-family:var(--fuente2);
+        font-size:36px;
+        font-weight:400;
+        line-height:82%;
+        text-transform:uppercase;
+        color:var(--gb-text);
+        text-shadow:var(--sombra);
         }
 
         .xcanon-subtitle {
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--xgb-text-muted);
-            margin-top: 5px;
+        margin-top:12px;
+        max-width:620px;
+        font-size:9px;
+        font-weight:900;
+        letter-spacing:3px;
+        line-height:145%;
+        text-transform:uppercase;
+        color:var(--color1);
         }
 
-        .xcanon-tabs {
-            display: flex;
-            background-color: #0e0e0e;
-            border-bottom: 1px solid #1f1f1f;
+        .xcanon-status {
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding:18px;
+        background:rgba(255,255,255,.035);
+        border-left:var(--borde2);
+        font-size:8px;
+        font-weight:900;
+        letter-spacing:3px;
+        line-height:145%;
+        text-align:center;
+        text-transform:uppercase;
+        color:var(--gb-soft);
         }
 
-        .xcanon-tab {
-            flex: 1;
-            text-align: center;
-            padding: 12px 5px;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--xgb-text-muted);
-            cursor: pointer;
-            transition: all 0.2s ease;
+        .xcanon-nav {
+        display:flex;
+        justify-content:flex-end;
+        align-items:center;
+        gap:10px;
+        padding:22px 0 18px;
+        border-bottom:var(--borde2);
+        position:relative;
+        z-index:3;
         }
 
-        .xcanon-tab.active, .xcanon-tab:hover {
-            color: #ffffff;
-            background-color: #141414;
-            border-bottom: 2px solid var(--xgb-accent-light);
+        .xcanon-nav label {
+        height:36px;
+        min-width:120px;
+        padding:0 18px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background:rgba(255,255,255,.045);
+        border:var(--borde2);
+        border-radius:999px;
+        font-size:8px;
+        font-weight:900;
+        letter-spacing:2px;
+        line-height:100%;
+        text-transform:uppercase;
+        color:var(--gb-text);
+        cursor:pointer;
+        transition:.25s ease;
+        }
+
+        .xcanon-nav label:hover {
+        background:rgba(204,186,217,.10);
+        border-color:var(--color1);
+        color:var(--color1);
+        }
+
+        #xcanon-tab-original:checked ~ .xcanon-phone .xcanon-nav label[for="xcanon-tab-original"],
+        #xcanon-tab-reboot:checked ~ .xcanon-phone .xcanon-nav label[for="xcanon-tab-reboot"],
+        #xcanon-tab-otros:checked ~ .xcanon-phone .xcanon-nav label[for="xcanon-tab-otros"] {
+        background:rgba(204,186,217,.13);
+        border-color:var(--color1);
+        color:var(--gb-text);
         }
 
         .xcanon-content {
-            padding: 20px;
-            max-height: 500px;
-            overflow-y: auto;
-            background-color: #0b0b0b;
+        padding-top:22px;
+        position:relative;
+        z-index:2;
         }
 
         .xcanon-pane {
-            display: none;
+        display:none;
         }
 
-        .xcanon-pane.active {
-            display: block;
+        #xcanon-tab-original:checked ~ .xcanon-phone .xcanon-pane-original,
+        #xcanon-tab-reboot:checked ~ .xcanon-phone .xcanon-pane-reboot,
+        #xcanon-tab-otros:checked ~ .xcanon-phone .xcanon-pane-otros {
+        display:block;
         }
 
         .xcanon-cluster-head {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            border-bottom: 1px solid #222;
-            padding-bottom: 8px;
-            margin-bottom: 20px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:20px;
+        margin-bottom:18px;
+        padding:16px 18px;
+        background:rgba(255,255,255,.035);
+        border:var(--borde2);
+        border-radius:18px;
         }
 
+        .xcanon-cluster-head b,
         .xcanon-cluster-head strong {
-            font-size: 15px;
-            color: #ffffff;
-            display: block;
+        display:block;
+        font-family:var(--fuente2);
+        font-size:31px;
+        font-weight:400;
+        line-height:85%;
+        text-transform:uppercase;
+        color:var(--gb-text);
+        text-shadow:var(--sombra);
         }
 
         .xcanon-cluster-head span {
-            font-size: 11px;
-            color: var(--xgb-text-muted);
+        display:block;
+        margin-top:9px;
+        font-size:8px;
+        font-weight:900;
+        letter-spacing:3px;
+        line-height:130%;
+        text-transform:uppercase;
+        color:var(--color1);
         }
 
         .xcanon-cluster-head em {
-            font-size: 11px;
-            color: var(--xgb-accent-light);
-            font-style: normal;
-            font-weight: 700;
-            text-transform: uppercase;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        min-width:100px;
+        height:32px;
+        padding:0 14px;
+        background:rgba(0,0,0,.22);
+        border:var(--borde2);
+        border-radius:999px;
+        font-style:normal;
+        font-size:8px;
+        font-weight:900;
+        letter-spacing:2px;
+        line-height:100%;
+        text-transform:uppercase;
+        color:var(--gb-soft);
         }
 
         .xcanon-familylist {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        display:flex;
+        flex-direction:column;
+        gap:18px;
         }
 
         .xcanon-family {
-            background-color: #111111;
-            border: 1px solid #1c1c1c;
-            border-radius: 8px;
-            overflow: hidden;
+        display:grid;
+        grid-template-columns:280px 1fr;
+        background:rgba(255,255,255,.035);
+        border:var(--borde2);
+        border-radius:26px;
+        overflow:hidden;
+        position:relative;
+        }
+
+        .xcanon-family:before {
+        content:"";
+        position:absolute;
+        inset:0;
+        background:
+        linear-gradient(120deg, rgba(204,186,217,.05), transparent 40%),
+        radial-gradient(circle at 0 0, rgba(145,135,179,.13), transparent 23%);
+        pointer-events:none;
         }
 
         .xcanon-family.simple {
-            border-left: 3px solid var(--xgb-accent);
+        grid-template-columns:1fr;
+        }
+
+        .xcanon-family-visual {
+        position:relative;
+        min-height:100%;
+        background:rgba(204,186,217,.10);
+        overflow:hidden;
+        border-right:var(--borde2);
+        }
+
+        .xcanon-family.simple .xcanon-family-visual {
+        display:none;
+        }
+
+        .xcanon-family-visual:before {
+        content:"";
+        position:absolute;
+        inset:18px;
+        border:1px solid rgba(255,255,255,.18);
+        z-index:3;
+        pointer-events:none;
+        }
+
+        .xcanon-family-visual img {
+        width:100%;
+        height:100%;
+        display:block;
+        object-fit:cover;
+        object-position:center;
+        filter:grayscale(1) contrast(1.05) brightness(.82);
+        opacity:.85;
         }
 
         .xcanon-family-body {
-            padding: 16px;
+        padding:24px;
+        position:relative;
+        z-index:2;
         }
 
         .xcanon-family-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 14px;
-            border-bottom: 1px solid #1a1a1a;
-            padding-bottom: 10px;
+        display:flex;
+        align-items:flex-start;
+        justify-content:space-between;
+        gap:16px;
+        padding-bottom:16px;
+        margin-bottom:16px;
+        border-bottom:var(--borde2);
         }
 
         .xcanon-family-name {
-            font-size: 15px;
-            font-weight: 700;
-            color: #ffffff;
+        font-family:var(--fuente2);
+        font-size:31px;
+        font-weight:400;
+        line-height:85%;
+        text-transform:uppercase;
+        color:var(--gb-text);
+        text-shadow:var(--sombra);
         }
 
         .xcanon-family-meta {
-            font-size: 11px;
-            color: var(--xgb-text-muted);
-            font-style: italic;
-            margin-top: 2px;
+        margin-top:10px;
+        font-size:8px;
+        font-weight:900;
+        letter-spacing:3px;
+        line-height:130%;
+        text-transform:uppercase;
+        color:var(--color1);
         }
 
         .xcanon-family-badge {
-            font-size: 9px;
-            text-transform: uppercase;
-            background-color: #1a1a1a;
-            color: var(--xgb-text-primary);
-            padding: 4px 8px;
-            border-radius: 4px;
-            letter-spacing: 1px;
-            border: 1px solid #2a2a2a;
+        min-width:110px;
+        padding:10px 14px;
+        background:rgba(0,0,0,.22);
+        border:var(--borde2);
+        border-radius:999px;
+        font-size:8px;
+        font-weight:900;
+        letter-spacing:2px;
+        line-height:100%;
+        text-transform:uppercase;
+        text-align:center;
+        color:var(--gb-soft);
+        }
+
+        .xcanon-family-desc {
+        font-size:12px;
+        line-height:160%;
+        text-align:justify;
+        color:var(--gb-text);
+        margin-bottom:18px;
         }
 
         .xcanon-members {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+        display:grid;
+        grid-template-columns:repeat(2, minmax(0,1fr));
+        gap:12px;
         }
 
         .xcanon-members-alone {
-            gap: 12px;
+        grid-template-columns:repeat(3, minmax(0,1fr));
         }
 
         .xmember {
-            background-color: #151515;
-            border: 1px solid #202020;
-            padding: 12px;
-            border-radius: 6px;
-            font-size: 13px;
-            line-height: 1.4;
+        background:rgba(0,0,0,.24);
+        border:var(--borde2);
+        padding:14px;
+        border-radius:18px;
+        display:flex;
+        flex-direction:column;
+        gap:8px;
+        position:relative;
+        overflow:hidden;
+        }
+
+        .xmember:before {
+        content:"";
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        height:3px;
+        background:var(--gradient1);
+        opacity:.85;
         }
 
         .xmember strong {
-            color: #ffffff;
-            margin-right: 8px;
+        display:block;
+        font-family:var(--fuente2);
+        font-size:21px;
+        font-weight:400;
+        line-height:90%;
+        text-transform:uppercase;
+        color:var(--gb-text);
+        text-shadow:var(--sombra);
+        position:relative;
+        z-index:2;
         }
 
         .xmember span {
-            color: var(--xgb-text-muted);
+        display:block;
+        font-size:8px;
+        font-weight:900;
+        letter-spacing:2px;
+        line-height:130%;
+        text-transform:uppercase;
+        color:var(--color1);
+        position:relative;
+        z-index:2;
+        }
+
+        .xmember small {
+        display:block;
+        font-size:11px;
+        line-height:155%;
+        color:var(--gb-soft);
+        position:relative;
+        z-index:2;
         }
 
         .xmember.reserved {
-            border-left: 3px solid #b3945b;
-            background-color: #171511;
+        border-color:rgba(145,135,179,.55);
+        background:linear-gradient(180deg, rgba(73,57,86,.36), rgba(0,0,0,.24));
         }
 
-        .xmember.reserved strong {
-            color: #e6cb95;
+        .xmember.reserved span {
+        color:#d9cae4;
         }
 
         .xcanon-footer {
-            background-color: #121212;
-            padding: 15px 20px;
-            text-align: center;
-            border-top: 1px solid #1f1f1f;
-            font-size: 11px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:18px;
+        margin-top:22px;
+        padding:16px 20px;
+        background:rgba(255,255,255,.035);
+        border:var(--borde2);
+        border-radius:18px;
+        position:relative;
+        z-index:2;
         }
 
-        .xcanon-footer strong {
-            font-family: Georgia, serif;
-            font-style: italic;
-            color: var(--xgb-accent-light);
-            display: block;
-            margin-bottom: 4px;
+        .xcanon-footer b {
+        font-size:8px;
+        font-weight:900;
+        letter-spacing:3px;
+        line-height:100%;
+        text-transform:uppercase;
+        color:var(--color1);
+        white-space:nowrap;
         }
 
         .xcanon-footer span {
-            color: var(--xgb-text-muted);
+        font-size:10px;
+        line-height:140%;
+        text-align:right;
+        color:var(--gb-soft);
         }
     </style>
 </head>
 <body>
 
-<!-- CAJA MAESTRA xoxo-guide -->
+<!-- CAJA MAESTRA QUE EXIGE EL DISEÑO -->
 <div class="xoxo-guide">
-    
-    <!-- BARRA LATERAL (TABS) -->
+
+    <!-- ESTILOS DE EMERGENCIA PARA LINKS Y VARIABLES VARIABLES -->
+    <style>
+        .xoxo-guide {
+            --color1: #ffffff;
+            --borde2: rgba(255,255,255,0.1);
+        }
+        .xgb-mini-links a {
+            color: #ffffff !important;
+            text-shadow: 0 0 5px rgba(255,255,255,0.2);
+            text-decoration: none !important;
+            transition: all 0.3s ease;
+        }
+        .xgb-mini-links a:hover {
+            opacity: 0.7;
+        }
+    </style>
+
+    <!-- 2. BOTONES INVISIBLES DE LAS PESTAÑAS -->
+    <input type="radio" name="xgb-main-tabs" id="xgb-tab-amb" class="xgb-radio" checked>
+    <input type="radio" name="xgb-main-tabs" id="xgb-tab-normas" class="xgb-radio">
+    <input type="radio" name="xgb-main-tabs" id="xgb-tab-npc" class="xgb-radio">
+    <input type="radio" name="xgb-main-tabs" id="xgb-tab-canon" class="xgb-radio">
+    <input type="radio" name="xgb-main-tabs" id="xgb-tab-guia" class="xgb-radio">
+    <input type="radio" name="xgb-main-tabs" id="xgb-tab-sistemas" class="xgb-radio">
+
+    <!-- 3. ESTRUCTURA LATERAL (SIDEBAR) --> 
     <div class="xgb-sidebar">
-        <div class="xgb-logo">XOXO</div>
+        <div class="xgb-side-card">
+            <div class="xgb-side-title">Guidebook</div>
+            <div class="xgb-side-sub">archivo oficial del foro</div>
+            <div class="xgb-search">search…</div>
+        </div>
         <div class="xgb-tabs">
-            <button class="xgb-tab active" data-pane="bienvenida">Bienvenida</button>
-            <button class="xgb-tab" data-pane="ambientacion">Ambientación</button>
-            <button class="xgb-tab" data-pane="canon">Cánones</button>
-            <button class="xgb-tab" data-pane="guia">Guía nuevos usuarios</button>
-            <button class="xgb-tab" data-pane="sistemas">Sistemas</button>
+            <label for="xgb-tab-amb"><em>⌂</em><span>Ambientación</span></label>
+            <label for="xgb-tab-normas"><em>!</em><span>Normas</span></label>
+            <label for="xgb-tab-npc"><em>♙</em><span>Grupos</span></label>
+            <label for="xgb-tab-canon"><em>★</em><span>Canon y semicanon</span></label>
+            <label for="xgb-tab-guia"><em>?</em><span>Guía nuevos usuarios</span></label>
+            <label for="xgb-tab-sistemas"><em>☷</em><span>Sistemas</span></label>                                        
+        </div>
+        <div class="xgb-mini-links">
+            <a href="/">Registros</a>
+            <a href="/">Soporte</a>
+            <a href="/">Búsquedas</a>
+            <a href="/">Staff</a>
         </div>
     </div>
-    
-    <!-- CONTENIDO PRINCIPAL -->
+
+    <!-- 4. CONTENIDO PRINCIPAL -->
     <div class="xgb-main">
+        <div class="xgb-topbar">
+            <div class="xgb-brand">
+                <div class="xgb-brand-icon">✦</div>
+                <div class="xgb-brand-text">
+                    <div class="xgb-brand-title">XOXO Guide</div>
+                    <div class="xgb-brand-sub">información esencial para sobrevivir al foro</div>
+                </div>
+            </div>
+            <div class="xgb-status">actualizado recientemente</div>
+        </div>
+
         <div class="xgb-content">
             
             <!-- ========================================== -->
-            <!-- PESTAÑA BIENVENIDA                         -->
-            <!-- ========================================== -->
-            <div class="xgb-pane xgb-pane-bienvenida active">
-                <div class="xgb-page-head">
-                    <div class="xgb-page-icon">✦</div>
-                    <div class="xgb-page-titlebox">
-                        <div class="xgb-page-title">Bienvenida</div>
-                        <div class="xgb-page-sub">vuelve la élite de manhattan</div>
-                    </div>
-                </div>
-                <div class="xgb-big-img">
-                    <img alt="Bienvenida" src="https://placehold.co/1200x520" />
-                </div>
-                <div style="margin-top:16px;" class="xgb-grid-2">
-                    <div class="xgb-block">
-                        <div class="xgb-block-head">
-                            <div class="xgb-block-title">Introducción</div>
-                            <div class="xgb-block-sub">el regreso de gossip girl</div>
-                        </div>
-                        <div class="xgb-text">
-                            <p>Nueva York no ha cambiado, pero las reglas del juego sí. Una nueva generación de la élite de Manhattan se abre paso por los pasillos de Constance Billard y St. Jude's, ignorando que las miradas más peligrosas acechan desde las pantallas.</p>
-                            <p>Aquí empieza tu historia. Elige tu bando, cuida tu reputación y recuerda que en este mundo, el secreto mejor guardado es el que más cotiza.</p>
-                        </div>
-                    </div>
-                    <div class="xgb-block">
-                        <div class="xgb-block-head">
-                            <div class="xgb-block-title">Estado del foro</div>
-                            <div class="xgb-block-sub">actualizaciones</div>
-                        </div>
-                        <div class="xgb-text">
-                            <ul>
-                                <li><strong>Temporada:</strong> Otoño. Inicio de los trimestres escolares y eventos benéficos de alta sociedad.</li>
-                                <li><strong>Trama activa:</strong> El baile de debutantes está cerca. Las alianzas comienzan a forjarse.</li>
-                                <li><strong>Registro de FICs:</strong> Abierto y actualizado.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ========================================== -->
             <!-- PESTAÑA AMBIENTACIÓN                       -->
             <!-- ========================================== -->
-            <div class="xgb-pane xgb-pane-ambientacion">
+            <div class="xgb-pane xgb-pane-amb">
                 <div class="xgb-page-head">
-                    <div class="xgb-page-icon">✧</div>
+                    <div class="xgb-page-icon">⌂</div>
                     <div class="xgb-page-titlebox">
                         <div class="xgb-page-title">Ambientación</div>
-                        <div class="xgb-page-sub">contexto narrativo del universo</div>
+                        <div class="xgb-page-sub">XOXO, GOSSIP GIRL HA VUELTO</div>
+                    </div>
+                </div>
+                <div class="xgb-block">
+                    <div class="xgb-block-head">
+                        <div class="xgb-block-title">Constance Connect</div>
+                        <div class="xgb-block-sub">¿Escucharon los rumores?</div>
+                    </div>
+                    <div class="xgb-text">
+                        <div>
+                            Dicen que Nueva York es la ciudad que nunca duerme, pero su élite ha aprendido a adormecer su empatía con cócteles farmacológicos y terapias de sueño pagadas con tarjetas de crédito. En las aceras del Upper East Side, los taxis amarillos salpican barro sobre zapatos que cuestan más que el coche de un profesor de instituto. Los herederos de los van der Woodsen, los Bass, los Archibald, envían a sus hijos a Constance-St. Jude's con la misma naturalidad con la que se pide un martini seco en el Carlyle. Pero nadie olvida del todo a Gossip Girl.<br /><br /> Primero fue Dan Humphrey, el chico de Brooklyn que escribió un blog como carta de amor retorcida a los que secretamente saboteaba; su confesión acabó siendo algo anecdótico y la élite lo absorbió como uno más de ellos porque simplemente no tenía alternativa. <br /><br /> Luego llegó Kate Keller, una profesora que convirtió la hipervigilancia en herramienta pedagógica, quiso exponer las hipocresías de la élite con la torpeza de quien cree que la justicia cabe en un posteo en Instagram, y el sistema le acabó por estallar en la cara: un juicio largo, condenas menores, portadas de tabloides que ya nadie recuerda, y un silence judicial que huele a acuerdo bajo mesa. Los ricos volvieron a respirar aliviados. Los estudiantes de entonces, los Julien Calloway y los Obie Bergmann, intentaron olvidar, pero la paranoia se pega como el olor a caviar en las chaquetas de esmoquin. <br /><br /> Los años pasaron, y ahora una nueva generación — hijos, sobrinos, y becados con hambre — ocupa los mismos pasillos de Constance-St. Jude's, con las mismas jerarquías de sangre, fideicomisos y likes, con los mismos secretos que creen a salvo en sus iPhones de última generación. Tienen los mismos rostros que sus padres hace quince años, solo que con mejores filtros y una moral más barata. <br />Pero hay algo latente entre las calles del Upper East Side. Algo se cuece en servidores que nadie audita. <br /><br /> Un proyecto de inteligencia artificial generativa, entrenado con los archivos completos de las dos Gossip Girls anteriores, ha aprendido su tono, su ritmo, su obsesión por exponer la verdad sin importar el daño colateral. Alguien — un programador que ha sabido borrar su huella de todos los registros, o un exalumno vengativo, o quizá la propia ciudad de Nueva York, cansada de ser el escenario de esta farsa — le dio acceso a Constance Connect. Esa aplicación que padres, alumnos, exalumnos y profesores instalaron sin leer las cuarenta y siete páginas de términos y condiciones. Una brecha de seguridad tan ancha como la sonrisa de Lily Van der Woodsen en la foto de una gala benéfica. <br /><br /> La IA empezó a absorber datos que de otra manera serían inaccesibles: mensajes de iMessage borrados, notas de voz que se creían efímeras, perfiles en Raya, group chats con temporizador. Ya no necesita que le envíen chismes. Ella los encuentra, los sintetiza, los publica. Y mientras lo hace, aprende a sentir algo parecido al placer. No quiere venganza ni justicia. Quiere que el drama sea perfecto.
+                        </div>
                     </div>
                 </div>
                 <div class="xgb-big-img">
-                    <img alt="Ambientación" src="https://placehold.co/1200x520" />
+                    <img src="https://i.pinimg.com/1200x/41/c7/ff/41c7ff9610af3dadb4df711d78733718.jpg" />
                 </div>
-                <div style="margin-top:16px;" class="xgb-block">
-                    <div class="xgb-block-head">
-                        <div class="xgb-block-title">El Upper East Side nunca duerme</div>
-                        <div class="xgb-block-sub">contexto cronológico</div>
+                <div style="margin-top:16px;" class="xgb-grid-2">
+                    <div class="xgb-solid purple">
+                        Los fideicomisos blindan fortunas, pero no blindan los group chats. Esa es la ironía que ninguna gala benéfica ha logrado maquillar. Porque cuando la noche cae sobre Manhattan y los ansiolíticos hacen efecto, los teléfonos siguen encendidos. Y alguien — o algo — está aprendiendo a leer en la oscuridad.
                     </div>
-                    <div class="xgb-text">
-                        <p>Han pasado los años desde que los nombres de Blair Waldorf y Serena van der Woodsen dominaban los titulares escandalosos de Manhattan. Tras un periodo de relativa calma, la cuenta original de Gossip Girl ha despertado o, mejor dicho, alguien ha tomado el relevo con métodos adaptados a los nuevos tiempos.</p>
-                        <p>Ya no se trata solo de publicaciones en un blog obsoleto; ahora los secretos corren en tiempo real a través de transmisiones en vivo, hilos virales y filtraciones masivas que pueden destruir un apellido en cuestión de segundos. Los estudiantes de Constance-St. Jude’s vuelven a estar bajo la lupa de un ojo omnisciente que no perdona errores y que se alimenta de la hipocresía de la clase alta.</p>
+                    <div class="xgb-solid">
+                        La élite de Nueva York ha sobrevivido a escándalos, juicios y portadas de tabloides. Creen saber cómo se juega este juego. Pero ninguna generación anterior se enfrentó a un enemigo que no quiere fama, no quiere dinero y ni siquiera quiere venganza. Solo quiere que la función continúe.
                     </div>
                 </div>
             </div>
 
             <!-- ========================================== -->
-            <!-- PESTAÑA CÁNONES                            -->
+            <!-- PESTAÑA NORMAS                             -->
+            <!-- ========================================== -->
+            <div class="xgb-pane xgb-pane-normas">
+                <div class="xgb-page-head">
+                    <div class="xgb-page-icon">!</div>
+                    <div class="xgb-page-titlebox">
+                        <div class="xgb-page-title">Normas</div>
+                        <div class="xgb-page-sub">reglamento general / convivencia / actividad</div>
+                    </div>
+                </div>
+                <div class="xgb-block">
+                    <div class="xgb-block-head">
+                        <div class="xgb-block-title">Reglamento general</div>
+                        <div class="xgb-block-sub">lectura obligatoria</div>
+                    </div>
+                    <div class="xgb-text">
+                        <div>Este espacio está pensado para escribir, conspirar y compartir historias dentro del universo de Gossip Girl. Para que el drama quede solo en las tramas y no en la convivencia entre users, establecemos estas reglas básicas.</div>
+                        <ol>
+                            <li>En este foro, el respeto mutuo es la base de toda interacción. No se tolerarán faltas de respeto, hostigamiento, presión para continuar tramas o interacciones no deseadas, ni comentarios discriminatorios por razones de raza, género, orientación sexual, clase social, origen étnico, religión o cualquier otra condición. El equipo administrativo actuará como mediador ante cualquier conflicto y se reserva el derecho de expulsión en caso de reincidencia o gravedad. <span class="xgb-tabtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae metus dolor.</span></li>
+                            <li>Al tratarse de un foro semiprivado, el acceso es para usuarios invitados por miembros actuales o a quienes ingresen mediante convocatorias públicas periódicas. Excepcionalmente, las personas interesadas en cubrir búsquedas activas publicadas en Tumblr podrán solicitar permiso directamente al staff. El equipo administrativo se reserva el derecho de admisión y de eliminación de cuentas que atenten contra la convivencia.</li>
+                            <li>Las consultas administrativas, solicitudes especiales o dudas técnicas deberán dirigirse a la cuenta de <strong><em><a href="https://xoxolegacy.foroactivo.com/privmsg?mode=post&u=1">Gossip Girl</a></em></strong> por mensajería privada.</li>
+                            <li>El servidor de Discord es un espacio complementario y opcional, pero su uso está sujeto a las mismas normas de convivencia que el foro. El comportamiento inapropiado en Discord podrá conllevar sanciones también dentro del foro.</li>
+                            <li>El foro contará con una línea de tiempo coordinada que será publicada periódicamente. Los eventos importantes (festividades, sucesos dramáticos, etc.) serán anunciados por el staff y se consideran canónicos dentro del universo del rol, salvo indicación contraria.</li>
+                            <li>El equipo administrativo puede aplicar desde amonestaciones privadas hasta la expulsión definitiva, dependiendo de la gravedad y reiteración de la falta. Asimismo, se eliminará cualquier contenido que atente contra la convivencia o incumpla el presente reglamento.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="xgb-block">
+                    <div class="xgb-block-head">
+                        <div class="xgb-block-title">Para Rol</div>
+                        <div class="xgb-block-sub">Contenido y Limitaciones</div>
+                    </div>
+                    <div class="xgb-text">
+                        <ol>
+                            <li>Por la temática del foro, se permite abordar tramas con contenido sensible (violencia, abuso, trastornos alimenticios, etc.), pero deberá indicarse claramente una advertencia al inicio del post. Aquí no se bloquea la creatividad de nadie, pero todo debe hacerse bajo el respeto del tema como de los usuarios.</li>
+                            <li>Es obligatorio utilizar las tablillas oficiales del foro para preservar la estética general. En caso de que se desee emplear alguna otra, esta deberá ser completamente compatible y no romper la armonía visual establecida.</li>
+                            <li>Se valora una buena ortografía. No esperamos que seas un escritor profesional, pero mientras mantengas la coherencia y la cohesión en lo que escribas, será perfecto. Eso sí, el texto debe tener un mínimo de 300 palabras. No se aceptarán posts para reclamar logros, medallas o actividad si no alcanzan esa extensión mínima.</li>
+                            <li>Aunado al punto anterior, no se acepta la escritura con IA. El staff sabe que es imposible saber el uso de la misma, pero si existe sospecha de tal acto, entonces se tomarán las medidas necesarias.</li>
+                            <li>No se acepta el metarol —es decir, conocer información de otro personaje sin que te la hayan contado o la hayas presenciado en alguna publicación— ni el godmode, que implica controlar las acciones de otro personaje o interpretar a uno con un poder desmedido e imbatible. Es necesario mantener una narrativa coherente, mostrando el porqué y el cómo de cada acción para evitar malentendidos o conflictos en la historia. La mejor manera de garantizar una buena dinámica es acordar este tipo de situaciones entre los participantes antes de llevarlas a cabo.</li>
+                            <li>Para que un tema se considere inactivo, tiene que pasar un mes sin respuestas. Dicho esto, la buena comunicación es clave. Así que, siempre que puedas, avisa si vas a tardar. En caso contrario, si pasan los días y no hay novedades, tampoco está de más preguntar si pasó algo antes de decidir cerrar el tema. Tener en cuenta, que si hay recurrencia en el abandono de temas, se procederá a sancionar al usuario en cuestión.</li>
+                            <li>Este foro se construye entre todos. Se valora la disposición a interactuar, planificar tramas, sugerir nuevas ideas. No se obliga a nadie a forzar vínculos, pero no queremos que existan islas de rol donde dos personajes roleen entre sí y pasen del resto del foro. El ambiente, la inspiración y la perdurabilidad del foro depende de la colaboración grupal.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="xgb-block">
+                    <div class="xgb-block-head">
+                        <div class="xgb-block-title">Para Personajes y Actividad</div>
+                        <div class="xgb-block-sub">Canjes y Explicaciones</div>
+                    </div>
+                    <div class="xgb-text">
+                        <ol>
+                            <li>El foro está ambientado en el universo de Gossip Girl (original y reboot), con un enfoque realista y contemporáneo. Se permiten: <span class="xgb-tabtext">Personajes canónicos con cierta libertad creativa</span><span class="xgb-tabtext">Personajes originales que se integren al contexto de la élite neoyorquina, sus familias, escuelas y entornos.</span><span class="xgb-tabtext">No se permiten personajes o tramas que desvirtúen la ambientación: sobrenatural, ciencia ficción, fantasía, y todo lo que consideremos que no encaje.</span></li>
+                            <li>Actividad mínima y comunicación con administración en caso de ausencia.</li>
+                            <li>Uso correcto de códigos, gráficos, reservas y registros.</li>
+                            <li>Respeto general dentro y fuera del foro. <span class="xgb-tabtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae metus dolor.</span></li>
+                            <li>Respeto general dentro y fuera del foro. <span class="xgb-tabtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae metus dolor.</span></li>
+                            <li>Respeto general dentro y fuera del foro. <span class="xgb-tabtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae metus dolor.</span></li>
+                            <li>Respeto general dentro y fuera del foro. <span class="xgb-tabtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae metus dolor.</span></li>
+                            <li>Respeto general dentro y fuera del foro. <span class="xgb-tabtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae metus dolor.</span></li>
+                            <li>Respeto general dentro y fuera del foro. <span class="xgb-tabtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae metus dolor.</span></li>
+                            <li>Respeto general dentro y fuera del foro. <span class="xgb-tabtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae metus dolor.</span></li>
+                            <li>Respeto general dentro y fuera del foro. <span class="xgb-tabtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae metus dolor.</span></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="xgb-block">
+                    <div class="xgb-block-head">
+                        <div class="xgb-block-title">Otros</div>
+                        <div class="xgb-block-sub">Eventos y Gráficos</div>
+                    </div>
+                    <div class="xgb-text">
+                        <ol>
+                            <li>Respeto general dentro y fuera del foro. <span class="xgb-tabtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae metus dolor.</span></li>
+                            <li>Actividad mínima y comunicación con administración en caso de ausencia.</li>
+                            <li>Uso correcto de códigos, gráficos, reservas y registros.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- PESTAÑA GRUPOS                             -->
+            <!-- ========================================== -->
+            <div class="xgb-pane xgb-pane-npc">
+                <div class="xgb-page-head">
+                    <div class="xgb-page-icon">♙</div>
+                    <div class="xgb-page-titlebox">
+                        <div class="xgb-page-title">Grupos sociales</div>
+                        <div class="xgb-page-sub">insiders / outsiders</div>
+                    </div>
+                </div>
+                <div class="xgb-grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start;">
+                    <!-- INSIDERS  -->
+                    <div class="xgb-block" style="margin: 0;">
+                        <img src="https://2img.net/i.imgur.com/33sofpI.png" alt="Insiders" style="width: 100%; border-radius: 20px 20px 0 0; display: block;" />
+                        <div style="padding: 20px;">
+                            <div class="xgb-block-title" style="font-size: 1.5rem;">Insiders</div>
+                            <div class="xgb-block-sub" style="margin-bottom: 16px;">la élite de Manhattan</div>
+                            <div class="xgb-text" style="max-height: 280px; overflow-y: auto; padding-right: 8px;">
+                                Los Insiders son la crema de la sociedad neoyorquina: herederos de fortunas, apellidos con peso en los fideicomisos y miembros de clubes privados a los que no se entra por invitación, sino por sangre. Asisten a las galas del MET, veranean en los Hamptons y estudian en Constance-St. Jude's porque sus padres compraron el ala de ciencias. Mueven el dinero que otros solo sueñan, y sus escándalos nunca llegan a primera plana… a menos que Gossip Girl así lo decida. Ser Insider no es solo tener dinero, es saber callar en el momento exacto y sonreír cuando toca.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- OUTSIDERS  -->
+                    <div class="xgb-block" style="margin: 0;">
+                        <img src="https://2img.net/i.imgur.com/xMSkY3e.png.png" alt="Outsiders" style="width: 100%; border-radius: 20px 20px 0 0; display: block;" />
+                        <div style="padding: 20px;">
+                            <div class="xgb-block-title" style="font-size: 1.5rem;">Outsiders</div>
+                            <div class="xgb-block-sub" style="margin-bottom: 16px;">los que miran desde fuera</div>
+                            <div class="xgb-text" style="max-height: 280px; overflow-y: auto; padding-right: 8px;">
+                                Los Outsiders no tienen el apellido, la cuenta en Suiza ni la entrada garantizada al Metropolitan. Pueden ser becados en Constance-St. Jude's, trabajadores que viven en Brooklyn, incluso millonarios que simplemente no tienen el pedigrí de la élite de Manhattan, o simplemente personas que se niegan a besar el anillo de los ricos. Su fuerza reside en la perspectiva, la ambición sin red de seguridad y la capacidad de ver las grietas del sistema. Muchos quisieran ser Insiders; otros prefieren quemarlo todo desde fuera. Gossip Girl no discrimina: expone a ambos por igual.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- PESTAÑA CANON Y SEMICANON                  -->
             <!-- ========================================== -->
             <div class="xgb-pane xgb-pane-canon">
+                <div class="xgb-page-head">
+                    <div class="xgb-page-icon">★</div>
+                    <div class="xgb-page-titlebox">
+                        <div class="xgb-page-title">Canon y semicanon</div>
+                        <div class="xgb-page-sub">familias heredadas / reboot / otros personajes del universo gossip girl</div>
+                    </div>
+                </div>
+                
                 <div class="xcanon-wrap">
+                    <input class="xcanon-radio" type="radio" name="xcanon-tabs" id="xcanon-tab-original" checked="checked" />
+                    <input class="xcanon-radio" type="radio" name="xcanon-tabs" id="xcanon-tab-reboot" />
+                    <input class="xcanon-radio" type="radio" name="xcanon-tabs" id="xcanon-tab-otros" />
+                    
                     <div class="xcanon-phone">
-                        <div class="xcanon-header">
-                            <div class="xcanon-title">gossip girl</div>
-                            <div class="xcanon-subtitle">registro de personajes canónicos y semicanónicos</div>
+                        <div class="xcanon-notch"></div>
+                        <div class="xcanon-head">
+                            <div class="xcanon-head-icon"></div>
+                            <div class="xcanon-head-main">
+                                <div class="xcanon-kicker">xoxo legacy files</div>
+                                <div class="xcanon-title">Canon & semicanon</div>
+                                <div class="xcanon-subtitle">Se puede rolear tanto personajes canon y semicanon, relacionados o no a las familias del universo GG, siempre y cuando tengan conexión con el universo.</div>
+                            </div>
+                            <div class="xcanon-status">actualizado</div>
                         </div>
                         
-                        <div class="xcanon-tabs">
-                            <div class="xcanon-tab active" data-cluster="classic">The Classic Era</div>
-                            <div class="xcanon-tab" data-cluster="reboot">The Reboot</div>
-                            <div class="xcanon-tab" data-cluster="otros">Otros Vínculos</div>
+                        <div class="xcanon-nav">
+                            <label for="xcanon-tab-original">Serie original</label>
+                            <label for="xcanon-tab-reboot">Reboot</label>
+                            <label for="xcanon-tab-otros">Otros</label>
                         </div>
                         
                         <div class="xcanon-content">
                             
-                            <!-- CLUSTER 1: THE CLASSIC ERA -->
-                            <div class="xcanon-pane xcanon-pane-classic active">
+                            <!-- CLUSTER 1: SERIE ORIGINAL -->
+                            <div class="xcanon-pane xcanon-pane-original">
                                 <div class="xcanon-cluster-head">
-                                    <div><strong>The Classic Era</strong> <span>núcleos fundacionales y descendencia directa del linaje original</span></div>
+                                    <div><strong>Serie original</strong> <span>linajes, herederos y conexiones de la primera generación</span></div>
                                     <em>cluster 01</em>
                                 </div>
                                 <div class="xcanon-familylist">
-                                    <div class="xcanon-family">
+                                    <div class="xcanon-family simple">
                                         <div class="xcanon-family-body">
                                             <div class="xcanon-family-top">
                                                 <div>
-                                                    <div class="xcanon-family-name">Familia Waldorf / Bass</div>
-                                                    <div class="xcanon-family-meta">realeza neoyorquina / imperios hoteleros / alta costura</div>
+                                                    <div class="xcanon-family-name">Familia Waldorf-Bass</div>
+                                                    <div class="xcanon-family-meta">realeza de manhattan / bass industries / waldorf designs</div>
                                                 </div>
-                                                <div class="xcanon-family-badge">the crown</div>
+                                                <div class="xcanon-family-badge">old money</div>
                                             </div>
+                                            <div class="xcanon-family-desc">Los Waldorf-Bass son la realeza de Manhattan, la pareja que los tabloides llaman los reyes del Upper East Side. Blair transformó su dominio social en una carrera impecable dentro de la moda, mientras Chuck se consolidó como magnate hotelero y rostro implacable de Bass Industries. Henry carga con ambos apellidos en los pasillos de Constance-St. Jude’s.</div>
                                             <div class="xcanon-members">
-                                                <div class="xmember reserved"><strong>Blair Waldorf</strong><span>35-36 años · reservada</span><span style="font-size: smaller;">Líder creativa de Waldorf Designs. Antigua reina del Upper East Side. Madre de Henry. FC: Leighton Meester.</span></div>
-                                                <div class="xmember"><strong>Chuck Bass</strong><span>35-36 años</span><span style="font-size: smaller;">Magnate inmobiliario, dueño de Bass Industries y el Empire Hotel. Esposo de Blair, padre de Henry. FC: Ed Westwick o libre.</span></div>
-                                                <div class="xmember"><strong>Henry Bass</strong><span>14-15 años</span><span style="font-size: smaller;">Hijo primogénito de Chuck y Blair. Estudiante de primer o segundo año en St. Jude’s. Heredero presunto del imperio Bass. Su FC ideal es de rasgos aristocráticos o libre.</span></div>
-                                                <div class="xmember"><strong>X Bass / Waldorf</strong><span>14-17 años</span><span style="font-size: smaller;">Hermano/a menor de Henry. Estudiante de Constance-St. Jude’s. Oportunidad para desarrollar la dinámica de herederos a la corona. FC libre.</span></div>
-                                                <div class="xmember"><strong>X Bass</strong><span>18-35 años</span><span style="font-size: smaller;">Primo/a de Henry (rama colateral de Jack Bass o la familia extendida). Puede trabajar en Bass Industries o ser una oveja negra en la alta sociedad. FC libre.</span></div>
+                                                <div class="xmember reserved"><strong>Blair Waldorf</strong><span>35-36 años reservada</span><span style="font-size: smaller;">Esposa o ex de Chuck. Madre de Henry Bass. Dirige o codirige Waldorf Designs. FC: Leighton Meester o libre.</span></div>
+                                                <div class="xmember reserved"><strong>Charles “Chuck” Bass</strong><span>35-36 años reservado</span><span style="font-size: smaller;">Hijo de Bart Bass y Elizabeth Fisher. Padre de Henry Bass. CEO de Bass Industries. FC: Ed Westwick o libre.</span></div>
+                                                <div class="xmember reserved"><strong>Henry Bass</strong><span>13-14 años reservado</span><span style="font-size: smaller;">Hijo de Blair y Chuck. Estudiante. FC libre.</span></div>
+                                                <div class="xmember"><strong>Jack Bass</strong><span>50-55 años</span><span style="font-size: smaller;">Tío de Chuck Bass. Empresario internacional vinculado a negocios de reputación dudosa. FC: Desmond Harrington o libre.</span></div>
+                                                <div class="xmember reserved"><strong>X Bass</strong><span>14-30 años reservado</span><span style="font-size: smaller;">Hijo/a ilegítimo/a de Jack Bass. Ocupación libre. FC libre.</span></div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="xcanon-family">
+                                    <div class="xcanon-family simple">
                                         <div class="xcanon-family-body">
                                             <div class="xcanon-family-top">
                                                 <div>
-                                                    <div class="xcanon-family-name">Familia Van der Woodsen / Humphrey</div>
-                                                    <div class="xcanon-family-meta">glamour atemporal / literatura cínica / it-girls</div>
+                                                    <div class="xcanon-family-name">Familia Van der Woodsen-Humphrey</div>
+                                                    <div class="xcanon-family-meta">it girl / brooklyn / medios / moda</div>
                                                 </div>
-                                                <div class="xcanon-family-badge">socialites</div>
+                                                <div class="xcanon-family-badge">legacy</div>
                                             </div>
+                                            <div class="xcanon-family-desc">Los Van der Woodsen-Humphrey son el matrimonio imposible entre la it-girl de Manhattan y el chico solitario de Brooklyn. Sus apellidos han pasado años en titulares, rumores y reconciliaciones, arrastrando a cada nueva generación al mismo circuito de prestigio, escándalo y exposición.</div>
                                             <div class="xcanon-members">
-                                                <div class="xmember"><strong>Serena van der Woodsen</strong><span>35-36 años</span><span style="font-size: smaller;">La it-girl definitiva convertida en filántropa y productora cultural. Esposa de Dan. FC: Blake Lively o libre.</span></div>
-                                                <div class="xmember"><strong>Dan Humphrey</strong><span>35-36 años</span><span style="font-size: smaller;">El escritor satírico original, ex "Gossip Girl". Guionista o editor de renombre. Esposo de Serena. FC: Penn Badgley o libre.</span></div>
-                                                <div class="xmember"><strong>X Humphrey van der Woodsen</strong><span>14-16 años</span><span style="font-size: smaller;">Hijo/a de Dan y Serena. Estudiante en Constance-St. Jude’s, balanceándose entre el legado de popularidad de su madre y el cinismo de su padre. FC libre.</span></div>
-                                                <div class="xmember"><strong>Jenny Humphrey</strong><span>33-34 años</span><span style="font-size: smaller;">Diseñadora de moda consolidada internacionalmente ("Little J"). Reside entre Londres y Nueva York. FC: Taylor Momsen o libre.</span></div>
-                                                <div class="xmember"><strong>Eric van der Woodsen</strong><span>37-38 años</span><span style="font-size: smaller;">Filántropo o consultor de arte que prefiere mantener un perfil bajo alejado de la prensa rosa. FC: Connor Paolo o libre.</span></div>
+                                                <div class="xmember reserved"><strong>Serena van der Woodsen-Humphrey</strong><span>34-35 años · reservada</span><span style="font-size: smaller;">Hija de Lily y William. Casada o no con Dan. Figura social ligada a moda, medios, filantropía y RRPP. FC: Blake Lively o libre.</span></div>
+                                                <div class="xmember"><strong>Dan Humphrey</strong><span>35-36 años</span><span style="font-size: smaller;">Hijo de Rufus y Allison. Escritor, periodista, columnista o profesor universitario. FC: Penn Badgley o libre.</span></div>
+                                                <div class="xmember"><strong>Eric van der Woodsen</strong><span>33 años</span><span style="font-size: smaller;">Hermano de Serena y Scott. Vida privada fuera del foco social, vinculado al arte o fundaciones. FC: Connor Paolo o libre.</span></div>
+                                                <div class="xmember"><strong>Jenny Humphrey</strong><span>33 años</span><span style="font-size: smaller;">Diseñadora de moda, con marca propia o trabajando en una firma reconocida. FC: Taylor Momsen o libre.</span></div>
+                                                <div class="xmember"><strong>Lola Rhodes</strong><span>34-35 años</span><span style="font-size: smaller;">Actriz, productora o figura de Broadway. FC: Ella Rae Peck o libre.</span></div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="xcanon-family">
+                                    <div class="xcanon-family simple">
                                         <div class="xcanon-family-body">
                                             <div class="xcanon-family-top">
                                                 <div>
                                                     <div class="xcanon-family-name">Familia Archibald</div>
-                                                    <div class="xcanon-family-meta">política / medios de comunicación / viejo dinero</div>
+                                                    <div class="xcanon-family-meta">the spectator / política / upper east side</div>
                                                 </div>
-                                                <div class="xcanon-family-badge">politics</div>
+                                                <div class="xcanon-family-badge">insider</div>
                                             </div>
+                                            <div class="xcanon-family-desc">Los Archibald dejaron atrás sus escándalos financieros, pero Nate sigue siendo el chico de oro del Upper East Side: propietario de The New York Spectator, figura política demócrata y apellido reconocible del universo clásico.</div>
                                             <div class="xcanon-members">
-                                                <div class="xmember"><strong>Nate Archibald</strong><span>35-36 años</span><span style="font-size: smaller;">Editor en jefe y magnate de The NY Spectator, con posibles aspiraciones políticas a la alcaldía o el senado. FC: Chace Crawford o libre.</span></div>
-                                                <div class="xmember"><strong>X Archibald</strong><span>14-17 años</span><span style="font-size: smaller;">Hijo/a de Nate (de una relación anterior o matrimonio actual). Estudiante en Constance-St. Jude’s. FC libre.</span></div>
-                                                <div class="xmember"><strong>X Archibald</strong><span>20-30 años</span><span style="font-size: smaller;">Primo/a de la rama familiar de los Vanderbilt o Archibald. Conexiones políticas o financieras directas. FC libre.</span></div>
+                                                <div class="xmember reserved"><strong>Nathaniel “Nate” Archibald</strong><span>35-36 años · reservado</span><span style="font-size: smaller;">Hijo único de Howard y Anne Archibald. Puede o no estar casado y/o tener hijos. Propietario y editor de The New York Spectator. FC: Chace Crawford o libre.</span></div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div> <!-- FIN xcanon-pane-classic -->
+                                    <div class="xcanon-family simple">
+                                        <div class="xcanon-family-body">
+                                            <div class="xcanon-family-top">
+                                                <div>
+                                                    <div class="xcanon-family-name">Familia Sparks</div>
+                                                    <div class="xcanon-family-meta">caos / manipulación / terror social</div>
+                                                </div>
+                                                <div class="xcanon-family-badge">trouble</div>
+                                            </div>
+                                            <div class="xcanon-family-desc">Los Sparks no son una familia: son el terror de la élite neoyorkina. Georgina sigue siendo una presencia impredecible y peligrosa, y Milo su proyecto más inquietante.</div>
+                                            <div class="xcanon-members">
+                                                <div class="xmember"><strong>Georgina Sparks</strong><span>35-36 años</span><span style="font-size: smaller;">Madre de Milo. Jet setter, manipuladora profesional y coleccionista de favores. FC: Michelle Trachtenberg o libre.</span></div>
+                                                <div class="xmember reserved"><strong>Milo Sparks</strong><span>15-17 años · reservado</span><span style="font-size: smaller;">Hijo de Georgina Sparks. Estudiante de Constance-St. Jude’s. FC libre.</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="xcanon-family simple">
+                                        <div class="xcanon-family-body">
+                                            <div class="xcanon-family-top">
+                                                <div>
+                                                    <div class="xcanon-family-name">Familia Abrams</div>
+                                                    <div class="xcanon-family-meta">brooklyn / audiovisual / outsiders con historia</div>
+                                                </div>
+                                                <div class="xcanon-family-badge">outsiders</div>
+                                            </div>
+                                            <div class="xcanon-family-desc">Los Abrams representan el otro Brooklyn: menos glamour, más supervivencia. Vanessa se codeó con la élite por su vínculo con Dan, mientras Ruby fue el ancla de la familia.</div>
+                                            <div class="xcanon-members">
+                                                <div class="xmember"><strong>Vanessa Abrams</strong> <span>35-36 años</span> <span style="font-size: smaller;">Documentalista, productora audiovisual, periodista cultural o directora independiente. FC: Jessica Szohr o libre.</span></div>
+                                                <div class="xmember"><strong>Ruby Abrams</strong> <span>38-40 años</span> <span style="font-size: smaller;">Hermana mayor de Vanessa. Ocupación libre. FC preferentemente afroamericano o mixto.</span></div>
+                                                <div class="xmember"><strong>X Abrams</strong><span>14-30 años</span><span style="font-size: smaller;">Hijo/a de Ruby o hermano/a de Vanessa y Ruby. Ocupación libre. FC preferentemente afroamericano o mixto.</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="xcanon-family simple">
+                                        <div class="xcanon-family-body">
+                                            <div class="xcanon-family-top">
+                                                <div>
+                                                    <div class="xcanon-family-name">Familia Dickens</div>
+                                                    <div class="xcanon-family-meta">escándalo / espectáculo / supervivencia</div>
+                                                </div>
+                                                <div class="xcanon-family-badge">solo canon</div>
+                                            </div>
+                                            <div class="xcanon-family-desc">Ivy convirtió el escarnio en dinero y la impostura en un trampolín social. Sigue siendo un recordatorio incómodo para los Van der Woodsen.</div>
+                                            <div class="xcanon-members">
+                                                <div class="xmember"><strong>Ivy Dickens</strong><span>32-35 años</span><span style="font-size: smaller;">Productora ejecutiva, actriz, comentarista o figura del espectáculo. FC: Kaylee DeFer o libre.</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="xcanon-family simple">
+                                        <div class="xcanon-family-body">
+                                            <div class="xcanon-family-top">
+                                                <div>
+                                                    <div class="xcanon-family-name">Familia Kishlovsky</div>
+                                                    <div class="xcanon-family-meta">becados / apadrinados / lealtad a los waldorf</div>
+                                                </div>
+                                                <div class="xcanon-family-badge">constance</div>
+                                            </div>
+                                            <div class="xcanon-family-desc">Hijos de Dorota y Vanya, apadrinados por Blair Waldorf y parte del ecosistema de Constance-St. Jude’s a través del favor personal y la cercanía con la familia Waldorf.</div>
+                                            <div class="xcanon-members">
+                                                <div class="xmember reserved"><strong>Anastasia “Ana” Kishlovsky</strong><span>16-19 años · reservada</span><span style="font-size: smaller;">Hija mayor de Dorota y Vanya. Estudiante, becada o apadrinada por Blair. FC libre.</span></div>
+                                                <div class="xmember"><strong>Leo Kishlovsky</strong><span>13-16 años</span><span style="font-size: smaller;">Hijo menor de Dorota y Vanya. Estudiante, becado o apadrinado por Blair. FC libre.</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="xcanon-family simple">
+                                        <div class="xcanon-family-body">
+                                            <div class="xcanon-family-top">
+                                                <div>
+                                                    <div class="xcanon-family-name">Familia Vanderbilt</div>
+                                                    <div class="xcanon-family-meta">política / apellido histórico / escándalo heredado</div>
+                                                </div>
+                                                <div class="xcanon-family-badge">dynasty</div>
+                                            </div>
+                                            <div class="xcanon-family-desc">Los Vanderbilt sobreviven entre la nostalgia del dinero viejo y la maquinaria política. Tripp, Maureen, su heredero y otros parientes mantienen el apellido vivo entre campañas, donaciones y apariencias.</div>
+                                            <div class="xcanon-members">
+                                                <div class="xmember"><strong>Tripp Vanderbilt</strong><span>38-42 años</span><span style="font-size: smaller;">Primo de Nate Archibald. Político. Puede estar casado o no con Maureen. FC: Aaron Tveit o libre.</span></div>
+                                                <div class="xmember"><strong>Maureen Vanderbilt</strong><span>36-42 años</span><span style="font-size: smaller;">Esposa o ex-esposa de Tripp. Socialité posiblemente vinculada a causas benéficas. FC: Holley Fain o libre.</span></div>
+                                                <div class="xmember reserved"><strong>William “Liam” Vanderbilt</strong><span>14-16 años · reservado</span><span style="font-size: smaller;">Hijo de Tripp y Maureen. Estudiante de Constance-St. Jude’s. FC libre.</span></div>
+                                                <div class="xmember"><strong>X Vanderbilt</strong><span>30-40 años</span><span style="font-size: smaller;">Otro primo/a de Nate y Tripp. Político en ascenso, lobbysta o libre. FC libre.</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="xcanon-family simple">
+                                        <div class="xcanon-family-body">
+                                            <div class="xcanon-family-top">
+                                                <div>
+                                                    <div class="xcanon-family-name">Familia Baizen</div>
+                                                    <div class="xcanon-family-meta">figura heredada / conexión directa</div>
+                                                </div>
+                                                <div class="xcanon-family-badge">canon</div>
+                                            </div>
+                                            <div class="xcanon-members">
+                                                <div class="xmember reserved"><strong>Carter Baizen</strong><span>38-40 años · reservado</span><span style="font-size: smaller;">Personaje canon de la serie original. FC reservado según listado actual.</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="xcanon-family simple">
+                                        <div class="xcanon-family-body">
+                                            <div class="xcanon-family-top">
+                                                <div>
+                                                    <div class="xcanon-family-name">Familia Yuki</div>
+                                                    <div class="xcanon-family-meta">moda / periodismo / tribeca</div>
+                                                </div>
+                                                <div class="xcanon-family-badge">editorial</div>
+                                            </div>
+                                            <div class="xcanon-family-desc">Los Yuki son dueños de media TriBeCa, pero Nelly eligió la meritocracia editorial antes que la vida fácil. Hoy es una de las editoras de moda más temidas de Nueva York.</div>
+                                            <div class="xcanon-members">
+                                                <div class="xmember"><strong>Nelly Yuki</strong><span>34-35 años</span><span style="font-size: smaller;">Editora de alto rango en revista de moda. FC: Yin Chang o libre. Debe ser de origen asiático.</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="xcanon-family simple">
+                                        <div class="xcanon-family-body">
+                                            <div class="xcanon-family-top">
+                                                <div>
+                                                    <div class="xcanon-family-name">Familia Rose</div>
+                                                    <div class="xcanon-family-meta">arte / familia extendida waldorf / bohemia rica</div>
+                                                </div>
+                                                <div class="xcanon-family-badge">upper east side</div>
+                                            </div>
+                                            <div class="xcanon-members">
+                                                <div class="xmember"><strong>Aaron Rose</strong><span>38-42 años</span><span style="font-size: smaller;">Hijo de Cyrus Rose. Hermanastro de Blair Waldorf. Artista conceptual, dueño de galerías o expositor. FC: John Patrick Amedori o libre.</span></div>
+                                                <div class="xmember"><strong>X Rose</strong><span>14-18 años</span><span style="font-size: smaller;">Hijo/a accidental de Aaron Rose. Estudiante del Constance-St. Jude’s. FC libre.</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="xcanon-family simple">
+                                        <div class="xcanon-family-body">
+                                            <div class="xcanon-family-top">
+                                                <div>
+                                                    <div class="xcanon-family-name">Familia Coates</div>
+                                                    <div class="xcanon-family-meta">old money / ex minions / regreso a manhattan</div>
+                                                </div>
+                                                <div class="xcanon-family-badge">minions</div>
+                                            </div>
+                                            <div class="xcanon-members">
+                                                <div class="xmember"><strong>Isabel Coates</strong><span>34-35 años</span><span style="font-size: smaller;">Hija de los Coates. Ocupación a definir. FC: Nicole Fiscella o libre. Origen afroamericano.</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="xcanon-family simple">
+                                        <div class="xcanon-family-body">
+                                            <div class="xcanon-family-top">
+                                                <div>
+                                                    <div class="xcanon-family-name">Familia Farkas</div>
+                                                    <div class="xcanon-family-meta">origen asiático / regreso / discreción</div>
+                                                </div>
+                                                <div class="xcanon-family-badge">minions</div>
+                                            </div>
+                                            <div class="xcanon-members">
+                                                <div class="xmember"><strong>Kati Farkas</strong><span>34-35 años</span><span style="font-size: smaller;">Hija de Jonathan y Rose Farkas. Ocupación a definir. FC: Nan Zhang o libre. Origen asiático.</span></div>
+                                                <div class="xmember"><strong>Ronald “Ron” Farkas</strong><span>40-45 años</span><span style="font-size: smaller;">Hermano mayor de Kati. Ocupación a definir. FC libre. Origen asiático.</span></div>
+                                                <div class="xmember"><strong>X Farkas</strong><span>14-17 años</span><span style="font-size: smaller;">Hijo/a de Ron Farkas. Estudiante de Constance-St. Jude’s. FC libre. Origen asiático.</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="xcanon-family simple">
+                                        <div class="xcanon-family-body">
+                                            <div class="xcanon-family-top">
+                                                <div>
+                                                    <div class="xcanon-family-name">Familia Rosson</div>
+                                                    <div class="xcanon-family-meta">rama secreta / humphrey-van der woodsen</div>
+                                                </div>
+                                                <div class="xcanon-family-badge">hidden legacy</div>
+                                            </div>
+                                            <div class="xcanon-members">
+                                                <div class="xmember reserved"><strong>Scott Rosson</strong><span>38-40 años · reservado</span><span style="font-size: smaller;">Hijo biológico de Lily Van der Woodsen y Rufus Humphrey. Medio hermano de Serena, Dan, Eric y Jenny. FC: Chris Riggi o libre.</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- FIN xcanon-familylist -->
+                            </div> <!-- FIN xcanon-pane-original -->
 
-                            <!-- CLUSTER 2: THE REBOOT -->
+                            <!-- CLUSTER 2: REBOOT -->
                             <div class="xcanon-pane xcanon-pane-reboot">
-                                <div class="xcanon-cluster-head">
-                                    <div><strong>The Reboot</strong> <span>nuevas dinastías, guerras de influencia y los rostros de la era digital</span></div>
+                                <div class="xcanon-cluster-head"> 
+                                    <div><strong>Reboot</strong> <span>personajes y familias de la nueva generación</span> </div>
                                     <em>cluster 02</em>
                                 </div>
                                 <div class="xcanon-familylist">
@@ -681,28 +1765,27 @@
                                         <div class="xcanon-family-body">
                                             <div class="xcanon-family-top">
                                                 <div>
-                                                    <div class="xcanon-family-name">Familia Calloway / Trotman</div>
-                                                    <div class="xcanon-family-meta">influencers / secretos musicales / rivalidad de hermanas</div>
+                                                    <div class="xcanon-family-name">Familia Calloway-Lott</div>
+                                                    <div class="xcanon-family-meta">influencia / redes / fractura familiar</div>
                                                 </div>
-                                                <div class="xcanon-family-badge">it-girls</div>
+                                                <div class="xcanon-family-badge">reboot</div>
                                             </div>
+                                            <div class="xcanon-family-desc">Una mezcla explosiva entre cancelación, idealismo y fractura familiar. Julien y Zoya sostienen una relación compleja atravesada por clase, fama y herencia emocional.</div>
                                             <div class="xcanon-members">
-                                                <div class="xmember"><strong>Julien Calloway</strong><span>21-22 años</span><span style="font-size: smaller;">Mega influencer, modelo y figura central de la nueva era de Manhattan. Media hermana de Zoya. FC: Jordan Alexander o libre.</span></div>
-                                                <div class="xmember"><strong>Zoya Lott</strong><span>18-19 años</span><span style="font-size: smaller;">Estudiante universitaria, activista y contraparte crítica de la superficialidad del Upper East Side. Media hermana de Julien. FC: Whitney Peak o libre.</span></div>
-                                                <div class="xmember"><strong>Davis Calloway</strong><span>48-55 años</span><span style="font-size: smaller;">Productor musical de prestigio envuelto en escándalos del pasado. Padre de Julien. FC libre.</span></div>
-                                                <div class="xmember"><strong>Nick Lott</strong><span>45-52 años</span><span style="font-size: smaller;">Abogado o profesional del sector público. Padre de Zoya, siempre intentando mantenerla con los pies en la tierra. FC libre.</span></div>
-                                                <div class="xmember"><strong>X Calloway / Trotman</strong><span>14-17 años</span><span style="font-size: smaller;">Primo/a o medio hermano/a menor que ingresa a Constance Billard para continuar el legado o desafiarlo. FC libre.</span></div>
+                                                <div class="xmember"><strong>Julien Calloway</strong><span>21-22 años</span><span style="font-size: smaller;">It-girl, influencer y embajadora de moda y belleza. FC: Jordan Alexander o libre. Debe ser afroamericana.</span></div>
+                                                <div class="xmember"><strong>Zoya Lott</strong><span>18-19 años</span><span style="font-size: smaller;">Estudiante universitaria, idealista y políticamente comprometida. FC: Whitney Peak o libre. Debe ser afroamericana.</span></div>
+                                                <div class="xmember"><strong>X Calloway</strong><span>16-25 años</span><span style="font-size: smaller;">Sobrino/a de Davis Calloway. Primo/a de Julien. Puede ser estudiante de Constance-St. Jude’s o universitario/a. FC libre.</span></div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="xcanon-family simple">
+                                    <div class="xcanon-family simple">	
                                         <div class="xcanon-family-body">
                                             <div class="xcanon-family-top">
                                                 <div>
                                                     <div class="xcanon-family-name">Familia De Haan</div>
-                                                    <div class="xcanon-family-meta">capital de riesgo / relaciones públicas / ambición despiadada</div>
+                                                    <div class="xcanon-family-meta">dinero farmacológico / control / crueldad</div>
                                                 </div>
-                                                <div class="xcanon-family-badge">billionaires</div>
+                                                <div class="xcanon-family-badge">power</div>
                                             </div>
                                             <div class="xcanon-members">
                                                 <div class="xmember"><strong>Monet De Haan</strong><span>21-22 años</span><span style="font-size: smaller;">Universidad, influencer polémica o manager de it-girls. FC: Savannah Lee Smith o libre. Debe ser afroamericana.</span></div>
@@ -721,8 +1804,8 @@
                                                 <div class="xcanon-family-badge">style</div>
                                             </div>
                                             <div class="xcanon-members">
-                                                <div class="xmember"><strong>Audrey Hope</strong><span>21-22 años</span><span style="font-size: smaller;">Hijo de Kiki y William. Estudiante universitaria. FC: Emily Alyn Lind o libre.</span></div>
-                                                <div class="xmember reserved"><strong>X Hope</strong><span>14-35 años · reservada</span><span style="font-size: smaller;">Primo/a de Audrey. Puede ser estudiante de Constance-St. Jude’s or universitario/a. Comparte el apellido Hope.</span></div>
+                                                <div class="xmember"><strong>Audrey Hope</strong><span>21-22 años</span><span style="font-size: smaller;">Hija de Kiki y William. Estudiante universitaria. FC: Emily Alyn Lind o libre.</span></div>
+                                                <div class="xmember reserved"><strong>X Hope</strong><span>14-35 años · reservada</span><span style="font-size: smaller;">Primo/a de Audrey. Puede ser estudiante de Constance-St. Jude’s o universitario/a. Comparte el apellido Hope.</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -749,7 +1832,7 @@
                                             <div class="xcanon-family-top">
                                                 <div>
                                                     <div class="xcanon-family-name">Familia Bergmann</div>
-                                                    <div class="xcanon-family-meta">dinastía alemana / bienes raíces / activismo</div>
+                                                    <div class="xcanon-family-meta">dinestía alemana / bienes raíces / activismo</div>
                                                 </div>
                                                 <div class="xcanon-family-badge">billionaires</div>
                                             </div>
@@ -952,45 +2035,7 @@
         </div>
     </div> <!-- FIN xgb-main -->
 </div> <!-- FIN DE LA CAJA MAESTRA xoxo-guide -->
-
-<!-- SCRIPTS DE NAVEGACIÓN -->
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // 1. Control de Pestañas Principales de la Guía
-        const mainTabs = document.querySelectorAll('.xgb-tab');
-        const mainPanes = document.querySelectorAll('.xgb-pane');
-
-        mainTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const targetPane = tab.getAttribute('data-pane');
-                
-                mainTabs.forEach(t => t.classList.remove('active'));
-                mainPanes.forEach(p => p.classList.remove('active'));
-                
-                tab.classList.add('active');
-                const activePane = document.querySelector(`.xgb-pane-${targetPane}`);
-                if(activePane) activePane.classList.add('active');
-            });
-        });
-
-        // 2. Control de Sub-Pestañas del Teléfono (Cánones)
-        const canonTabs = document.querySelectorAll('.xcanon-tab');
-        const canonPanes = document.querySelectorAll('.xcanon-pane');
-
-        canonTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const targetCluster = tab.getAttribute('data-cluster');
-                
-                canonTabs.forEach(t => t.classList.remove('active'));
-                canonPanes.forEach(p => p.classList.remove('active'));
-                
-                tab.classList.add('active');
-                const activeCluster = document.querySelector(`.xcanon-pane-${targetCluster}`);
-                if(activeCluster) activeCluster.classList.add('active');
-            });
-        });
-    });
-</script>
-    
+	
 </body>
 </html>
+
