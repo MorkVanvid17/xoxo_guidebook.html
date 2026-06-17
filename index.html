@@ -283,6 +283,28 @@
             background: rgba(0,0,0,0.15);
         }
 
+        /* REJILLA DE IMÁGENES EN LA PESTAÑA GRUPOS */
+        .xgb-grupos-media-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .xgb-grupo-img-wrapper {
+            border: var(--borde2);
+            border-radius: 8px;
+            overflow: hidden;
+            height: 250px;
+        }
+
+        .xgb-grupo-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
         /* ========================================================================== */
         /* 5. NORMAS MAQUETADAS SEGÚN CAPTURA ORIGINAL                                */
         /* ========================================================================== */
@@ -320,28 +342,28 @@
         }
 
         /* ========================================================================== */
-        /* 6. SMARTPHONE DE PERSONAJES CANON                                         */
+        /* 6. MAQUETACIÓN CANON Y SEMICANON (ESTILO ORIGINAL RESTAURADO)               */
         /* ========================================================================== */
-        .xcanon-phone {
-            background: #090909;
+        .xcanon-container {
+            background: #0d0d0d;
             border: var(--borde2);
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            border-radius: 12px;
+            padding: 25px;
         }
 
         .xcanon-header {
             text-align: center;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #181818;
-            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #1a1a1a;
+            margin-bottom: 25px;
         }
 
         .xcanon-header h3 {
             font-family: var(--fuente2);
-            font-size: 24px;
+            font-size: 26px;
             color: #ffffff;
             margin: 0;
+            letter-spacing: 1px;
         }
 
         .xcanon-header p {
@@ -350,111 +372,115 @@
             text-transform: uppercase;
             color: var(--color2);
             letter-spacing: 2px;
-            margin: 4px 0 0 0;
+            margin: 6px 0 0 0;
         }
 
-        .xcanon-subnavegacion {
+        .xcanon-tabs-navegacion {
             display: flex;
-            background: #121212;
-            padding: 4px;
+            background: #141414;
+            padding: 5px;
             border-radius: 8px;
-            border: 1px solid #1a1a1a;
-            margin-bottom: 20px;
+            border: 1px solid #1f1f1f;
+            margin-bottom: 25px;
         }
 
-        .xcanon-subtab {
+        .xcanon-tab-boton {
             flex: 1;
             text-align: center;
             font-family: var(--fuente2);
-            font-size: 12px;
-            padding: 8px 0;
+            font-size: 13px;
+            padding: 10px 0;
             color: rgba(255,255,255,0.4);
             cursor: pointer;
             border-radius: 6px;
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .xcanon-subtab.active {
+        .xcanon-tab-boton.active {
             background: #1c1c1c;
             color: var(--color1);
         }
 
-        .xcanon-cluster {
+        .xcanon-panel {
             display: none;
         }
 
-        .xcanon-cluster.active {
+        .xcanon-panel.active {
             display: block;
         }
 
-        .xcanon-tarjeta-familia {
+        .xcanon-familia-box {
             background: #121212;
             border: 1px solid #1a1a1a;
             border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
         }
 
-        .xcanon-familia-head {
+        .xcanon-familia-top {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            border-bottom: 1px solid #1a1a1a;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
+            border-bottom: 1px solid #1e1e1e;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
         }
 
         .xcanon-familia-titulo {
             font-family: var(--fuente2);
-            font-size: 17px;
+            font-size: 19px;
             color: #ffffff;
+            margin: 0;
         }
 
-        .xcanon-familia-sub {
+        .xcanon-familia-descripcion {
             font-family: var(--fuente1);
-            font-size: 10px;
+            font-size: 11px;
             color: var(--color2);
-            margin-top: 3px;
+            margin: 4px 0 0 0;
         }
 
-        .xcanon-tag {
+        .xcanon-badge {
             font-family: var(--fuente1);
             font-size: 9px;
             text-transform: uppercase;
-            background: rgba(255,255,255,0.04);
-            padding: 3px 8px;
+            background: rgba(255,255,255,0.05);
+            padding: 4px 10px;
             border-radius: 4px;
             color: rgba(255,255,255,0.5);
+            letter-spacing: 1px;
         }
 
-        .xcanon-miembros-lista {
+        .xcanon-lista-personajes {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
         }
 
-        .xcanon-miembro {
-            background: #181818;
+        .xcanon-personaje-card {
+            background: #171717;
             border: 1px solid #222222;
-            padding: 12px 15px;
-            border-radius: 5px;
-            font-size: 13px;
+            padding: 14px 18px;
+            border-radius: 6px;
         }
 
-        .xcanon-miembro strong {
+        .xcanon-personaje-card strong {
             font-family: var(--fuente2);
-            font-size: 14px;
+            font-size: 15px;
             display: block;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
 
-        .xcanon-miembro span {
-            font-size: 11px;
+        .xcanon-personaje-card span {
+            font-size: 12px;
             color: rgba(255,255,255,0.5);
             display: block;
+            line-height: 145%;
         }
 
-        .xcanon-miembro.reservado {
+        .xcanon-personaje-card.ocupado {
             border-left: 3px solid var(--color1);
         }
     </style>
@@ -483,7 +509,7 @@
                 <span class="xgb-tab-num">04</span> Canon y Semicanon
             </div>
             <div class="xgb-tab" data-pane="guia">
-                <span class="xgb-tab-num">05</span> Guía del Usuario
+                <span class="xgb-tab-num">05</span> Guia del nuevo usuario
             </div>
             <div class="xgb-tab" data-pane="sistemas">
                 <span class="xgb-tab-num">06</span> Sistemas
@@ -553,12 +579,22 @@
                     <h2>Grupos Sociales</h2>
                     <p>Insiders / Outsiders / La jerarquía urbana</p>
                 </div>
+
+                <div class="xgb-grupos-media-grid">
+                    <div class="xgb-grupo-img-wrapper">
+                        <img alt="The Insiders Group" src="https://2img.net/i.imgur.com/33sofpI.png" />
+                    </div>
+                    <div class="xgb-grupo-img-wrapper">
+                        <img alt="The Outsiders Group" src="https://2img.net/i.imgur.com/xMSkY3e.png" />
+                    </div>
+                </div>
+
                 <div class="xgb-grid-2">
                     <div class="xgb-caja-texto">
                         <strong>The Insiders</strong><br><br>
                         Nacidos en cunas de oro de la Quinta Avenida. Son los dueños legítimos de los áticos, herederos directos de los fondos de inversión y apellidos históricos de Nueva York. Para ellos, el mundo es un tablero personal donde las consecuencias se borran con un cheque.
                     </div>
-                    <div class="xgb-caja-texto">
+                    <div class="xgb-grid-item xgb-caja-texto">
                         <strong>The Outsiders</strong><br><br>
                         Llegados de los distritos de moda en Brooklyn o becados por intelecto brillante. Observan la opulencia con una mezcla de fascinación y desprecio. Saben bien que para sobrevivir entre tiburones, hay que ser el doble de listos y no dejar cabos sueltos.
                     </div>
@@ -566,36 +602,36 @@
             </div>
 
             <div class="xgb-pane xgb-pane-canon">
-                <div class="xcanon-phone">
+                <div class="xcanon-container">
                     <div class="xcanon-header">
                         <h3>Upper East Side</h3>
                         <p>Líneas de Sangre y Roles Disponibles</p>
                     </div>
                     
-                    <div class="xcanon-subnavegacion">
-                        <div class="xcanon-subtab active" data-cluster="classic">Classic Era</div>
-                        <div class="xcanon-subtab" data-cluster="reboot">The Next Gen</div>
+                    <div class="xcanon-tabs-navegacion">
+                        <div class="xcanon-tab-boton active" data-cluster="classic">Classic Era</div>
+                        <div class="xcanon-tab-boton" data-cluster="reboot">The Next Gen</div>
                     </div>
 
-                    <div class="xcanon-cluster xcanon-cluster-classic active">
-                        <div class="xcanon-tarjeta-familia">
-                            <div class="xcanon-familia-head">
+                    <div class="xcanon-panel xcanon-panel-classic active">
+                        <div class="xcanon-familia-box">
+                            <div class="xcanon-familia-top">
                                 <div>
-                                    <div class="xcanon-familia-titulo">Familia Waldorf / Bass</div>
-                                    <div class="xcanon-familia-sub">Bass Industries & Waldorf Designs</div>
+                                    <h4 class="xcanon-familia-titulo">Familia Waldorf / Bass</h4>
+                                    <p class="xcanon-familia-descripcion">Bass Industries & Waldorf Designs</p>
                                 </div>
-                                <div class="xcanon-tag">Old Money</div>
+                                <div class="xcanon-badge">Old Money</div>
                             </div>
-                            <div class="xcanon-miembros-lista">
-                                <div class="xcanon-miembro reservado">
+                            <div class="xcanon-lista-personajes">
+                                <div class="xcanon-personaje-card ocupado">
                                     <strong>Blair Waldorf (35-36 años)</strong>
                                     <span>Matriarca de la moda, codirige el imperio familiar. Reservada.</span>
                                 </div>
-                                <div class="xcanon-miembro reservado">
+                                <div class="xcanon-personaje-card ocupado">
                                     <strong>Chuck Bass (35-36 años)</strong>
                                     <span>CEO absoluto de Bass Industries. Magnate hotelero. Reservado.</span>
                                 </div>
-                                <div class="xcanon-miembro">
+                                <div class="xcanon-personaje-card">
                                     <strong>Henry Bass (14-15 años)</strong>
                                     <span>Heredero directo, estudiante en las academias élite. Libre.</span>
                                 </div>
@@ -603,17 +639,17 @@
                         </div>
                     </div>
 
-                    <div class="xcanon-cluster xcanon-cluster-reboot">
-                        <div class="xcanon-tarjeta-familia">
-                            <div class="xcanon-familia-head">
+                    <div class="xcanon-panel xcanon-panel-reboot">
+                        <div class="xcanon-familia-box">
+                            <div class="xcanon-familia-top">
                                 <div>
-                                    <div class="xcanon-familia-titulo">Dinastía Calloway</div>
-                                    <div class="xcanon-familia-sub">Monopolio de Influencia Digital</div>
+                                    <h4 class="xcanon-familia-titulo">Dinastía Calloway</h4>
+                                    <p class="xcanon-familia-descripcion">Monopolio de Influencia Digital</p>
                                 </div>
-                                <div class="xcanon-tag">New Influence</div>
+                                <div class="xcanon-badge">New Influence</div>
                             </div>
-                            <div class="xcanon-miembros-lista">
-                                <div class="xcanon-miembro">
+                            <div class="xcanon-lista-personajes">
+                                <div class="xcanon-personaje-card">
                                     <strong>Julien Calloway (21-22 años)</strong>
                                     <span>Ícono de tendencias en redes sociales y modelo de pasarela. Libre.</span>
                                 </div>
@@ -645,7 +681,7 @@
                 </div>
                 <div class="xgb-caja-texto">
                     <p>El azar y los deslices sociales se rigen bajo mecánicas específicas diseñadas para dar veracidad e imprevisibilidad a las tramas globales:</p>
-                    <p><strong>El Dado Gossip Girl:</strong> Cuando ejecutes una acción comprometida o intentes descubrir un secreto, el staff o los dados determinarán si dejas pistas incriminatorias que puedan terminar directamente en la bandeja de entrada de la reina del cotilleo urbano.</p>
+                    <p><strong>El Dado Gossip Girl:</strong> Cuando ejecutes una action comprometida o intentes descubrir un secreto, el staff o los dados determinarán si dejas pistas incriminatorias que puedan terminar directamente en la bandeja de entrada de la reina del cotilleo urbano.</p>
                 </div>
             </div>
 
@@ -672,9 +708,9 @@
             });
         });
 
-        // NAVEGACIÓN INTERNA SMARTPHONE (CANONS)
-        const subTabs = document.querySelectorAll('.xcanon-subtab');
-        const subPanes = document.querySelectorAll('.xcanon-cluster');
+        // NAVEGACIÓN INTERNA PANELES DE CANONS
+        const subTabs = document.querySelectorAll('.xcanon-tab-boton');
+        const subPanes = document.querySelectorAll('.xcanon-panel');
 
         subTabs.forEach(subTab => {
             subTab.addEventListener('click', () => {
@@ -684,7 +720,7 @@
                 subPanes.forEach(sp => sp.classList.remove('active'));
                 
                 subTab.classList.add('active');
-                const targetCluster = document.querySelector(`.xcanon-cluster-${clusterTarget}`);
+                const targetCluster = document.querySelector(`.xcanon-panel-${clusterTarget}`);
                 if (targetCluster) targetCluster.classList.add('active');
             });
         });
