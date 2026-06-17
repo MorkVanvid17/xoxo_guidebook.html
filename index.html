@@ -59,12 +59,6 @@
             color: var(--color1);
         }
 
-        @keyframes pulsoSencillo {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.05); opacity: 0.8; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
         /* ========================================== */
         /* ESTRUCTURA CONTENEDORA MAESTRA             */
         /* ========================================== */
@@ -88,14 +82,14 @@
             border-right: 1px solid var(--xgb-border);
             display: flex;
             flex-direction: column;
-            padding: 30px 20px;
+            padding: 25px 20px;
             box-sizing: border-box;
             justify-content: space-between;
         }
 
         .xgb-brand {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .xgb-logo-img {
@@ -104,7 +98,7 @@
             background-image: var(--imagen-logo);
             background-size: cover;
             background-position: center;
-            margin: 0 auto 15px;
+            margin: 0 auto 12px;
             border-radius: 50%;
             border: 1px solid var(--xgb-accent);
         }
@@ -131,17 +125,17 @@
         .xgb-menu {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            margin: 20px 0;
+            gap: 6px;
+            margin: 15px 0;
         }
 
         .xgb-tab {
             font-family: var(--fuente2);
-            font-size: 14px;
+            font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: rgba(255,255,255,0.4);
-            padding: 12px 16px;
+            padding: 10px 14px;
             border-radius: 6px;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -165,7 +159,7 @@
 
         .xgb-tab-num {
             font-family: var(--fuente1);
-            font-size: 10px;
+            font-size: 9px;
             font-weight: 600;
             opacity: 0.5;
         }
@@ -177,7 +171,7 @@
             color: rgba(255,255,255,0.3);
             line-height: 140%;
             border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 15px;
+            padding-top: 12px;
         }
 
         /* CONTENEDOR CENTRAL DE CONTENIDOS */
@@ -277,7 +271,7 @@
             margin-bottom: 0;
         }
 
-        .xgb-text ul {
+        .xgb-text ul, .xgb-text ol {
             margin: 0;
             padding-left: 18px;
         }
@@ -560,19 +554,25 @@
             <div class="xgb-subtitle">XOXO NEXT GEN</div>
         </div>
 
-        <!-- NAVEGACIÓN -->
+        <!-- NAVEGACIÓN ACTUALIZADA CON SECCIONES COMPLETAS -->
         <div class="xgb-menu">
-            <div class="xgb-tab active" data-pane="grupos">
-                <span class="xgb-tab-num">01</span> Grupos
+            <div class="xgb-tab active" data-pane="ambientacion">
+                <span class="xgb-tab-num">01</span> Ambientación
+            </div>
+            <div class="xgb-tab" data-pane="grupos">
+                <span class="xgb-tab-num">02</span> Grupos
             </div>
             <div class="xgb-tab" data-pane="canon">
-                <span class="xgb-tab-num">02</span> Canon
+                <span class="xgb-tab-num">03</span> Canon
             </div>
             <div class="xgb-tab" data-pane="guia">
-                <span class="xgb-tab-num">03</span> Guía de Inicio
+                <span class="xgb-tab-num">04</span> Guía de Inicio
             </div>
             <div class="xgb-tab" data-pane="sistemas">
-                <span class="xgb-tab-num">04</span> Sistemas
+                <span class="xgb-tab-num">05</span> Sistemas
+            </div>
+            <div class="xgb-tab" data-pane="normas">
+                <span class="xgb-tab-num">06</span> Normas
             </div>
         </div>
 
@@ -589,11 +589,42 @@
         <div class="xgb-content">
             
             <!-- ========================================== -->
-            <!-- PESTAÑA GRUPOS (BIENVENIDA ORIGINAL)       -->
+            <!-- PESTAÑA 01: AMBIENTACIÓN                   -->
             <!-- ========================================== -->
-            <div class="xgb-pane xgb-pane-grupos active">
-                
-                <!-- CABECERA DE LA PÁGINA -->
+            <div class="xgb-pane xgb-pane-ambientacion active">
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid var(--color2); padding-top: 12px; margin-bottom: 25px; width: 100%;">
+                    <div style="display: flex; align-items: flex-end; gap: 12px;">
+                        <div class="xgb-page-icon" style="font-size: 22px; color: var(--xgb-accent); line-height: 100%; margin-bottom: 2px;">🏛</div>
+                        <div class="xgb-page-title" style="font-family: var(--fuente2); font-size: 26px; text-transform: uppercase; color: #ffffff; letter-spacing: 1px; line-height: 100%;">
+                            Ambientación
+                        </div>
+                    </div>
+                    <div class="xgb-page-sub" style="font-family: var(--fuente1); font-size: 10px; text-transform: uppercase; color: var(--xgb-accent); letter-spacing: 3px; font-weight: 600; line-height: 100%;">
+                        the upper east side
+                    </div>
+                </div>
+
+                <div class="xgb-big-img" style="border: var(--borde2); border-radius: 8px; overflow: hidden; height: 240px; margin-bottom: 20px;">
+                    <img alt="Manhattan" src="https://i.imgur.com/Zx61S0K.jpeg" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(30%) brightness(80%);" />
+                </div>
+
+                <div class="xgb-block">
+                    <div class="xgb-block-head">
+                        <div class="xgb-block-title">El Contexto de la Élite</div>
+                        <div class="xgb-block-sub">una nueva era digital</div>
+                    </div>
+                    <div class="xgb-text">
+                        <p>Han pasado los años desde que los primeros nombres resonaran en las alertas de los teléfonos móviles de Manhattan. Los antiguos reyes y reinas han crecido, consolidando imperios de moda, finanzas y política, pero sus linajes siguen atrapados bajo el mismo cielo gris de Nueva York.</p>
+                        <p>Hoy, una nueva generación camina por las escalinatas del Met y llena los prestigiosos salones de Constance Billard y St. Jude's. Sin embargo, el dinero viejo y los apellidos de peso ya no son los únicos escudos válidos. En la era de la inmediatez digital, los seguidores, la influencia y la capacidad de control de daños definen quién sobrevive.</p>
+                        <p>Y entre las sombras de las redes sociales, una vieja conocida ha despertado. No sabemos quién está detrás de la pantalla esta vez, pero sus ojos observan cada desliz, cada copa de más en los áticos de la Quinta Avenida y cada pacto susurrado en los callejones de Brooklyn. La voz que todo lo sabe ha regresado, más cínica, más rápida y más letal.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- PESTAÑA 02: GRUPOS SOCIALES                -->
+            <!-- ========================================== -->
+            <div class="xgb-pane xgb-pane-grupos">
                 <div style="display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid var(--color2); padding-top: 12px; margin-bottom: 25px; width: 100%;">
                     <div style="display: flex; align-items: flex-end; gap: 12px;">
                         <div class="xgb-page-icon" style="font-size: 22px; color: var(--xgb-accent); line-height: 100%; margin-bottom: 2px;">♙</div>
@@ -606,7 +637,6 @@
                     </div>
                 </div>
 
-                <!-- IMÁGENES DESTACADAS -->
                 <div class="xgb-big-img" style="display: flex; gap: 15px; background: transparent; border: none; overflow: visible;">
                     <div style="flex: 1; border: var(--borde2); border-radius: 8px; overflow: hidden; height: 260px;">
                         <img alt="Insiders" src="https://2img.net/i.imgur.com/33sofpI.png" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
@@ -616,7 +646,6 @@
                     </div>
                 </div>
 
-                <!-- BLOQUES DE INFORMACIÓN -->
                 <div style="margin-top: 16px;" class="xgb-grid-2">
                     <div class="xgb-block">
                         <div class="xgb-block-head">
@@ -643,15 +672,14 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- FIN PESTAÑA GRUPOS -->
+            </div>
 
             <!-- ========================================== -->
-            <!-- PESTAÑA CANON                              -->
+            <!-- PESTAÑA 03: CANON                              -->
             <!-- ========================================== -->
             <div class="xgb-pane xgb-pane-canon">
                 <div class="xcanon-wrap">
                     <div class="xcanon-phone">
-                        
                         <div class="xcanon-header">
                             <div class="xcanon-title">Gossip Girl</div>
                             <div class="xcanon-subtitle">Personajes canon y semicanon</div>
@@ -664,16 +692,13 @@
                         </div>
                         
                         <div class="xcanon-content">
-                            
                             <!-- CLUSTER 1: THE CLASSIC ERA -->
                             <div class="xcanon-pane xcanon-pane-classic active">
                                 <div class="xcanon-cluster-head">
                                     <div><strong>The Classic Era</strong> <span>linajes, herederos y conexiones de la primera generación</span></div>
                                     <em>cluster 01</em>
                                 </div>
-                                
                                 <div class="xcanon-familylist">
-                                    <!-- FAMILIA WALDORF / BASS -->
                                     <div class="xcanon-family">
                                         <div class="xcanon-family-body">
                                             <div class="xcanon-family-top">
@@ -694,7 +719,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- FAMILIA VAN DER WOODSEN / HUMPHREY -->
                                     <div class="xcanon-family">
                                         <div class="xcanon-family-body">
                                             <div class="xcanon-family-top">
@@ -708,31 +732,13 @@
                                                 <div class="xmember"><strong>Serena van der Woodsen</strong><span>35-36 años</span><span style="font-size: smaller;">La it-girl definitiva convertida en filántropa y productora cultural. Esposa de Dan. FC: Blake Lively o libre.</span></div>
                                                 <div class="xmember"><strong>Dan Humphrey</strong><span>35-36 años</span><span style="font-size: smaller;">El escritor satírico original, ex "Gossip Girl". Guionista o editor de renombre. Esposo de Serena. FC: Penn Badgley o libre.</span></div>
                                                 <div class="xmember"><strong>X Humphrey van der Woodsen</strong><span>14-16 años</span><span style="font-size: smaller;">Hijo/a de Dan y Serena. Estudiante en Constance-St. Jude’s, balanceándose entre el legado de popularidad de su madre y el cinismo de su padre. FC libre.</span></div>
-                                                <div class="xmember"><strong>Jenny Humphrey</strong><span>33-34 años</span><span style="font-size: smaller;">Diseñadora de moda consolidada internacionalmente ("Little J"). Reside entre Londres and Nueva York. FC: Taylor Momsen o libre.</span></div>
+                                                <div class="xmember"><strong>Jenny Humphrey</strong><span>33-34 años</span><span style="font-size: smaller;">Diseñadora de moda consolidada internacionalmente ("Little J"). Reside entre Londres y Nueva York. FC: Taylor Momsen o libre.</span></div>
                                                 <div class="xmember"><strong>Eric van der Woodsen</strong><span>37-38 años</span><span style="font-size: smaller;">Filántropo o consultor de arte que prefiere mantener un perfil bajo alejado de la prensa rosa. FC: Connor Paolo o libre.</span></div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <!-- FAMILIA ARCHIBALD -->
-                                    <div class="xcanon-family">
-                                        <div class="xcanon-family-body">
-                                            <div class="xcanon-family-top">
-                                                <div>
-                                                    <div class="xcanon-family-name">Familia Archibald</div>
-                                                    <div class="xcanon-family-meta">política / medios de comunicación / viejo dinero</div>
-                                                </div>
-                                                <div class="xcanon-family-badge">politics</div>
-                                            </div>
-                                            <div class="xcanon-members">
-                                                <div class="xmember"><strong>Nate Archibald</strong><span>35-36 años</span><span style="font-size: smaller;">Editor en jefe y magnate de The NY Spectator, con posibles aspiraciones políticas a la alcaldía o el senado. FC: Chace Crawford o libre.</span></div>
-                                                <div class="xmember"><strong>X Archibald</strong><span>14-17 años</span><span style="font-size: smaller;">Hijo/a de Nate (de una relación anterior o matrimonio actual). Estudiante en Constance-St. Jude’s. FC libre.</span></div>
-                                                <div class="xmember"><strong>X Archibald</strong><span>20-30 años</span><span style="font-size: smaller;">Primo/a de la rama familiar de los Vanderbilt o Archibald. Conexiones políticas o financieras directas. FC libre.</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
-                            </div> <!-- FIN CLUSTER 1 -->
+                            </div>
 
                             <!-- CLUSTER 2: THE REBOOT -->
                             <div class="xcanon-pane xcanon-pane-reboot">
@@ -740,9 +746,7 @@
                                     <div><strong>The Reboot</strong> <span>nuevas dinastías, guerras de influencia y los rostros de la era digital</span></div>
                                     <em>cluster 02</em>
                                 </div>
-                                
                                 <div class="xcanon-familylist">
-                                    <!-- FAMILIA CALLOWAY / TROTMAN -->
                                     <div class="xcanon-family simple">
                                         <div class="xcanon-family-body">
                                             <div class="xcanon-family-top">
@@ -755,195 +759,36 @@
                                             <div class="xcanon-members">
                                                 <div class="xmember"><strong>Julien Calloway</strong><span>21-22 años</span><span style="font-size: smaller;">Mega influencer, modelo y figura central de la nueva era de Manhattan. Media hermana de Zoya. FC: Jordan Alexander o libre.</span></div>
                                                 <div class="xmember"><strong>Zoya Lott</strong><span>18-19 años</span><span style="font-size: smaller;">Estudiante universitaria, activista y contraparte crítica de la superficialidad del Upper East Side. Media hermana de Julien. FC: Whitney Peak o libre.</span></div>
-                                                <div class="xmember"><strong>Davis Calloway</strong><span>48-55 años</span><span style="font-size: smaller;">Productor musical de prestigio envuelto en escándalos del pasado. Padre de Julien. FC libre.</span></div>
-                                                <div class="xmember"><strong>Nick Lott</strong><span>45-52 años</span><span style="font-size: smaller;">Abogado o profesional del sector público. Padre de Zoya, siempre intentando mantenerla con los pies en la tierra. FC libre.</span></div>
-                                                <div class="xmember"><strong>X Calloway / Trotman</strong><span>14-17 años</span><span style="font-size: smaller;">Primo/a o medio hermano/a menor que ingresa a Constance Billard para continuar el legado o desafiarlo. FC libre.</span></div>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <!-- FAMILIA DE HAAN -->
-                                    <div class="xcanon-family simple">
-                                        <div class="xcanon-family-body">
-                                            <div class="xcanon-family-top">
-                                                <div>
-                                                    <div class="xcanon-family-name">Familia De Haan</div>
-                                                    <div class="xcanon-family-meta">capital de riesgo / relaciones públicas / ambición despiadada</div>
-                                                </div>
-                                                <div class="xcanon-family-badge">billionaires</div>
-                                            </div>
-                                            <div class="xcanon-members">
-                                                <div class="xmember"><strong>Monet De Haan</strong><span>21-22 años</span><span style="font-size: smaller;">Universidad, influencer polémica o manager de it-girls. FC: Savannah Lee Smith o libre. Debe ser afroamericana.</span></div>
-                                                <div class="xmember"><strong>X De Haan</strong><span>14-18 años</span><span style="font-size: smaller;">Hermano/a menor de Monet. Estudiante actual de Constance-St. Jude’s. FC libre. Debe ser afroamericano.</span></div>
-                                                <div class="xmember"><strong>X De Haan</strong><span>22-30 años</span><span style="font-size: smaller;">Hermano/a mayor de Monet. Universitario o parte de la empresa familiar. FC libre. Debe ser afroamericano.</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- FAMILIA HOPE -->
-                                    <div class="xcanon-family simple">
-                                        <div class="xcanon-family-body">
-                                            <div class="xcanon-family-top">
-                                                <div>
-                                                    <div class="xcanon-family-name">Familia Hope</div>
-                                                    <div class="xcanon-family-meta">moda / divorcio / ironía elegante</div>
-                                                </div>
-                                                <div class="xcanon-family-badge">style</div>
-                                            </div>
-                                            <div class="xcanon-members">
-                                                <div class="xmember"><strong>Audrey Hope</strong><span>21-22 años</span><span style="font-size: smaller;">Hijo de Kiki y William. Estudiante universitaria. FC: Emily Alyn Lind o libre.</span></div>
-                                                <div class="xmember reserved"><strong>X Hope</strong><span>14-35 años · reservada</span><span style="font-size: smaller;">Primo/a de Audrey. Puede ser estudiante de Constance-St. Jude’s or universitario/a. Comparte el apellido Hope.</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- FAMILIA MENZIES -->
-                                    <div class="xcanon-family simple">
-                                        <div class="xcanon-family-body">
-                                            <div class="xcanon-family-top">
-                                                <div>
-                                                    <div class="xcanon-family-name">Familia Menzies</div>
-                                                    <div class="xcanon-family-meta">imperio mediático / sucesión / tensión familiar</div>
-                                                </div>
-                                                <div class="xcanon-family-badge">media empire</div>
-                                            </div>
-                                            <div class="xcanon-members">    
-                                                <div class="xmember"><strong>Akeno “Aki” Menzies</strong><span>21-22 años</span><span style="font-size: smaller;">Estudiante universitario de cine o medios audiovisuales. FC: Evan Mock o libre.</span></div>
-                                                <div class="xmember"><strong>Hamish Menzies</strong><span>40-50 años</span><span style="font-size: smaller;">Medio hermano de Aki. Ejecutivo del imperio mediático. FC libre.</span></div>
-                                                <div class="xmember"><strong>Eliza Menzies</strong><span>38-48 años</span><span style="font-size: smaller;">Medio hermana de Aki. Ejecutiva del imperio mediático. FC libre.</span></div>
-                                                <div class="xmember"><strong>Jake Menzies</strong><span>30-45 años</span><span style="font-size: smaller;">Medio hermano de Aki. Ocupación libre. FC libre.</span></div>
-                                                <div class="xmember"><strong>X Menzies</strong><span>14-17 años</span><span style="font-size: smaller;">Hijo/a de Hamish, Eliza o Jake. Estudiante del Constance-St. Jude’s. FC libre.</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- FAMILIA BERGMANN -->
-                                    <div class="xcanon-family simple">
-                                        <div class="xcanon-family-body">
-                                            <div class="xcanon-family-top">
-                                                <div>
-                                                    <div class="xcanon-family-name">Familia Bergmann</div>
-                                                    <div class="xcanon-family-meta">dinastía alemana / bienes raíces / activismo</div>
-                                                </div>
-                                                <div class="xcanon-family-badge">billionaires</div>
-                                            </div>
-                                            <div class="xcanon-members">    
-                                                <div class="xmember"><strong>Otto “Obie” Bergmann IV</strong><span>21-22 años</span><span style="font-size: smaller;">Estudiante universitario / activista político. FC: Eli Brown o libre.</span></div>
-                                                <div class="xmember"><strong>Heidi Bergmann</strong><span>28-32 años</span><span style="font-size: smaller;">Hermana mayor de Obie. Puede trabajar en la empresa familiar. FC: Kathryn Gallagher o libre.</span></div>
-                                                <div class="xmember"><strong>X Bergmann</strong><span>14-17 años</span><span style="font-size: smaller;">Hermano/a menor de Obie y Heidi. Estudiante del Constance-St. Jude’s. FC libre.</span></div>
-                                                <div class="xmember"><strong>X Bergmann</strong><span>20-38 años</span><span style="font-size: smaller;">Primo/a de Obie y Heidi. Puede trabajar en Bergmann Property Group. FC libre.</span></div>
-                                            </div>
-                                        </div>  
-                                    </div>
-
-                                    <!-- FAMILIA DE LA CRUZ -->
-                                    <div class="xcanon-family simple">
-                                        <div class="xcanon-family-body">
-                                            <div class="xcanon-family-top">
-                                                <div>
-                                                    <div class="xcanon-family-name">Familia De la Cruz</div>
-                                                    <div class="xcanon-family-meta">cine / glamour / identidad performativa</div>
-                                                </div>
-                                                <div class="xcanon-family-badge">fashion</div>
-                                            </div>
-                                            <div class="xcanon-members">
-                                                <div class="xmember"><strong>Luna La</strong><span>21-22 años</span><span style="font-size: smaller;">Modelo, estilista y creadora de tendencias. FC: Zion Moreno o libre. Personaje trans.</span></div>
-                                                <div class="xmember"><strong>X De la Cruz</strong><span>14-17 años</span><span style="font-size: smaller;">Hermano/a menor o medio hermano/a de Luna. Estudiante en Constance-St. Jude’s. FC libre. Origen latinoamericano.</span></div>
-                                                <div class="xmember"><strong>X De la Cruz</strong><span>18-40 años</span><span style="font-size: smaller;">Primo/a o tío/a de Luna. Ocupación libre. FC libre. Origen latinoamericano.</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- FAMILIA WOLFE -->
-                                    <div class="xcanon-family simple">
-                                        <div class="xcanon-family-body">
-                                            <div class="xcanon-family-top">
-                                                <div>
-                                                    <div class="xcanon-family-name">Familia Wolfe</div>
-                                                    <div class="xcanon-family-meta">broadway / lujo / hedonismo</div>
-                                                </div>
-                                                <div class="xcanon-family-badge">elite</div>
-                                            </div>
-                                            <div class="xcanon-members">
-                                                <div class="xmember reserved"><strong>Max Wolfe</strong><span>21-22 años · reservado</span><span style="font-size: smaller;">Hijo de Gideon y Roy. Modelo ocasional, hedonista profesional o estudiante universitario. FC: Thomas Doherty o libre.</span></div>
-                                                <div class="xmember"><strong>X Wolfe</strong><span>14-26 años</span><span style="font-size: smaller;">Primo/a de Max. Ocupación libre. FC libre.</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- FAMILIA KELLER -->
-                                    <div class="xcanon-family simple">
-                                        <div class="xcanon-family-body">
-                                            <div class="xcanon-family-top">
-                                                <div>
-                                                    <div class="xcanon-family-name">Familia Keller</div>
-                                                    <div class="xcanon-family-meta">estigma / prisión / becados</div>
-                                                </div>
-                                                <div class="xcanon-family-badge">fallout</div>
-                                            </div>
-                                            <div class="xcanon-members">
-                                                <div class="xmember"><strong>X Keller</strong><span>18-40 años</span><span style="font-size: smaller;">Hermano/a de Kate Keller. Puede estar en la universidad o trabajar para familias de la élite. FC libre.</span></div>
-                                                <div class="xmember"><strong>X Keller</strong><span>14-18 años</span><span style="font-size: smaller;">Hermano/a o sobrino/a de Kate Keller. Estudiante becado en Constance-St. Jude’s. FC libre.</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- FAMILIA BARNES -->
-                                    <div class="xcanon-family simple">   
-                                        <div class="xcanon-family-body">
-                                            <div class="xcanon-family-top">
-                                                <div>
-                                                    <div class="xcanon-family-name">Familia Barnes</div>
-                                                    <div class="xcanon-family-meta">dinero viejo / despreocupación / amistad con zoya</div>
-                                                </div>
-                                                <div class="xcanon-family-badge">old money</div>
-                                            </div>
-                                            <div class="xcanon-members">
-                                                <div class="xmember"><strong>Shan Barnes</strong><span>18-20 años</span><span style="font-size: smaller;">Artista, musa, activista de sofá o libre. FC: Grace Duah o libre. Debe ser afroamericana.</span></div>
-                                                <div class="xmember"><strong>X Barnes</strong><span>14-17 años</span><span style="font-size: smaller;">Hermano menor de Shan. Estudiante en Constance-St. Jude’s. FC libre. Debe ser afroamericano.</span></div>
-                                            </div>
-                                        </div>  
                                     </div>
                                 </div>
-                            </div> <!-- FIN CLUSTER 2 -->
+                            </div>
 
-                            <!-- CLUSTER 3: OTROS PERSONAJES -->
+                            <!-- CLUSTER 3: OTROS -->
                             <div class="xcanon-pane xcanon-pane-otros">
                                 <div class="xcanon-cluster-head">
                                     <div><strong>Otros personajes</strong> <span>figuras vinculadas al universo gossip girl fuera de los núcleos familiares principales</span></div>   
                                     <em>cluster 03</em> 
                                 </div>
                                 <div class="xcanon-members xcanon-members-alone">
-                                    <div class="xmember"><strong>Damien Dalgaard</strong> <span>35-36 años</span> <span style="font-size: smaller;">Hijo del embajador de Bélgica. Ex de Jenny / Eric. Empresario internacional, diplomático o figura en los márgenes de la ley. FC: Kevin Zegers o libre.</span></div>
-                                    <div class="xmember"><strong>Olivia Burke</strong> <span>34-35 años</span> <span style="font-size: smaller;">Exnovia de Dan Humphrey. Estrella de cine, productora o retirada del espectáculo. FC: Hilary Duff o libre.</span></div>
-                                    <div class="xmember"><strong>Steven Spence</strong> <span>45-50 años</span> <span style="font-size: smaller;">Padre de Sage Spence. Empresario. FC libre.</span></div>
-                                    <div class="xmember"><strong>Sage Spence</strong> <span>27-28 años</span> <span style="font-size: smaller;">Ex Queen B de Constance y modelo. Puede ser diseñadora, influencer o estar ligada al mundo de la moda. FC: Sofia Black-D’Elia o libre.</span></div>
-                                    <div class="xmember"><strong>Raina Thorpe</strong> <span>35-36 años</span> <span style="font-size: smaller;">Empresaria y ejecutiva en Thorpe Enterprises. FC: Tika Sumpter o libre. Debe ser afroamericana.</span></div>
-                                    <div class="xmember"><strong>Diana Payne</strong> <span>55-60 años</span> <span style="font-size: smaller;">Magnate de medios de comunicación y gurú editorial. FC: Elizabeth Hurley o libre.</span></div>
-                                    <div class="xmember"><strong>Colin Forrester</strong> <span>40-45 años</span> <span style="font-size: smaller;">Primo de Juliet Sharp y Ben Donovan. Ex profesor de Columbia y empresario millonario. FC: Sam Page o libre.</span></div>
-                                    <div class="xmember"><strong>Juliet Sharp</strong> <span>35-36 años</span> <span style="font-size: smaller;">Prima de Colin Forrester. Ex antagonista. Puede estar redimida o seguir moviendo fichas desde las sombras. FC: Katie Cassidy o libre.</span></div> 
-                                    <div class="xmember"><strong>Agnes Andrews</strong> <span>34-35 años</span> <span style="font-size: smaller;">Ex modelo. Antigua amiga y luego enemiga de Jenny Humphrey. FC: Willa Holland o libre.</span></div>
-                                    <div class="xmember"><strong>Hazel Williams</strong> <span>35-36 años</span> <span style="font-size: smaller;">Una de las antiguas minions de Blair Waldorf. Ocupación a definir. FC: Dreama Walker o libre.</span></div>
-                                    <div class="xmember"><strong>Penelope Shafai</strong> <span>35-36 años</span> <span style="font-size: smaller;">Ex minion de Blair. Puede ser abogada, ejecutiva o haberse casado con algún heredero. FC: Amanda Setton o libre.</span></div>
-                                    <div class="xmember"><strong>Poppy Lifton</strong> <span>38-40 años</span> <span style="font-size: smaller;">Socialité devenida en estafadora de alto nivel. Puede estar rehabilitada o preparando el próximo golpe. FC: Tamara Feldman o libre.</span></div>
-                                    <div class="xmember"><strong>Gabriel Edwards</strong> <span>40-45 años</span> <span style="font-size: smaller;">Estafador y falso emprendedor tecnológico. Puede estar rehabilitado o preparando otro golpe. FC libre.</span></div>
+                                    <div class="xmember"><strong>Damien Dalgaard</strong> <span>35-36 años</span> <span style="font-size: smaller;">Hijo del embajador de Bélgica. Ex de Jenny / Eric. FC: Kevin Zegers o libre.</span></div>
+                                    <div class="xmember"><strong>Olivia Burke</strong> <span>34-35 años</span> <span style="font-size: smaller;">Exnovia de Dan Humphrey. Estrella de cine. FC: Hilary Duff o libre.</span></div>
                                 </div>
-                            </div> <!-- FIN CLUSTER 3 -->
-                                                
-                        </div> <!-- FIN xcanon-content -->
-                                                
+                            </div>
+                        </div>
+                        
                         <div class="xcanon-footer"> 
-                            <strong>xoxo, gossip girl</strong> <span>Los personajes canon y semicanon pueden ser reinterpretados mientras conserven sus ejes narrativos y sus conexiones con el universo.</span> 
+                            <strong>xoxo, gossip girl</strong> <span>Los personajes canon y semicanon pueden ser reinterpretados mientras conserven sus ejes narrativos.</span> 
                         </div>
                     </div>
                 </div>
-            </div> <!-- FIN PESTAÑA CANON -->
+            </div>
 
             <!-- ========================================== -->
-            <!-- PESTAÑA GUÍA NUEVOS USUARIOS               -->
+            <!-- PESTAÑA 04: GUÍA NUEVOS USUARIOS           -->
             <!-- ========================================== -->
             <div class="xgb-pane xgb-pane-guia">
-                
                 <div style="display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid var(--color2); padding-top: 12px; margin-bottom: 25px; width: 100%;">
                     <div style="display: flex; align-items: flex-end; gap: 12px;">
                         <div class="xgb-page-icon" style="font-size: 22px; color: var(--xgb-accent); line-height: 100%; margin-bottom: 2px;">?</div>
@@ -956,25 +801,21 @@
                     </div>
                 </div>
 
-                <div class="xgb-big-img" style="border: var(--borde2); border-radius: 8px; overflow: hidden; height: 260px; margin-bottom: 16px;">
-                    <img alt="Guía" src="https://2img.net/i.imgur.com/33sofpI.png" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-                </div>
-
                 <div class="xgb-mini-cards" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
                     <div class="xgb-mini-card" style="background: rgba(255,255,255,0.02); border: var(--borde1); border-radius: 8px; padding: 20px; box-sizing: border-box;">
                         <div class="xgb-mini-icon" style="font-family: var(--fuente2); font-size: 32px; color: var(--xgb-accent); opacity: 0.4; line-height: 100%; margin-bottom: 12px;">01</div>
                         <div class="xgb-mini-title" style="font-family: var(--fuente2); font-size: 15px; color: #ffffff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Lee la normativa</div>
-                        <div class="xgb-mini-text" style="font-family: var(--fuente1); font-size: 12px; color: rgba(255,255,255,0.6); line-height: 150%;">Antes de comenzar, revisa las normas de convivencia, el sistema de dados y las pautas generales de rol de nuestra comunidad.</div>
+                        <div class="xgb-mini-text" style="font-family: var(--fuente1); font-size: 12px; color: rgba(255,255,255,0.6); line-height: 150%;">Antes de comenzar, revisa las normas de convivencia, el sistema de dados y las pautas generales.</div>
                     </div>
                     <div class="xgb-mini-card" style="background: rgba(255,255,255,0.02); border: var(--borde1); border-radius: 8px; padding: 20px; box-sizing: border-box;">
                         <div class="xgb-mini-icon" style="font-family: var(--fuente2); font-size: 32px; color: var(--xgb-accent); opacity: 0.4; line-height: 100%; margin-bottom: 12px;">02</div>
                         <div class="xgb-mini-title" style="font-family: var(--fuente2); font-size: 15px; color: #ffffff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Revisa registros</div>
-                        <div class="xgb-mini-text" style="font-family: var(--fuente1); font-size: 12px; color: rgba(255,255,255,0.6); line-height: 150%;">Asegúrate de comprobar la lista de físicos ocupados, las familias disponibles y los cupos canon antes de armar tu ficha.</div>
+                        <div class="xgb-mini-text" style="font-family: var(--fuente1); font-size: 12px; color: rgba(255,255,255,0.6); line-height: 150%;">Asegúrate de comprobar la lista de físicos ocupados y familias antes de armar tu ficha.</div>
                     </div>
                     <div class="xgb-mini-card" style="background: rgba(255,255,255,0.02); border: var(--borde1); border-radius: 8px; padding: 20px; box-sizing: border-box;">
                         <div class="xgb-mini-icon" style="font-family: var(--fuente2); font-size: 32px; color: var(--xgb-accent); opacity: 0.4; line-height: 100%; margin-bottom: 12px;">03</div>
                         <div class="xgb-mini-title" style="font-family: var(--fuente2); font-size: 15px; color: #ffffff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Crea personaje</div>
-                        <div class="xgb-mini-text" style="font-family: var(--fuente1); font-size: 12px; color: rgba(255,255,255,0.6); line-height: 150%;">Completa el modelo de ficha oficial y publícalo en la sección correspondiente para que la administración evalúe y apruebe tu perfil.</div>
+                        <div class="xgb-mini-text" style="font-family: var(--fuente1); font-size: 12px; color: rgba(255,255,255,0.6); line-height: 150%;">Completa el modelo de ficha oficial y publícalo en la sección correspondiente para su revisión.</div>
                     </div>
                 </div>
 
@@ -986,18 +827,16 @@
                     <div class="xgb-text">
                         <ul> 
                             <li><strong>Búsquedas activas:</strong> Pásate por la zona de búsquedas; muchos usuarios tienen tramas clave esperándote.</li>
-                            <li><strong>Canales oficiales:</strong> Únete al servidor de Discord para una integración inmediata y resolver dudas en tiempo real con el staff.</li>
-                            <li><strong>Reservas de PB:</strong> Recuerda que dispones de un tiempo limitado para mantener reservado tu avatar antes de subir la ficha.</li>
+                            <li><strong>Canales oficiales:</strong> Únete al servidor de Discord para una integración inmediata y resolver dudas.</li>
                         </ul>
                     </div>
                 </div>
-            </div> <!-- FIN PESTAÑA GUÍA -->
+            </div>
 
             <!-- ========================================== -->
-            <!-- PESTAÑA SISTEMAS                           -->
+            <!-- PESTAÑA 05: SISTEMAS                           -->
             <!-- ========================================== -->
             <div class="xgb-pane xgb-pane-sistemas">
-                
                 <div style="display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid var(--color2); padding-top: 12px; margin-bottom: 25px; width: 100%;">
                     <div style="display: flex; align-items: flex-end; gap: 12px;">
                         <div class="xgb-page-icon" style="font-size: 22px; color: var(--xgb-accent); line-height: 100%; margin-bottom: 2px;">☷</div>
@@ -1017,7 +856,7 @@
                             <div class="xgb-block-sub">dados</div> 
                         </div>
                         <div class="xgb-text"> 
-                            <p>El destino de tus secretos y tu estatus social no siempre está bajo tu control. Nuestro sistema de dados determina el éxito o fracaso de las acciones arriesgadas, los rumores que intentas esparcir y las confrontaciones directas en los eventos de la alta sociedad.</p> 
+                            <p>El destino de tus secretos y tu estatus social no siempre está bajo tu control. Nuestro sistema de dados determina el éxito o fracaso de las acciones arriesgadas y confrontaciones directas.</p> 
                         </div> 
                     </div>
                     <div class="xgb-block">
@@ -1026,20 +865,66 @@
                             <div class="xgb-block-sub">avance</div>
                         </div>
                         <div class="xgb-text"> 
-                            <p>A medida que participes en las tramas globales, acumularás influencia. La influencia te permitirá escalar desde ser un simple aspirante o un becado invisible hasta convertirte en el rey o reina del Upper East Side, desbloqueando beneficios narrativos exclusivos.</p> 
+                            <p>A medida que participes en las tramas globales, acumularás influencia, ascendiendo en la escala del Upper East Side.</p> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- PESTAÑA 06: NORMAS                         -->
+            <!-- ========================================== -->
+            <div class="xgb-pane xgb-pane-normas">
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid var(--color2); padding-top: 12px; margin-bottom: 25px; width: 100%;">
+                    <div style="display: flex; align-items: flex-end; gap: 12px;">
+                        <div class="xgb-page-icon" style="font-size: 22px; color: var(--xgb-accent); line-height: 100%; margin-bottom: 2px;">⚖</div>
+                        <div class="xgb-page-title" style="font-family: var(--fuente2); font-size: 26px; text-transform: uppercase; color: #ffffff; letter-spacing: 1px; line-height: 100%;">
+                            Normativa General
+                        </div>
+                    </div>
+                    <div class="xgb-page-sub" style="font-family: var(--fuente1); font-size: 10px; text-transform: uppercase; color: var(--xgb-accent); letter-spacing: 3px; font-weight: 600; line-height: 100%;">
+                        reglamento / convivencia
+                    </div>
+                </div>
+
+                <div class="xgb-grid-2">
+                    <div class="xgb-block">
+                        <div class="xgb-block-head">
+                            <div class="xgb-block-title">01. Convivencia</div>
+                            <div class="xgb-block-sub">respeto off-rol</div>
+                        </div>
+                        <div class="xgb-text">
+                            <p>Se exige el máximo respeto entre usuarios en los canales de Discord, mensajería y zonas comunes del foro. Cualquier tipo de acoso, discriminación o toxicidad será motivo de sanción inmediata o expulsión directa.</p>
+                            <p>Recuerda separar siempre las acciones y opiniones de tu personaje (on-rol) de tu persona real (off-rol).</p>
+                        </div>
+                    </div>
+
+                    <div class="xgb-block">
+                        <div class="xgb-block-head">
+                            <div class="xgb-block-title">02. Personajes</div>
+                            <div class="xgb-block-sub">cuentas y actividad</div>
+                        </div>
+                        <div class="xgb-text">
+                            <p>Cada usuario debe poseer una cuenta por personaje. Para solicitar cuentas adicionales (multicuentas), se evaluará la actividad constante en la cuenta principal.</p>
+                            <p>Los censos periódicos son de carácter obligatorio para mantener el físico asignado y los registros de tu personaje activos.</p>
                         </div>
                     </div>
                 </div>
 
-                <div style="margin-top: 16px;" class="xgb-listbox">
-                    <div class="xgb-list-title" style="font-family: var(--fuente2); font-size: 16px; color: #ffffff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; border-left: 3px solid var(--xgb-accent); padding-left: 10px;">Acciones comunes</div>
-                    <ol style="font-family: var(--fuente1); font-size: 13px; color: rgba(255,255,255,0.7); padding-left: 20px; line-height: 170%;">
-                        <li style="margin-bottom: 6px;">Lanzar dados según la dificultad establecida por la narración o el staff en las tramas.</li>
-                        <li style="margin-bottom: 6px;">Aplicar modificadores basados en los rasgos de tu personaje, objetos adquiridos o el contexto de la escena.</li>
-                        <li>Registrar las consecuencias narrativas dentro del tema correspondiente para que afecten a tu reputación general.</li>
-                    </ol>
+                <div class="xgb-block">
+                    <div class="xgb-block-head">
+                        <div class="xgb-block-title">03. Mecánica de Escritura</div>
+                        <div class="xgb-block-sub">líneas y contenido</div>
+                    </div>
+                    <div class="xgb-text">
+                        <ul>
+                            <li><strong>Mínimo de líneas:</strong> Se establece un mínimo de desarrollo narrativo por respuesta para garantizar la fluidez de los temas de rol.</li>
+                            <li><strong>Contenido sensible (+18):</strong> El gore, la violencia explícita o el contenido adulto deben llevar obligatoriamente una advertencia en el título del tema para proteger la sensibilidad de la comunidad.</li>
+                            <li><strong>Godmodding:</strong> Está estrictamente prohibido manipular las acciones, pensamientos o herir al personaje de otro usuario sin su previo consentimiento explícito.</li>
+                        </ul>
+                    </div>
                 </div>
-            </div> <!-- FIN PESTAÑA SISTEMAS -->
+            </div> <!-- FIN PESTAÑA NORMAS -->
             
         </div> <!-- FIN xgb-content -->
         
