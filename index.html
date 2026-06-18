@@ -188,11 +188,34 @@
         .xgb-pane {
             display: none;
         }
-
+/**Aqui hay que cambiar por esto si no funciona o lo rompe
         .xgb-pane.active {
             display: block;
-        }
+        }**/
+        /* Asegura que el panel activo sea visible y use el espacio correcto */
+.xgb-pane.active {
+    display: flex !important; /* O 'block', dependiendo de cómo estructuraras el layout derecho */
+    flex-direction: column;
+    width: 100%;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
 
+/* Fuerza a que el texto interno de la guía de inicio y sistemas no sea transparente ni negro */
+.xgb-pane-guia .xgb-caja-texto,
+.xgb-pane-sistemas .xgb-caja-texto {
+    display: block !important;
+    color: #ffffff !important; /* Fuerza el color de texto a blanco para descartar que se camufle con el fondo */
+    opacity: 1 !important;
+}
+
+/* Asegura que los títulos internos no se escondan */
+.xgb-header-seccion h2 {
+    color: #ffffff !important;
+    font-size: 24px; /* Ajusta según el tamaño de tus otros títulos */
+    margin-bottom: 10px;
+}
+/***Hasta aquí hay que borrar si no funciona o lo rompe***/
         /* ========================================================================== */
         /* 4. COMPONENTES COMUNES INTERNOS                                           */
         /* ========================================================================== */
@@ -545,7 +568,7 @@
         <div class="xgb-content">
             
             <!-- SECCIÓN 01: AMBIENTACIÓN -->
-            <div class="xgb-pane xgb-pane-ambientacion">
+            <div class="xgb-pane xgb-pane-ambientacion active">
                 <div class="xgb-header-seccion">
                     <h2><i class="fa-solid fa-building" style="color: var(--color1);"></i>Ambientación</h2>
                     <p>XOXO, Gossip Girl ha vuelto</p>
@@ -686,10 +709,7 @@
                     <div class="xnormas-bloque">
                         <div class="xnormas-icono">✦</div>
                         <p class="xnormas-texto">
-                            <strong>Personajes (tipo):</strong> El foro está ambientado en el universo de Gossip Girl (original y reboot), con un enfoque realista y contemporáneo. Se permiten:</p><br/><br/> 
-                            <p><strong>Personajes canónicos</strong> con cierta libertad creativa</p><br/><br/>
-                            <p><strong>Personajes originales</strong> que se integren al contexto de la élite neoyorquina, sus familias, escuelas y entornos.</p><br/><br/>
-                            <p><strong>No se permiten personajes o tramas que desvirtúen la ambientación:</strong> sobrenatural, ciencia ficción, fantasía, y todo lo que consideremos que no encaje.</p>
+                            <strong>Personajes (tipo):</strong> El foro está ambientado en el universo de Gossip Girl (original y reboot), con un enfoque realista y contemporáneo. Se permiten: <em>Personajes canónicos</em> con cierta libertad creativa, <em>Personajes originales</em> que se integren al contexto de la élite neoyorquina, sus familias, escuelas y entornos; <em>No se permiten personajes o tramas que desvirtúen la ambientación:</em> sobrenatural, ciencia ficción, fantasía, y todo lo que consideremos que no encaje.</p>
                     </div>
                     <div class="xnormas-bloque">
                         <div class="xnormas-icono">✦</div>
@@ -724,10 +744,7 @@
                     <div class="xnormas-bloque">
                          <div class="xnormas-icono">✦</div>
                         <p class="xnormas-texto">
-                            <strong>Personajes extra:</strong>Una vez que hayas ocupado los 5 puestos de personajes disponibles, podrás obtener nuevos personajes mediante un sistema de escalabilidad. Las condiciones son las siguientes:</p><br/><br/>
-                            <p><strong>6° Personaje:</strong> Cada cuenta debe tener al menos 20 publicaciones. Además, deberás dirigirte a la Tienda (inserte aquí el enlace correspondiente), donde se descontará la cantidad de dinero necesaria al momento de realizar la solicitud.</p><br/><br/>
-                            <p><strong>Disclaimer: </strong>Como podrán observar, el requisito aumentará con cada personaje nuevo. La cantidad de dinero que se debe tener está indicada dentro de la propia Tienda. En cuanto a las publicaciones, se requerirán 20 adicionales por cada nuevo personaje. Por ejemplo, si ya has obtenido el sexto personaje y deseas el séptimo, tus primeras cinco cuentas deberán tener 40 publicaciones cada una, mientras que la sexta cuenta (la del nuevo personaje) deberá cumplir con 20 publicaciones para poder aplicar la regla.</p><br/><br/>
-                            <p><strong>3° Canon:</strong> Si ya tienes los 2 canon que se te poporcionan, para obtener el 3° debes haber participado por lo menos en una mini-trama o trama global con alguno de tus personajes canon y también cumplir 3 meses en el foro sin haber caído en inactividad.</p>
+                            <strong>Personajes extra:</strong>Una vez que hayas ocupado los 5 puestos de personajes disponibles, podrás obtener nuevos personajes mediante un sistema de escalabilidad. Las condiciones son las siguientes:<br/> <em>6° Personaje:</em> Cada cuenta debe tener al menos 20 publicaciones. Además, deberás dirigirte a la Tienda (inserte aquí el enlace correspondiente), donde se descontará la cantidad de dinero necesaria al momento de realizar la solicitud.<br/> <em>Disclaimer: </em>Como podrán observar, el requisito aumentará con cada personaje nuevo. La cantidad de dinero que se debe tener está indicada dentro de la propia Tienda. En cuanto a las publicaciones, se requerirán 20 adicionales por cada nuevo personaje. Por ejemplo, si ya has obtenido el sexto personaje y deseas el séptimo, tus primeras cinco cuentas deberán tener 40 publicaciones cada una, mientras que la sexta cuenta (la del nuevo personaje) deberá cumplir con 20 publicaciones para poder aplicar la regla.<br/> <em>3° Canon:</em> Si ya tienes los 2 canon que se te poporcionan, para obtener el 3° debes haber participado por lo menos en una mini-trama o trama global con alguno de tus personajes canon y también cumplir 3 meses en el foro sin haber caído en inactividad.</p>
                     </div>
                     
                     <div class="xnormas-bloque">
@@ -1389,7 +1406,7 @@
                 </div> 
 
                 <!-- PANE: GUÍA DE INICIO -->
-                    <div class="xgb-pane xgb-pane-guia active">
+                    <div class="xgb-pane xgb-pane-guia">
                         <div class="xgb-header-seccion">
                             <h2>Guía de Inicio</h2>
                             <p>Primeros pasos obligatorios en el foro</p>
