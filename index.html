@@ -188,34 +188,10 @@
         .xgb-pane {
             display: none;
         }
-/**Aqui hay que cambiar por esto si no funciona o lo rompe
+
         .xgb-pane.active {
             display: block;
-        }**/
-        /* Asegura que el panel activo sea visible y use el espacio correcto */
-.xgb-pane.active {
-    display: flex !important; /* O 'block', dependiendo de cómo estructuraras el layout derecho */
-    flex-direction: column;
-    width: 100%;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-/* Fuerza a que el texto interno de la guía de inicio y sistemas no sea transparente ni negro */
-.xgb-pane-guia .xgb-caja-texto,
-.xgb-pane-sistemas .xgb-caja-texto {
-    display: block !important;
-    color: #ffffff !important; /* Fuerza el color de texto a blanco para descartar que se camufle con el fondo */
-    opacity: 1 !important;
-}
-
-/* Asegura que los títulos internos no se escondan */
-.xgb-header-seccion h2 {
-    color: #ffffff !important;
-    font-size: 24px; /* Ajusta según el tamaño de tus otros títulos */
-    margin-bottom: 10px;
-}
-/***Hasta aquí hay que borrar si no funciona o lo rompe***/
+        }
         /* ========================================================================== */
         /* 4. COMPONENTES COMUNES INTERNOS                                           */
         /* ========================================================================== */
@@ -1086,7 +1062,7 @@
                         <div class="xcanon-familia-top">
                             <div>
                                 <h4 class="xcanon-familia-titulo">Familia Rose</h4>
-                                    <p class="xcanon-familia-descripcion">arte / familia extendida waldorf / bohemia rica</p>
+                                    <p class="xcanon-familia-descripcion">Vinculados estrechamente a la dinastía Waldorf, los Rose combinan el linaje del Upper East Side con un espíritu bohemio y artístico. Una familia extendida donde el dinero viejo se gasta en galerías de arte, excentricidades refinadas y una libertad hedonista que desafía las normas más rígidas de Manhattan.</p>
                                 </div>
                                 <div class="xcanon-badge">Upper east side</div> 
                             </div>
@@ -1107,7 +1083,7 @@
                         <div class="xcanon-familia-top">
                             <div>
                                 <h4 class="xcanon-familia-titulo">Familia Coates</h4>
-                                    <p class="xcanon-familia-descripcion">old money / ex minions / regreso a manhattan</p>
+                                    <p class="xcanon-familia-descripcion">Antiguos aliados y protectores del séquito más selecto de la vieja élite, los Coates regresan a Manhattan para reclamar su propio espacio en la cima. Su fortuna es indiscutible, pero su verdadero poder radica en los secretos que recolectaron mientras orbitaban el sol de los apellidos más influyentes.</p>
                                 </div>
                                 <div class="xcanon-badge">Minions</div> 
                             </div>
@@ -1124,7 +1100,7 @@
                         <div class="xcanon-familia-top">
                             <div>
                                 <h4 class="xcanon-familia-titulo">Familia Farkas</h4>
-                                    <p class="xcanon-familia-descripcion">origen asiático / regreso / discreción</p>
+                                    <p class="xcanon-familia-descripcion">De un perfil tan distinguido como impenetrable, esta dinastía de origen asiático marca su retorno a la ciudad bajo el mantra de la absoluta discreción. En un ecosistema sediento de atención, los Farkas operan en las sombras, sabiendo que el verdadero control se ejerce sin hacer ruido.</p>
                                 </div>
                                 <div class="xcanon-badge">Minions</div> 
                             </div>
@@ -1149,7 +1125,7 @@
                         <div class="xcanon-familia-top">
                             <div>
                                 <h4 class="xcanon-familia-titulo">Familia Rosson</h4>
-                                    <p class="xcanon-familia-descripcion">rama secreta / humphrey-van der woodsen</p>
+                                    <p class="xcanon-familia-descripcion">La existencia de una rama secreta vinculada al legado Humphrey-Van der Woodsen es el secreto peor guardado de la alta sociedad. Los Rosson cargan con un apellido entrelazado por alianzas complejas, resentimientos del pasado y la constante presión de reclamar la herencia que les corresponde por derecho de sangre.</p>
                                 </div>
                                 <div class="xcanon-badge">Hidden legacy</div> 
                             </div>
@@ -1368,7 +1344,7 @@
             <div class="xcanon-familia-top">
                 <div>
                     <h4 class="xcanon-familia-titulo">Familia Barnes</h4>
-                    <p class="xcanon-familia-descripcion">dinero viejo / despreocupación / amistad con zoya</p>
+                    <p class="xcanon-familia-descripcion">Una dinastía de dinero viejo que prefiere la comodidad de la despreocupación antes que las rígidas etiquetas neoyorquinas. Con un pie en el lujo y otro en la autenticidad, se han convertido en un pilar fundamental de lealtad y el principal refugio emocional para Zoya en un entorno hostil.</p>
                 </div>
                 <div class="xcanon-badge">Old Money</div> 
             </div>
@@ -1390,15 +1366,63 @@
         <div class="xcanon-familia-box">
             <div class="xcanon-familia-top">
                 <div>
-                    <h4 class="xcanon-familia-titulo">Roles Individuales</h4>
+                    <h4 class="xcanon-familia-titulo">Otros personajes</h4>
                     <p class="xcanon-familia-descripcion">Personalidades destacadas y agregados de Manhattan</p>
                 </div>
                 <div class="xcanon-badge">Varios</div>
             </div>
             <div class="xcanon-lista-personajes">
                 <div class="xcanon-personaje-card">
-                    <strong>Personaje de Ejemplo (20 años)</strong>
-                    <span>Descripción libre para futuros cánones o solicitudes especiales del foro.</span>
+                    <strong>Damien Dalgaard (35-36 años)</strong>
+                    <span>Ex de Jenny/Eric. Empresario o figura marginal. FC: Kevin Zegers o libre.</span>
+                </div>
+                <div class="xcanon-personaje-card">
+                    <strong>Olivia Burke (34-35 años)</strong>
+                    <span>Exnovia de Dan. Actriz o productora. FC: Hilary Duff o libre.</span>
+                </div>
+                <div class="xcanon-personaje-card">
+                    <strong>Steven Spence (45-50 años)</strong>
+                    <span>Padre de Sage. Empresario. FC: libre.</span>
+                </div>
+                <div class="xcanon-personaje-card">
+                    <strong>Sage Spence (27-28 años)</strong>
+                    <span>Ex Queen B, modelo. FC: Sofia Black-D'Elia o libre.</span>
+                </div>
+                <div class="xcanon-personaje-card">
+                    <strong>Raina Thorpe (35-36 años)</strong>
+                    <span>Empresaria en Thorpe Enterprises. FC: Tika Sumpter o libre (afroamericana).</span>
+                </div>
+                <div class="xcanon-personaje-card">
+                    <strong>Diana Payne (55-60 años)</strong>
+                    <span>Magnate de medios. FC: Elizabeth Hurley o libre.</span>
+                </div>
+                <div class="xcanon-personaje-card">
+                    <strong>Colin Forrester (40-45 años)</strong>
+                    <span>Ex profesor de Columbia, empresario. FC: Sam Page o libre.</span>
+                </div>
+                <div class="xcanon-personaje-card">
+                    <strong>Juliet Sharp (35-36 años)</strong>
+                    <span>Ex antagonista. FC: Katie Cassidy o libre.</span>
+                </div>
+                <div class="xcanon-personaje-card">
+                    <strong>Agnes Andrews (34-35 años)</strong>
+                    <span>Ex modelo, enemiga de Jenny. FC: Willa Holland o libre.</span>
+                </div>
+                <div class="xcanon-personaje-card">
+                    <strong>Hazel Williams (35-36 años)</strong>
+                    <span>Ex minion de Blair. FC: Dreama Walker o libre.</span>
+                </div>
+                <div class="xcanon-personaje-card">
+                    <strong>Penelope Shafai (35-36 años)</strong>
+                    <span>Ex minion de Blair. FC: Amanda Setton o libre.</span>
+                </div>
+                <div class="xcanon-personaje-card">
+                    <strong>Poppy Lifton (38-40 años)</strong>
+                    <span>Socialite estafadora. FC: Tamara Feldman o libre.</span>
+                </div>
+                <div class="xcanon-personaje-card">
+                    <strong>Gabriel Edwards (40-45 años)</strong>
+                    <span>Estafador tecnológico. FC: Armie Hammer o libre.</span>
                 </div>
             </div>
         </div>
