@@ -1386,8 +1386,11 @@
             </div>
         </div>
     </div> </div> 
-        
-                <div class="xgb-pane xgb-pane-guia">
+        <!-- ========================================== -->
+<!-- PARTE 5/5: CORREGIDA Y REVISADA DESDE CERO -->
+<!-- ========================================== -->
+
+<div class="xgb-pane xgb-pane-guia">
     <div class="xgb-header-seccion">
         <h2>Guía de Inicio</h2>
         <p>Primeros pasos obligatorios en el foro</p>
@@ -1409,15 +1412,25 @@
     </div>
     <div class="xgb-caja-texto">
         <p>El azar y los deslices sociales se rigen bajo mecánicas específicas diseñadas para dar veracidad e imprevisibilidad a las tramas globales:</p>
-        <p><strong>El Dado Gossip Girl:</strong> Cuando ejecutes una action comprometida o intentes descubrir un secreto, el staff o los dados determinarán si dejas pistas incriminatorias que puedan terminar directamente en la bandeja de entrada de la reina del cotilleo urbano.</p>
+        <p><strong>El Dado Gossip Girl:</strong> Cuando ejecutes una acción comprometida o intentes descubrir un secreto, el staff o los dados determinarán si dejas pistas incriminatorias que puedan terminar directamente en la bandeja de entrada de la reina del cotilleo urbano.</p>
     </div>
 </div>
 
-</div> <div class="xgb-footer">
+<!-- CIERRE DE CONTENEDORES GENERALES -->
+</div> 
+
+<div class="xgb-footer">
     <div>xoxo, next gen</div>
     <div>guidebook oficial</div>
 </div>
-</div> </div> <script>
+
+</div> <!-- Cierre del contenedor principal -->
+</div> <!-- Cierre del envoltorio global -->
+
+<!-- ========================================== -->
+<!-- SCRIPT DE NAVEGACIÓN (EL MOTOR DE LAS PESTAÑAS) -->
+<!-- ========================================== -->
+<script>
     document.addEventListener('DOMContentLoaded', () => {
         // NAVEGACIÓN PRINCIPAL DE LA GUIDEBOOK
         const tabs = document.querySelectorAll('.xgb-tab');
@@ -1448,12 +1461,10 @@
                 subPanes.forEach(sp => sp.classList.remove('active'));
                 
                 subTab.classList.add('active');
+                // Buscamos la clase exacta que corregimos en los bloques anteriores
                 const targetCluster = document.querySelector(`.xcanon-panel-${clusterTarget}`);
                 if (targetCluster) targetCluster.classList.add('active');
             });
         });
     });
 </script>
-
-</body>
-</html>
