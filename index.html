@@ -495,6 +495,128 @@
 .xcanon-personaje-card.ocupado strong {
     color: var(--color2);
 }
+/**AQUI ESTA EL NUEVO DISEÑO DE LA GUIA CON CAJITAS BONITAS Y ESO**/
+/* ========================================================================== */
+/* ESTILO BONITO PARA LA GUIA DE NUEVOS USUARIOS                              */
+/* ========================================================================== */
+
+.xgb-guia-intro {
+    background: linear-gradient(135deg, rgba(204,186,217,0.08), rgba(255,255,255,0.02));
+    border: 1px solid rgba(204,186,217,0.18);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 22px;
+    font-size: 13.5px;
+    line-height: 165%;
+    color: rgba(255,255,255,0.72);
+}
+
+.xgb-guia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.xgb-guia-card {
+    background: #141414;
+    border: 1px solid #222222;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 170px;
+    box-sizing: border-box;
+}
+
+.xgb-guia-card h3 {
+    font-family: var(--fuente2);
+    font-size: 15px;
+    text-transform: uppercase;
+    color: var(--color1);
+    margin: 0 0 12px 0;
+    letter-spacing: 1px;
+}
+
+.xgb-guia-card p {
+    font-size: 12.8px;
+    line-height: 160%;
+    color: rgba(255,255,255,0.65);
+    margin: 0;
+}
+
+.xgb-guia-pasos {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.xgb-guia-step {
+    display: grid;
+    grid-template-columns: 46px 1fr;
+    gap: 16px;
+    align-items: flex-start;
+    background: #101010;
+    border: 1px solid #202020;
+    border-radius: 8px;
+    padding: 18px;
+}
+
+.xgb-guia-num {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--color1);
+    color: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--fuente1);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.xgb-guia-step h3 {
+    font-family: var(--fuente2);
+    font-size: 16px;
+    color: #ffffff;
+    margin: 0 0 6px 0;
+    text-transform: uppercase;
+}
+
+.xgb-guia-step p {
+    font-size: 13px;
+    line-height: 160%;
+    color: rgba(255,255,255,0.68);
+    margin: 0;
+}
+
+.xgb-guia-recos {
+    background: rgba(204,186,217,0.05);
+    border-left: 3px solid var(--color2);
+    border-radius: 8px;
+    padding: 20px 24px;
+}
+
+.xgb-guia-recos h3 {
+    font-family: var(--fuente2);
+    font-size: 16px;
+    color: var(--color1);
+    text-transform: uppercase;
+    margin: 0 0 12px 0;
+}
+
+.xgb-guia-recos ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.xgb-guia-recos li {
+    font-size: 13px;
+    line-height: 160%;
+    color: rgba(255,255,255,0.68);
+    margin-bottom: 8px;
+}
+/** AQUÍ SE TERMINA EL DISEÑO DE CAJITAS BONITAS Y ESO PARA LA GUIA**/
     </style>
 </head>
 <body>
@@ -1435,24 +1557,72 @@
                             <h2>GUÍA PARA NUEVOS USUARIOS — Gossip Girl: Legacy</h2>
                             <p>Primeros pasos obligatorios en el foro</p>
                         </div>
-                        <div class="xgb-caja-texto">
-                            <p>Bienvenido a Manhattan. Para integrarte de forma óptima a la comunidad, te sugerimos seguir meticulosamente este orden de acciones:</p>
-                            <p><strong><i class="game-icon game-icon-logic-gate-nxor"></i>SOBRE EL FORO:</strong> Este es un foro de rol narrativo, semiprivado y semicanon, inspirado en el universo de Gossip Girl (serie original y reboot). La nueva amenaza no es necesariamente una persona, sino una inteligencia artificial que ha absorbido el legado de las Gossip Girls anteriores y teje sus propias tramas desde las sombras del algoritmo. La élite neoyorquina sigue viva y coleando, y sus secretos están más frescos que nunca.</p>
-                            <p><strong><i class="game-icon game-icon-logic-gate-nxor"></i>¿QUÉ SIGNIFICA SEMICANON?:</strong> Aceptamos tanto personajes canónicos (con libertad creativa para reinterpretarlos) como personajes originales, siempre que estén bien integrados en el universo y tengan conexiones claras con la élite. No queremos islas: queremos una red de mentiras, lealtades y secretos compartidos. Si tu personaje no conoce a nadie, no tiene un apellido reconocible o su historia no podría cruzarse con la de un Van der Woodsen o un Calloway, probablemente no encaje. Pero si eres la becada que estudia junto al hijo bastardo de Jack Bass, o la influencer que compite por el mismo patrocinio que Luna La, o el heredero de una fortuna venida a menos que ahora trabaja para los Bass… bienvenido a casa.</p>
-                            <p><strong><i class="game-icon game-icon-logic-gate-nxor"></i>¿QUÉ SIGNIFICA SEMIPRIVADO?:</strong> El foro no está abierto para cualquiera. Buscamos un grupo de jugadores con compromiso narrativo, que disfruten construyendo tramas colectivas y respondan a los blasts de Gossip Girl como si su reputación dependiera de ello (porque en este universo, depende). En un principio, estará abierto a cualquiera que desee participar; llegados a un punto, se cerrará y sólo se podrá acceder por invitación o tomando búsquedas. No queremos cuentas aisladas. Queremos gente que entienda que el chisme y las tramas salen mejor si es en grupo.</p>
-                            <ul>
-                                <li><strong>Paso 1: LEE LA NORMATIVA</strong> Antes de soltarte por el Upper East Side como si fueras dueño del lugar, pasa por el reglamento. No queremos que te estampes contra las puertas giratorias del sentido común. Está ahí para que sepas hasta dónde puedes estirar la lengua sin que te la corten.</li>
-                                <li><strong>Paso 2: REVISA LOS REGISTROS</strong> Los apellidos no se repiten, los rostros tampoco. Mira qué canons están libres, qué faceclaims ya tienen dueño, y qué dramas te esperan.</li>
-                                <li><strong>Paso 3: CREA TU PERSONAJE</strong> Llegó el momento de ponerle cara, nombre y secretos a tu ricachón. Usa el modelo de ficha, respeta los mínimos de líneas, y recuerda: la historia no tiene que ser una novela, pero sí algo sustancial. Aporta al drama. Si no, ¿para qué estamos aquí?</li>
-                            </ul>
-                            <p><strong>RECOMENDACIONES</strong></p>
-                            <ul>
-                                <li>Toda idea y personaje, mientras tenga sentido con el foro, es bienvenido. Aquí no limitamos la creatividad, al contrario.</li>
-                                <li>Participa en las búsquedas. Es la manera más fácil de encontrar tramas y dramas.</li>
-                                <li>Si algo no te gusta, sugiere (siempre con respeto). Si algo te encanta, también hazlo saber. La comunidad se hace entre todos.</li>
-                                <li>Adoramos el drama, siempre y cuando sea dentro del foro. Fuera, somos personas civilizadas (más o menos).</li>
-                            </ul>
-                        </div>
+                        <!--- AQUI ESTA EL DISEÑO NUEVO SI LO ROMPO LO CAMBIO  --->
+                        <div class="xgb-guia-intro">
+    <!-- Introduccion principal de la guia -->
+    <p>Bienvenido a Manhattan. Para integrarte de forma optima a la comunidad, te sugerimos seguir este pequeno recorrido. Piensalo como tu mapa inicial antes de entrar al Upper East Side.</p>
+</div>
+
+<div class="xgb-guia-grid">
+    <!-- Caja informativa: sobre el foro -->
+    <div class="xgb-guia-card">
+        <h3>Sobre el foro</h3>
+        <p>Foro de rol narrativo, semiprivado y semicanon, inspirado en Gossip Girl. La nueva amenaza no es solo una persona, sino una inteligencia artificial alimentada por secretos.</p>
+    </div>
+
+    <!-- Caja informativa: semicanon -->
+    <div class="xgb-guia-card">
+        <h3>Semicanon</h3>
+        <p>Aceptamos personajes canon reinterpretados y personajes originales, siempre que encajen dentro del universo, la elite y las conexiones sociales del foro.</p>
+    </div>
+
+    <!-- Caja informativa: semiprivado -->
+    <div class="xgb-guia-card">
+        <h3>Semiprivado</h3>
+        <p>Buscamos jugadores con compromiso narrativo, ganas de crear tramas colectivas y participar en los secretos, rumores y consecuencias del foro.</p>
+    </div>
+</div>
+
+<div class="xgb-guia-pasos">
+    <!-- Paso 1 -->
+    <div class="xgb-guia-step">
+        <div class="xgb-guia-num">01</div>
+        <div>
+            <h3>Lee la normativa</h3>
+            <p>Antes de empezar, revisa las reglas. Esto te ayuda a saber que se permite, que no, y como convivir bien dentro de la comunidad.</p>
+        </div>
+    </div>
+
+    <!-- Paso 2 -->
+    <div class="xgb-guia-step">
+        <div class="xgb-guia-num">02</div>
+        <div>
+            <h3>Revisa los registros</h3>
+            <p>Mira que apellidos, personajes canon y faceclaims estan disponibles. Asi evitas repetir datos que ya pertenecen a otro personaje.</p>
+        </div>
+    </div>
+
+    <!-- Paso 3 -->
+    <div class="xgb-guia-step">
+        <div class="xgb-guia-num">03</div>
+        <div>
+            <h3>Crea tu personaje</h3>
+            <p>Usa el modelo de ficha, respeta los minimos pedidos y dale a tu personaje una historia con secretos, conexiones y posibilidades de trama.</p>
+        </div>
+    </div>
+</div>
+
+<div class="xgb-guia-recos">
+    <!-- Recomendaciones finales para nuevos usuarios -->
+    <h3>Recomendaciones</h3>
+    <ul>
+        <li>Toda idea y personaje es bienvenido mientras tenga sentido con el foro.</li>
+        <li>Participa en busquedas para encontrar tramas rapidamente.</li>
+        <li>Sugiere con respeto si algo puede mejorar.</li>
+        <li>El drama es bienvenido dentro del rol; fuera del rol, cuidamos la convivencia.</li>
+    </ul>
+</div>
+                        <!--- AQUI TERMINA EL DISEÑO NUEVO POR SI LO ROMPO, HASTA AQUÍ DEBO DE QUITAR  --->
                     </div>
 
                     <!-- PANE: SISTEMAS DE JUEGO -->
