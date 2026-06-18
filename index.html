@@ -733,6 +733,32 @@
     line-height: 160%;
     color: rgba(255,255,255,0.68);
 }
+.xgb-money-section {
+    margin-bottom: 28px;
+}
+
+.xgb-money-section h3 {
+    font-family: var(--fuente2);
+    font-size: 17px;
+    color: var(--color1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 14px 0;
+}
+
+.xgb-money-section h3 i {
+    color: var(--color2);
+    margin-right: 8px;
+}
+
+.xgb-money-negative {
+    border-left: 3px solid #8f4f66;
+}
+
+.xgb-money-negative .xgb-money-price {
+    background: #8f4f66;
+    color: #ffffff;
+}        
   /** AQUÍ TERMINA EL DISEÑOR DEL SISTEMA MONETARIO **/      
     </style>
 </head>
@@ -1743,102 +1769,291 @@
                     </div>
 
                     <!-- AQUÍ EMPIEZA EL SISTEMA MONETARIO NUEVO POR SI LO ROMPO Y LO DEBO DE QUITAR -->
-            <!-- PANE: SISTEMAS DE JUEGO -->
+       <!-- PANE: SISTEMAS DE JUEGO -->
 <div class="xgb-pane xgb-pane-sistemas">
     <div class="xgb-header-seccion">
         <h2>Sistema monetario</h2>
-        <p>Dolares, reputacion y privilegios dentro del foro</p>
+        <p>Even the Upper East Side runs on cash, darling.</p>
     </div>
 
     <div class="xgb-money-intro">
         <!-- Introduccion del sistema monetario -->
-        <p>En Manhattan todo tiene un precio. El sistema monetario sirve para premiar la actividad, mover tramas y permitir que los personajes compren privilegios, rumores, lujos o ventajas narrativas dentro del foro.</p>
+        <p>En el mundo de Gossip Girl, el dinero no solo engrasa los engranajes del poder: abre puertas blindadas, compra silencios incomodos y financia las fiestas mas exclusivas de Manhattan. Por eso, aqui la economia tambien sera parte del juego.</p>
+        <p>Gastar y ganar dolares solo sera posible si sabes moverte en la alta sociedad... o si te conviertes en un perfecto arribista. No importa si vienes de Brooklyn o ya tienes una estrella en el escote: todos tienen la posibilidad de brillar.</p>
     </div>
 
     <div class="xgb-money-grid">
-        <!-- Caja: que es el dinero -->
+        <!-- Caja explicativa -->
         <div class="xgb-money-card">
             <div class="xgb-money-icon">
                 <i class="fa-solid fa-coins"></i>
             </div>
-            <h3>¿Que es?</h3>
-            <p>La moneda del foro representa influencia, recursos y presencia social. No siempre es dinero literal: tambien puede ser acceso, contactos o reputacion.</p>
+            <h3>Canjes automaticos</h3>
+            <p>Son recompensas que se suman por acciones comunes dentro del foro, como crear ficha, abrir temas o participar en zonas sociales.</p>
         </div>
 
-        <!-- Caja: como se gana -->
+        <!-- Caja explicativa -->
         <div class="xgb-money-card">
             <div class="xgb-money-icon">
-                <i class="fa-solid fa-pen-nib"></i>
+                <i class="fa-solid fa-ranking-star"></i>
             </div>
-            <h3>¿Como se gana?</h3>
-            <p>Participando en temas, cerrando roles, tomando busquedas, asistiendo a tramas globales o cumpliendo dinamicas especiales del staff.</p>
+            <h3>Ingresos normales</h3>
+            <p>Premian la participacion activa, la integracion en busquedas, los rankings, las invitaciones y el apoyo a la comunidad.</p>
         </div>
 
-        <!-- Caja: como se usa -->
+        <!-- Caja explicativa -->
         <div class="xgb-money-card">
             <div class="xgb-money-icon">
-                <i class="fa-solid fa-bag-shopping"></i>
+                <i class="fa-solid fa-trophy"></i>
             </div>
-            <h3>¿Como se usa?</h3>
-            <p>Puede gastarse en compras narrativas, solicitudes especiales, rumores, eventos sociales, propiedades o beneficios esteticos para el personaje.</p>
+            <h3>Logros especiales</h3>
+            <p>Reconocen momentos narrativos concretos, actividad destacada o escenas dramaticas que mueven la vida social del foro.</p>
         </div>
     </div>
 
-    <div class="xgb-money-list">
-        <!-- Recompensa monetaria -->
-        <div class="xgb-money-row">
-            <i class="fa-solid fa-comment-dots"></i>
-            <div>
-                <strong>Responder un tema</strong>
-                <span>Participacion normal dentro de un rol activo.</span>
-            </div>
-            <div class="xgb-money-price">+10 USD</div>
-        </div>
+    <div class="xgb-money-section">
+        <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Canjes Automaticos</h3>
 
-        <!-- Recompensa monetaria -->
-        <div class="xgb-money-row">
-            <i class="fa-solid fa-lock"></i>
-            <div>
-                <strong>Cerrar un tema</strong>
-                <span>Bonificacion al terminar una escena completa.</span>
+        <div class="xgb-money-list">
+            <div class="xgb-money-row">
+                <i class="fa-solid fa-id-card"></i>
+                <div>
+                    <strong>Crear tu ficha de personaje</strong>
+                    <span>Primer paso para entrar oficialmente al foro.</span>
+                </div>
+                <div class="xgb-money-price">+15$</div>
             </div>
-            <div class="xgb-money-price">+25 USD</div>
-        </div>
 
-        <!-- Recompensa monetaria -->
-        <div class="xgb-money-row">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <div>
-                <strong>Tomar una busqueda</strong>
-                <span>Premio por integrarse a una trama solicitada por otro usuario.</span>
+            <div class="xgb-money-row">
+                <i class="fa-solid fa-folder-open"></i>
+                <div>
+                    <strong>Abrir un tema de rol</strong>
+                    <span>Inicio de una nueva escena narrativa.</span>
+                </div>
+                <div class="xgb-money-price">+10$</div>
             </div>
-            <div class="xgb-money-price">+40 USD</div>
-        </div>
 
-        <!-- Gasto monetario -->
-        <div class="xgb-money-row">
-            <i class="fa-solid fa-martini-glass"></i>
-            <div>
-                <strong>Evento privado</strong>
-                <span>Organizar una fiesta, gala, cena exclusiva o reunion social relevante.</span>
+            <div class="xgb-money-row">
+                <i class="fa-solid fa-comment-dots"></i>
+                <div>
+                    <strong>Responder a un tema de rol</strong>
+                    <span>Respuesta dentro de una escena activa.</span>
+                </div>
+                <div class="xgb-money-price">+5$</div>
             </div>
-            <div class="xgb-money-price">-80 USD</div>
-        </div>
 
-        <!-- Gasto monetario -->
-        <div class="xgb-money-row">
-            <i class="fa-solid fa-envelope-open-text"></i>
-            <div>
-                <strong>Rumor anonimo</strong>
-                <span>Enviar informacion comprometedora para que pueda ser usada por Gossip Girl.</span>
+            <div class="xgb-money-row">
+                <i class="fa-solid fa-user-plus"></i>
+                <div>
+                    <strong>Abrir una busqueda de personaje</strong>
+                    <span>Solicitud de un personaje necesario para tus tramas.</span>
+                </div>
+                <div class="xgb-money-price">+25$</div>
             </div>
-            <div class="xgb-money-price">-100 USD</div>
+
+            <div class="xgb-money-row">
+                <i class="fa-solid fa-map"></i>
+                <div>
+                    <strong>Abrir una busqueda de trama</strong>
+                    <span>Propuesta para encontrar conexiones narrativas.</span>
+                </div>
+                <div class="xgb-money-price">+25$</div>
+            </div>
+
+            <div class="xgb-money-row">
+                <i class="fa-solid fa-address-book"></i>
+                <div>
+                    <strong>Redes, baul, cronologia y relaciones</strong>
+                    <span>Creacion de espacios personales para organizar a tu personaje.</span>
+                </div>
+                <div class="xgb-money-price">+15$ c/u</div>
+            </div>
+
+            <div class="xgb-money-row">
+                <i class="fa-solid fa-image"></i>
+                <div>
+                    <strong>Apertura de espacio grafico</strong>
+                    <span>Zona para mostrar graficos, recursos o pedidos esteticos.</span>
+                </div>
+                <div class="xgb-money-price">+25$</div>
+            </div>
+
+            <div class="xgb-money-row">
+                <i class="fa-solid fa-bullhorn"></i>
+                <div>
+                    <strong>Comentario en chismes de Gossip Girl</strong>
+                    <span>Participacion directa en los rumores del foro.</span>
+                </div>
+                <div class="xgb-money-price">+5$</div>
+            </div>
         </div>
     </div>
 
-    <div class="xgb-money-note">
-        <!-- Nota final para aclarar el sistema -->
-        <strong>Importante:</strong> el staff puede ajustar precios, recompensas o limites segun la actividad del foro. El sistema no busca competir, sino dar movimiento, consecuencias y sabor narrativo a las tramas.
+    <div class="xgb-money-section">
+        <h3><i class="fa-solid fa-money-bill-trend-up"></i> Ingresos Normales</h3>
+
+        <div class="xgb-money-list">
+            <div class="xgb-money-row">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <div>
+                    <strong>Tomar una busqueda de personaje</strong>
+                    <span>Integrarte a una busqueda publicada por otro usuario.</span>
+                </div>
+                <div class="xgb-money-price">+20$</div>
+            </div>
+
+            <div class="xgb-money-row">
+                <i class="fa-solid fa-people-arrows"></i>
+                <div>
+                    <strong>Tomar una busqueda de trama</strong>
+                    <span>Unirte a una conexion o historia propuesta.</span>
+                </div>
+                <div class="xgb-money-price">+15$</div>
+            </div>
+
+            <div class="xgb-money-row">
+                <i class="fa-solid fa-crown"></i>
+                <div>
+                    <strong>Primer lugar en ranking quincenal</strong>
+                    <span>Premio por quedar en la posicion mas alta del ranking.</span>
+                </div>
+                <div class="xgb-money-price">+40$</div>
+            </div>
+
+            <div class="xgb-money-row">
+                <i class="fa-solid fa-medal"></i>
+                <div>
+                    <strong>Segundo lugar en ranking quincenal</strong>
+                    <span>Reconocimiento por actividad destacada.</span>
+                </div>
+                <div class="xgb-money-price">+30$</div>
+            </div>
+
+            <div class="xgb-money-row">
+                <i class="fa-solid fa-award"></i>
+                <div>
+                    <strong>Tercer lugar en ranking quincenal</strong>
+                    <span>Premio por mantener buena actividad.</span>
+                </div>
+                <div class="xgb-money-price">+20$</div>
+            </div>
+
+            <div class="xgb-money-row">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                    <strong>Invitar a un nuevo usuario</strong>
+                    <span>Traer una nueva persona activa al foro.</span>
+                </div>
+                <div class="xgb-money-price">+100$</div>
+            </div>
+
+            <div class="xgb-money-row">
+                <i class="fa-solid fa-masks-theater"></i>
+                <div>
+                    <strong>Participar en una mini-trama</strong>
+                    <span>Con un minimo de dos post dentro de la mini-trama.</span>
+                </div>
+                <div class="xgb-money-price">+25$</div>
+            </div>
+
+            <div class="xgb-money-row">
+                <i class="fa-solid fa-globe"></i>
+                <div>
+                    <strong>Participar en una trama global</strong>
+                    <span>Con un minimo de dos post dentro de la trama global.</span>
+                </div>
+                <div class="xgb-money-price">+25$</div>
+            </div>
+
+            <div class="xgb-money-row">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                <div>
+                    <strong>Reportar sugerencia o error</strong>
+                    <span>Ayuda para mejorar el funcionamiento del foro.</span>
+                </div>
+                <div class="xgb-money-price">+10$</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="xgb-money-section">
+        <h3><i class="fa-solid fa-star"></i> Logros Especiales</h3>
+
+        <div class="xgb-money-list">
+            <div class="xgb-money-row">
+                <i class="fa-solid fa-file-circle-check"></i>
+                <div>
+                    <strong>Poster Pro</strong>
+                    <span>Cerrar un tema donde cada personaje tenga 6 post.</span>
+                </div>
+                <div class="xgb-money-price">+30$</div>
+            </div>
+
+            <div class="xgb-money-row">
+                <i class="fa-solid fa-bolt"></i>
+                <div>
+                    <strong>Super-Poster</strong>
+                    <span>Haber cerrado 4 temas en un mes.</span>
+                </div>
+                <div class="xgb-money-price">+50$</div>
+            </div>
+
+            <div class="xgb-money-row">
+                <i class="fa-solid fa-face-flushed"></i>
+                <div>
+                    <strong>Humillation Ritual</strong>
+                    <span>Participar en un tema donde tu personaje sufre una humillacion publica.</span>
+                </div>
+                <div class="xgb-money-price">+20$</div>
+            </div>
+
+            <div class="xgb-money-row">
+                <i class="fa-solid fa-chess-queen"></i>
+                <div>
+                    <strong>Master of Manipulation</strong>
+                    <span>Organizar un tema donde dos personajes terminen en un malentendido causado por ti.</span>
+                </div>
+                <div class="xgb-money-price">+20$</div>
+            </div>
+
+            <div class="xgb-money-row">
+                <i class="fa-solid fa-gem"></i>
+                <div>
+                    <strong>Elite Member</strong>
+                    <span>Has hecho en un mes mas de 30 post. Sientete orgullosx de tu actividad.</span>
+                </div>
+                <div class="xgb-money-price">+100$</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="xgb-money-section">
+        <h3><i class="fa-solid fa-money-bill-transfer"></i> Egresos Normales</h3>
+
+        <div class="xgb-money-list">
+            <div class="xgb-money-row xgb-money-negative">
+                <i class="fa-solid fa-door-open"></i>
+                <div>
+                    <strong>Haber abandonado un tema</strong>
+                    <span>Penalizacion por dejar una escena sin continuidad.</span>
+                </div>
+                <div class="xgb-money-price">-25$</div>
+            </div>
+
+            <div class="xgb-money-row xgb-money-negative">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <div>
+                    <strong>Abandonar mini-trama o trama global</strong>
+                    <span>Penalizacion por retirarse de una actividad grupal importante.</span>
+                </div>
+                <div class="xgb-money-price">-50$</div>
+            </div>
+
+            <div class="xgb-money-note">
+                <!-- Nota temporal para ampliar egresos despues -->
+                Faltan agregar mas egresos normales.
+            </div>
+        </div>
     </div>
 </div>
             <!--- AQUI TERMINA EL DISEÑO NUEVO POR SI LO ROMPO, HASTA AQUÍ DEBO DE QUITAR  --->
