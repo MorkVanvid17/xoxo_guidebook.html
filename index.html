@@ -759,7 +759,60 @@
     background: #8f4f66;
     color: #ffffff;
 }        
-  /** AQUÍ TERMINA EL DISEÑOR DEL SISTEMA MONETARIO **/      
+  /** AQUÍ TERMINA EL DISEÑOR DEL SISTEMA MONETARIO **/    
+
+        /* ========================================================================== */
+/* LEYENDA DE ESTADOS PARA PERSONAJES CANON                                   */
+/* ========================================================================== */
+
+.xcanon-leyenda-estados {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: #101010;
+    border: 1px solid #202020;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 0 0 22px 0;
+}
+
+.xcanon-leyenda-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--fuente1);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.58);
+}
+
+.xcanon-leyenda-color {
+    width: 9px;
+    height: 26px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+/* Color para personajes reservados */
+.xcanon-leyenda-color.reservado {
+    background: var(--color1);
+}
+
+/* Color para personajes ocupados */
+.xcanon-leyenda-color.ocupado {
+    background: var(--color2);
+}
+
+/* Color para personajes libres */
+.xcanon-leyenda-color.libre {
+    background: rgba(255,255,255,0.22);
+}
+
+/* Borde automatico para personajes libres */
+.xcanon-personaje-card:not(.reservado):not(.ocupado) {
+    border-left: 3px solid rgba(255,255,255,0.22);
+}
     </style>
 </head>
 <body>
@@ -1092,6 +1145,21 @@
                         <div class="xcanon-tab-boton" data-cluster="otros">Otros Personajes</div>
                     </div>
 
+                    <!-- Leyenda de colores para estados de personajes canon -->
+                    <div class="xcanon-leyenda-estados">
+                    <div class="xcanon-leyenda-item">
+                        <span class="xcanon-leyenda-color reservado"></span>Reservado
+                    </div>
+    
+                    <div class="xcanon-leyenda-item">
+                        <span class="xcanon-leyenda-color ocupado"></span>Ocupado
+                    </div>
+
+                    <div class="xcanon-leyenda-item">
+                        <span class="xcanon-leyenda-color libre"></span>Libre
+                    </div>
+                </div>
+                    <!-- Aquí termina la Leyenda de colores para estados de personajes canon -->
                     <!-- CLUSTER 1: SERIE ORIGINAL -->
                     <div class="xcanon-panel xcanon-panel-original active">
                         <div class="xcanon-familia-box">
